@@ -26,6 +26,8 @@ config/redis.yml
 config/devise.yml
 config/hydra-ldap.yml
 config/browse_everything_providers.yml
+config/analytics.yml
+config/secrets.yml
 
 # Ignore this file for security reasons
 config/initializers/secret_token.rb
