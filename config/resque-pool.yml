@@ -1,1 +1,6 @@
- "*": 1
+batch_update: 1
+audit: 1
+event: 1
+proxy_deposit: 1
+import_url: 1
+"*": 1
