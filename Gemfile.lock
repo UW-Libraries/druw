@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/projecthydra/sufia.git
-  revision: 6c2f1a08b768783cf8e45f0244f35946c7f5cfa8
+  revision: ec75f11a509bf229f0a527e7136030fe1e7e2120
   branch: fedora-4/master
   specs:
     sufia (6.0.0.beta1)
@@ -23,7 +23,7 @@ GIT
       devise (~> 3.0)
       font-awesome-rails
       hydra-batch-edit (>= 1.1.1, < 2.0.0)
-      hydra-editor (~> 0.3)
+      hydra-editor (~> 1.0.0.beta1)
       mail_form
       rails_autolink (~> 1.1)
       sass-rails
@@ -92,7 +92,7 @@ GEM
       activemodel (= 4.1.8)
       activesupport (= 4.1.8)
       arel (~> 5.0.0)
-    activerecord-import (0.6.0)
+    activerecord-import (0.7.0)
       activerecord (>= 3.0)
     activeresource (4.0.0)
       activemodel (~> 4.0)
@@ -112,7 +112,7 @@ GEM
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
     bcrypt (3.1.9)
-    blacklight (5.8.1)
+    blacklight (5.8.2)
       bootstrap-sass (~> 3.2)
       deprecation
       kaminari (~> 0.13)
@@ -134,7 +134,7 @@ GEM
       sass (~> 3.2)
     bootstrap_form (2.1.1)
     breadcrumbs_on_rails (2.3.0)
-    browse-everything (0.7.0)
+    browse-everything (0.7.1)
       bootstrap-sass
       dropbox-sdk (>= 1.6.2)
       font-awesome-rails
@@ -219,7 +219,7 @@ GEM
       multi_json (~> 1.10)
       retriable (~> 1.4)
       signet (~> 0.6)
-    google_drive (0.3.11)
+    google_drive (1.0.0)
       google-api-client (>= 0.7.0)
       nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
       oauth (>= 0.3.6)
@@ -227,7 +227,7 @@ GEM
     haml (4.0.6)
       tilt
     hike (1.2.3)
-    htmlentities (4.3.2)
+    htmlentities (4.3.3)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
       mimemagic
@@ -262,19 +262,19 @@ GEM
       hydra-file_characterization
       mime-types
       mini_magick
-    hydra-editor (0.5.1)
-      active-fedora (>= 6.3.0)
+    hydra-editor (1.0.0.beta1)
+      active-fedora (>= 9.0.0.beta8)
       bootstrap_form (~> 2.1.1)
       cancancan
-      rails (>= 3.2.13, < 5.0)
+      rails (~> 4.1)
     hydra-file_characterization (0.3.1)
       activesupport (>= 3.0.0)
     hydra-head (9.0.0.beta2)
       hydra-access-controls (= 9.0.0.beta2)
       hydra-core (= 9.0.0.beta2)
       rails (>= 3.2.6)
-    i18n (0.6.11)
-    jbuilder (2.2.5)
+    i18n (0.7.0)
+    jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jettywrapper (1.8.3)

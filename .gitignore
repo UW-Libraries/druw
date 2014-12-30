@@ -41,3 +41,4 @@ jetty/
 # Ignore temp files
 public/system
 public/uploads
+public/assets
