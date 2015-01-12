@@ -8,6 +8,17 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
+  remote: git://github.com/projecthydra-labs/hydra-editor.git
+  revision: 584304b5d83923e00b68e881f5f9d1f02466b675
+  ref: 584304b5d8
+  specs:
+    hydra-editor (1.0.0.rc2)
+      active-fedora (>= 9.0.0.rc2)
+      cancancan
+      rails (~> 4.1)
+      simple_form (~> 3.1.0)
+
+GIT
   remote: git://github.com/projecthydra/sufia.git
   revision: f1d7929caff21a3fbc4be55faa236f12347d149c
   ref: f1d7929caff
@@ -261,11 +272,6 @@ GEM
       hydra-file_characterization
       mime-types
       mini_magick
-    hydra-editor (1.0.0.rc2)
-      active-fedora (>= 9.0.0.rc2)
-      cancancan
-      rails (~> 4.1)
-      simple_form (~> 3.1.0)
     hydra-file_characterization (0.3.1)
       activesupport (>= 3.0.0)
     hydra-head (9.0.0.rc2)
@@ -584,6 +590,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   devise-guests (~> 0.3)
+  hydra-editor!
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
