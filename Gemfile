@@ -25,6 +25,7 @@ gem 'kaminari', github: 'harai/kaminari', branch: 'route_prefix_prototype'  # re
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
+gem 'browse-everything'
 
 group :development, :test do
   gem "rspec-rails", '~> 3.0'
