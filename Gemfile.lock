@@ -9,59 +9,13 @@ GIT
 
 GIT
   remote: git://github.com/projecthydra-labs/hydra-editor.git
-  revision: 584304b5d83923e00b68e881f5f9d1f02466b675
-  ref: 584304b5d8
+  revision: 07004894f253a9f272c1d830040108be65150b90
   specs:
-    hydra-editor (1.0.0.rc2)
-      active-fedora (>= 9.0.0.rc2)
-      cancancan
+    hydra-editor (1.0.0)
+      active-fedora (>= 9.0.0)
+      cancancan (~> 1.8)
       rails (~> 4.1)
       simple_form (~> 3.1.0)
-
-GIT
-  remote: git://github.com/projecthydra/sufia.git
-  revision: f1d7929caff21a3fbc4be55faa236f12347d149c
-  ref: f1d7929caff
-  branch: fedora-4/master
-  specs:
-    sufia (6.0.0.rc1)
-      blacklight (~> 5.5)
-      blacklight-gallery
-      blacklight_advanced_search (~> 5.0)
-      breadcrumbs_on_rails (~> 2.3.0)
-      browse-everything (~> 0.4)
-      daemons (~> 1.1)
-      devise (~> 3.0)
-      font-awesome-rails
-      hydra-batch-edit (>= 1.1.1, < 2.0.0)
-      hydra-editor (~> 1.0.0.rc2)
-      mail_form
-      rails_autolink (~> 1.1)
-      sass-rails
-      select2-rails
-      sufia-models (= 6.0.0.rc1)
-      tinymce-rails (~> 4.0.19)
-      tinymce-rails-imageupload (~> 4.0.16.beta)
-      yaml_db (~> 0.2)
-    sufia-models (6.0.0.rc1)
-      active-fedora (~> 9.0.0.rc2)
-      activerecord-import (~> 0.5)
-      activeresource (~> 4.0)
-      acts_as_follower (>= 0.1.1, < 0.3)
-      carrierwave (~> 0.9)
-      google-api-client (~> 0.7)
-      hydra-collections (~> 4.0.0.rc2)
-      hydra-derivatives (~> 1.0.0.rc1)
-      hydra-head (~> 9.0.0.rc2)
-      legato (~> 0.3)
-      mailboxer (~> 0.12)
-      mini_magick
-      nest (~> 1.1)
-      noid (~> 0.6)
-      oauth2 (~> 0.9)
-      rails (~> 4.0, < 5.0.0)
-      resque (~> 1.23)
-      resque-pool (~> 0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -79,18 +33,18 @@ GEM
       activesupport (= 4.1.8)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active-fedora (9.0.0.rc2)
-      active-triples (~> 0.5.0)
+    active-fedora (9.0.0)
+      active-triples (~> 0.6.0)
       activesupport (>= 4.1.0)
       deprecation
-      ldp (~> 0.2.0)
+      ldp (~> 0.2.1)
       linkeddata
       nom-xml (>= 0.5.1)
       om (~> 3.1)
       rdf-ldp
       rdf-rdfxml (~> 1.1.0)
       rsolr (~> 1.0.10)
-    active-triples (0.5.0)
+    active-triples (0.6.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       deprecation (~> 0.1)
@@ -116,21 +70,24 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     acts_as_follower (0.2.1)
-    addressable (2.3.6)
+    addressable (2.3.7)
     arel (5.0.1.20140414130214)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
-    bcrypt (3.1.9)
-    blacklight (5.8.2)
+    autoprefixer-rails (5.1.3.1)
+      execjs
+      json
+    bcrypt (3.1.10)
+    blacklight (5.9.0)
       bootstrap-sass (~> 3.2)
       deprecation
       kaminari (~> 0.13)
       nokogiri (~> 1.6)
       rails (>= 3.2.6, < 5)
       rsolr (~> 1.0.6)
-    blacklight-gallery (0.1.1)
+    blacklight-gallery (0.1.2)
       blacklight (~> 5.0)
       bootstrap-sass (~> 3.0)
       openseadragon (>= 0.0.9)
@@ -139,10 +96,9 @@ GEM
       blacklight (>= 5.2, < 6.0)
       parslet
     blankslate (3.1.3)
-    block_helpers (0.3.3)
-      activesupport (>= 2.0)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     breadcrumbs_on_rails (2.3.0)
     browse-everything (0.7.1)
       bootstrap-sass
@@ -160,14 +116,14 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
-    cancancan (1.10.0)
+    cancancan (1.10.1)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-screenshot (1.0.3)
+    capybara-screenshot (1.0.4)
       capybara (>= 1.0, < 3)
       colored
       launchy
@@ -184,7 +140,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.8.0)
+    coffee-script-source (1.9.0)
     colored (1.2)
     columnize (0.9.0)
     daemons (1.1.9)
@@ -210,12 +166,12 @@ GEM
     equivalent-xml (0.5.1)
       nokogiri (>= 1.4.3)
     erubis (2.7.0)
-    execjs (2.2.2)
+    execjs (2.3.0)
     extlib (0.9.16)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
-    font-awesome-rails (4.2.0.0)
+    font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     foreigner (1.7.2)
       activerecord (>= 3.0.0)
@@ -246,43 +202,41 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    hydra-access-controls (9.0.0.rc2)
-      active-fedora (~> 9.0.0.rc2)
-      activesupport
+    hydra-access-controls (9.0.1)
+      active-fedora (~> 9.0.0)
+      activesupport (~> 4.0)
       blacklight (~> 5.3)
-      cancancan
-      deprecation
+      cancancan (~> 1.8)
+      deprecation (~> 0.1.0)
       sass-rails
     hydra-batch-edit (1.1.1)
       blacklight
       hydra-collections
-    hydra-collections (4.0.0.rc2)
-      blacklight
-      deprecation
-      hydra-head (~> 9.0.0.rc2)
-    hydra-core (9.0.0.rc2)
-      block_helpers
-      hydra-access-controls (= 9.0.0.rc2)
-      jettywrapper (>= 1.4.1)
-      rails (>= 3.2.3, < 5)
-    hydra-derivatives (1.0.0.rc1)
-      active-fedora (~> 9.0.0.rc2)
-      activesupport (>= 3.2.13, < 5.0)
-      deprecation
-      hydra-file_characterization
-      mime-types
-      mini_magick
+    hydra-collections (4.0.0)
+      deprecation (~> 0.1.0)
+      hydra-head (~> 9.0.1)
+    hydra-core (9.0.1)
+      hydra-access-controls (= 9.0.1)
+      jettywrapper (>= 2.0.0)
+      rails (~> 4.0)
+    hydra-derivatives (1.0.0)
+      active-fedora (~> 9.0)
+      activesupport (~> 4.0)
+      deprecation (~> 0.1)
+      hydra-file_characterization (~> 0.3)
+      mime-types (~> 2.3)
+      mini_magick (>= 3.2, < 5)
     hydra-file_characterization (0.3.1)
       activesupport (>= 3.0.0)
-    hydra-head (9.0.0.rc2)
-      hydra-access-controls (= 9.0.0.rc2)
-      hydra-core (= 9.0.0.rc2)
+    hydra-head (9.0.1)
+      hydra-access-controls (= 9.0.1)
+      hydra-core (= 9.0.1)
       rails (>= 3.2.6)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jettywrapper (1.8.3)
+    jettywrapper (2.0.0)
       activesupport (>= 3.0.0)
       childprocess
       i18n
@@ -293,11 +247,11 @@ GEM
     json (1.8.2)
     json-ld (1.1.7)
       rdf (~> 1.1, >= 1.1.4)
-    jwt (1.2.0)
-    kgio (2.9.2)
+    jwt (1.2.1)
+    kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
-    ldp (0.2.0)
+    ldp (0.2.2)
       faraday
       http_logger
       linkeddata (>= 1.1)
@@ -336,7 +290,7 @@ GEM
       rails (>= 3.2.0)
     mime-types (2.4.3)
     mimemagic (0.2.1)
-    mini_magick (4.0.2)
+    mini_magick (4.0.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
     mono_logger (1.1.0)
@@ -347,7 +301,7 @@ GEM
       redis
     net-http-persistent (2.9.4)
     noid (0.7.1)
-    nokogiri (1.6.5)
+    nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     nom-xml (0.5.1)
       activesupport
@@ -451,9 +405,9 @@ GEM
       redis-namespace (~> 1.3)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
-    resque-pool (0.3.0)
+    resque-pool (0.4.0)
       rake
-      resque (~> 1.20)
+      resque (~> 1.22)
       trollop (~> 1.16)
     retriable (1.4.1)
     rsolr (1.0.10)
@@ -462,25 +416,26 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       rspec-mocks (>= 2.99, < 4.0)
-    rspec-core (3.1.7)
-      rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.2)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.1.0)
+      rspec-support (~> 3.2.0)
     rspec-its (1.1.0)
       rspec-core (>= 3.0.0)
       rspec-expectations (>= 3.0.0)
-    rspec-mocks (3.1.3)
-      rspec-support (~> 3.1.0)
-    rspec-rails (3.1.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.1.0)
-      rspec-expectations (~> 3.1.0)
-      rspec-mocks (~> 3.1.0)
-      rspec-support (~> 3.1.0)
-    rspec-support (3.1.2)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.0)
+      actionpack (>= 3.0, <= 4.2)
+      activesupport (>= 3.0, <= 4.2)
+      railties (>= 3.0, <= 4.2)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     ruby-box (1.15.0)
       addressable
       json
@@ -492,7 +447,7 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    select2-rails (3.5.9.1)
+    select2-rails (3.5.9.2)
       thor (~> 0.14)
     signet (0.6.0)
       addressable (~> 2.3)
@@ -536,12 +491,50 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.2.2)
+    sprockets-rails (2.2.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.10)
     stomp (1.3.4)
+    sufia (6.0.0.rc3)
+      blacklight (~> 5.5)
+      blacklight-gallery (~> 0.1)
+      blacklight_advanced_search (~> 5.0)
+      breadcrumbs_on_rails (~> 2.3.0)
+      browse-everything (~> 0.4)
+      daemons (~> 1.1)
+      devise (~> 3.0)
+      font-awesome-rails (~> 4.2)
+      hydra-batch-edit (~> 1.1)
+      hydra-editor (~> 1.0)
+      mail_form (~> 1.5)
+      rails_autolink (~> 1.1)
+      sass-rails
+      select2-rails (~> 3.5.9)
+      sufia-models (= 6.0.0.rc3)
+      tinymce-rails (~> 4.0.19)
+      tinymce-rails-imageupload (~> 4.0.16.beta)
+      yaml_db (~> 0.2)
+    sufia-models (6.0.0.rc3)
+      active-fedora (~> 9.0)
+      activerecord-import (~> 0.5)
+      activeresource (~> 4.0)
+      acts_as_follower (>= 0.1.1, < 0.3)
+      carrierwave (~> 0.9)
+      google-api-client (~> 0.7)
+      hydra-collections (~> 4.0)
+      hydra-derivatives (~> 1.0)
+      hydra-head (~> 9.0)
+      legato (~> 0.3)
+      mailboxer (~> 0.12)
+      mini_magick
+      nest (~> 1.1)
+      noid (~> 0.6)
+      oauth2 (~> 0.9)
+      rails (~> 4.0)
+      resque (~> 1.23)
+      resque-pool (~> 0.3)
     sxp (0.1.5)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -559,7 +552,7 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.6.0)
+    uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicorn (4.8.3)
@@ -584,7 +577,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  browse-everything
   byebug
   capybara (~> 2.0)
   capybara-screenshot
@@ -603,7 +595,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   spring
   sqlite3
-  sufia!
+  sufia (= 6.0.0.rc3)
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)
