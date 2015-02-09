@@ -17,4 +17,3 @@
 //= require blacklight/blacklight
 //= require_tree .
 //= require sufia
-//= require browse_everything
