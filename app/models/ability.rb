@@ -2,19 +2,19 @@ class Ability
   include Hydra::Ability
   include Sufia::Ability
 
-  
-  # Define any customized permissions here.
-  def custom_permissions
-    # Limits deleting objects to a the admin user
-    #
-    # if current_user.admin?
-    #   can [:destroy], ActiveFedora::Base
-    # end
+  def featured_work_abilities
+    can [:create, :destroy, :update], FeaturedWork if admin_user?
+  end
 
-    # Limits creating new objects to a specific group
-    #
-    # if user_groups.include? 'special_group'
-    #   can [:create], ActiveFedora::Base
-    # end
+  def editor_abilities
+    if admin_user?
+      can :create, TinymceAsset
+      can [:create, :update], ContentBlock
+    end
+    can :read, ContentBlock
+  end
+
+  def admin_user?
+    current_user.admin?
   end
 end
