@@ -577,7 +577,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  browse-everything
   byebug
   capybara (~> 2.0)
   capybara-screenshot
