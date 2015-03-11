@@ -1,7 +1,8 @@
 development:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://127.0.0.1:8983/fedora
+  url: http://127.0.0.1:8983/fedora/rest
+  base_path: /dev
 test: &TEST  
   user: fedoraAdmin
   password: fedoraAdmin
@@ -9,6 +10,7 @@ test: &TEST
 production:
   user: fedoraAdmin
   password: fedoraAdmin
-  url: http://127.0.0.1:8080/fedora
+  url: http://127.0.0.1:8080/fedora/rest
+  base_path: /prod
 cucumber:
   <<: *TEST
