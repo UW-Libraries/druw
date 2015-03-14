@@ -19,8 +19,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'sufia', '6.0.0.rc4' 
-#gem 'hydra-editor', github: 'projecthydra-labs/hydra-editor', ref: '584304b5d8'
+gem 'sufia', '6.0.0.rc4'
 gem 'hydra-editor', github: 'projecthydra-labs/hydra-editor'
 gem 'kaminari', github: 'harai/kaminari', branch: 'route_prefix_prototype'  # required to handle pagination properly in dashboard. See https://github.com/amatsuda/kaminari/pull/322
 
@@ -32,6 +31,7 @@ group :development, :test do
   gem "rspec-rails", '~> 3.0'
   gem 'rspec-its'
   gem 'rspec-activemodel-mocks'
+  gem 'factory_girl_rails'
   gem 'capybara', '~> 2.0'
   gem 'capybara-screenshot'
   gem "jettywrapper"
@@ -39,7 +39,5 @@ group :development, :test do
 end
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'unicorn-rails'
 end
