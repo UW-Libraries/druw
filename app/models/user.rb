@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 
   # TODO: Replace with something LDAP-y or hydra-role-management, etc.
   def admin?
-    %w(younga3 leftwing swright ianm jeffs3 mahria).map { |login| "#{login}@uw.edu" }.include? email
+    return true if email == 'mahria@gmail.com'
+    %w(younga3 leftwing swright ianm jeffs3 mahria tgis).map { |login| "#{login}@uw.edu" }.include? email
   end
 end
