@@ -19,9 +19,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'sufia', '6.0.0.rc4'
+gem 'sufia', '~> 6.0.0'
+gem 'rsolr', '~> 1.0.11'
 gem 'hydra-editor', github: 'projecthydra-labs/hydra-editor'
-gem 'kaminari', github: 'harai/kaminari', branch: 'route_prefix_prototype'  # required to handle pagination properly in dashboard. See https://github.com/amatsuda/kaminari/pull/322
+gem 'kaminari', github: 'jcoyne/kaminari', branch: 'sufia'
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
