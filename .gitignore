@@ -28,6 +28,7 @@ config/hydra-ldap.yml
 config/browse_everything_providers.yml
 config/analytics.yml
 config/secrets.yml
+config/blacklight.yml
 
 # Ignore this file for security reasons
 config/initializers/secret_token.rb
