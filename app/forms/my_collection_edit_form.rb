@@ -1,0 +1,3 @@
+class MyCollectionEditForm < MyCollectionPresenter
+
+end

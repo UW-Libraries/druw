@@ -16,7 +16,10 @@ module CommonMetadata
     property :license, predicate: ::RDF::Vocab::DC.license do |index|
       index.as :stored_searchable
     end
-
+   
+    property :grant_award_number, predicate: ::RDF::URI('http://purl.org/eprint/terms/grantNumber') do |index|
+      index.as :stored_searchable
+    end
     has_and_belongs_to_many :complex_creators, predicate: ::RDF::Vocab::DC.creator, class_name: 'ComplexCreator'
 
     #CONTRIBUTORS.each do |field_name, predicate|
