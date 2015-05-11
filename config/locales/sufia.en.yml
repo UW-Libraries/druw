@@ -3,6 +3,8 @@ en:
     labels:
       generic_file:
         alternative: "Alternative Title"
+        accrual_policy: "Accrual Policy"
     metadata_help:
       generic_file:
         alternative: "An alternative name for a file."
+        accrual_policy: "The policy governing the addition of items to a collection."
