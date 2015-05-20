@@ -1,8 +1,11 @@
 describe MyGenericFilePresenter do
-  it 'includes alternative in its terms' do
-    expect(described_class.terms).to include(:alternative)
+  it 'includes accrual_periodicity in its terms' do
+    expect(described_class.terms).to include(:accrual_periodicity)
   end
   it 'includes accrual_policy in its terms' do
     expect(described_class.terms).to include(:accrual_policy)
+  end
+  it 'includes alternative in its terms' do
+    expect(described_class.terms).to include(:alternative)
   end
 end
