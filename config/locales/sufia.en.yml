@@ -11,4 +11,4 @@ en:
         alternative: "An alternative name for a file."
         accrual_policy: "The policy governing the addition of items to a collection."
         accrual_periodicity: "Frequency of addition?"
-        accrual_periodicity: "License or non-license status"
+        license: "License or non-license status"
