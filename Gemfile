@@ -19,10 +19,11 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'sufia', '~> 6.0.0'
-gem 'rsolr', '~> 1.0.11'
+gem 'rsolr', '~> 1.0'
+gem 'sufia', '~> 6.0'
 gem 'hydra-editor', github: 'projecthydra-labs/hydra-editor'
 gem 'kaminari', github: 'jcoyne/kaminari', branch: 'sufia'
+gem 'rdf-vocab'
 
 gem "devise"
 gem "devise-guests", "~> 0.3"
