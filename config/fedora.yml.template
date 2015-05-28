@@ -1,16 +1,13 @@
-development:
+default: &default
   user: fedoraAdmin
   password: fedoraAdmin
   url: http://127.0.0.1:8983/fedora/rest
+development:
   base_path: /dev
-#test: &TEST  
-#  user: fedoraAdmin
-#  password: fedoraAdmin
-#  url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8983}/fedora-test" %>
+  <<: *default
+test:
+  base_path: /test
+  <<: *default
 production:
-  user: fedoraAdmin
-  password: fedoraAdmin
-  url: http://127.0.0.1:8080/fedora/rest
   base_path: /prod
-cucumber:
-  <<: *TEST
+  <<: *default

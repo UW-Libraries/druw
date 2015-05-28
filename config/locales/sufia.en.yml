@@ -6,9 +6,11 @@ en:
         accrual_policy: "Accrual Policy"
         accrual_periodicity: "Frequency"
         license: "License"
+        complex_creators: "Creator"
     metadata_help:
       generic_file:
         alternative: "An alternative name for a file."
         accrual_policy: "The policy governing the addition of items to a collection."
         accrual_periodicity: "The frequency with which items are added to a collection."
         license: "A legal document giving official permission to do something with the resource."
+        complex_creators_html: "The person or group responsible for the uploaded work. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot; &lt;em&gt;This is a required field&lt;/em&gt;."

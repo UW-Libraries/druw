@@ -1,6 +1,23 @@
+require 'rails_helper'
+
 describe GenericFile do
   it { is_expected.to respond_to(:accrual_periodicity) }
   it { is_expected.to respond_to(:accrual_policy) }
   it { is_expected.to respond_to(:alternative) }
   it { is_expected.to respond_to(:license) }
+  it { is_expected.to respond_to(:complex_creators) }
+
+  describe 'complex creators' do
+    subject do
+      described_class.create(title: ['title1']) do |gf|
+        gf.apply_depositor_metadata('dpt')
+        gf.complex_creators_attributes = [{agent_name: agent_name}]
+      end
+    end
+    let(:agent_name) { ['Bob Smith'] }
+    it 'has a single complex_creator' do
+      expect(subject.complex_creators.count).to eq 1
+      expect(subject.complex_creators.first.agent_name).to eq agent_name
+    end
+  end
 end
