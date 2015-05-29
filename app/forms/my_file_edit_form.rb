@@ -48,5 +48,4 @@ class MyFileEditForm < MyGenericFilePresenter
       end
     end
 
->>>>>>> master
 end
