@@ -2,7 +2,7 @@ class MyFileEditForm < MyGenericFilePresenter
   include HydraEditor::Form
   include HydraEditor::Form::Permissions
 
-  self.required_fields = [:title, :complex_creators, :tag, :rights]
+  self.required_fields = [:title, :complex_creators, :tag, :rights, :license]
 
   protected
 
@@ -48,4 +48,5 @@ class MyFileEditForm < MyGenericFilePresenter
       end
     end
 
+>>>>>>> master
 end
