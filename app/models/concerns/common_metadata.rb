@@ -13,10 +13,6 @@ module CommonMetadata
       index.as :stored_searchable
     end
 
-    property :accrual_policy, predicate: ::RDF::Vocab::DC.accrualPolicy do |index|
-      index.as :stored_searchable
-    end
-
     property :license, predicate: ::RDF::Vocab::DC.license do |index|
       index.as :stored_searchable
     end
