@@ -57,14 +57,5 @@ describe GenericFilesController do
         expect(generic_file.reload.alternative).to eq alt_title
       end
     end
-
-    context 'with an accrual policy' do
-      let(:generic_file) { GenericFile.create { |f| f.apply_depositor_metadata(user.user_key) } }
-      let(:policy) { ['This thing is allow to accrue stuff.'] }
-      it 'adds an accrual policy' do
-        post :update, id: generic_file, generic_file: { accrual_policy: policy }
-        expect(generic_file.reload.accrual_policy).to eq policy
-      end
-    end
   end
 end
