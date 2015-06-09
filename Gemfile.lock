@@ -154,6 +154,7 @@ GEM
     devise-guests (0.3.3)
       devise
     diff-lcs (1.2.5)
+    docile (1.1.5)
     dropbox-sdk (1.6.4)
       json
     ebnf (0.3.9)
@@ -487,6 +488,11 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -625,6 +631,7 @@ DEPENDENCIES
   rspec-its
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
+  simplecov
   sqlite3
   sufia (~> 6.0)
   therubyracer

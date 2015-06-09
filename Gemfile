@@ -38,6 +38,7 @@ group :development, :test do
   gem 'capybara-screenshot'
   gem "jettywrapper"
   gem 'byebug', require: false
+  gem 'simplecov', require: false
 end
 
 group :development do
