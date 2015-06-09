@@ -43,3 +43,6 @@ jetty/
 public/system
 public/uploads
 public/assets
+
+# Ignore simplecov reports
+/coverage
