@@ -3,6 +3,7 @@ require 'rails_helper'
 describe GenericFile do
   it { is_expected.to respond_to(:alternative) }
   it { is_expected.to respond_to(:license) }
+  it { is_expected.to respond_to(:grant_award_number) }
   it { is_expected.to respond_to(:complex_creators) }
 
   describe 'complex creators' do
