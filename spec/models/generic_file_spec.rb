@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe GenericFile do
   it { is_expected.to respond_to(:alternative) }
   it { is_expected.to respond_to(:license) }

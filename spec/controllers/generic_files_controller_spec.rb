@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe GenericFilesController, type: :controller do
   routes { Sufia::Engine.routes }
   let(:user) { FactoryGirl.create(:odegaard) }

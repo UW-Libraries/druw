@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe 'Authentication', type: :feature do
   let(:user) { FactoryGirl.create(:odegaard) }
 
