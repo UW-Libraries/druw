@@ -7,6 +7,10 @@ class CollectionsController < ApplicationController
     MyCollectionPresenter
   end
 
+  def edit_form_class
+    MyCollectionEditForm
+  end
+
   def collection_params
     params.require(:collection).permit(:title, :description, :members, part_of: [],
                                        contributor: [], creator: [], publisher: [], date_created: [], subject: [],

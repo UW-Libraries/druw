@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe CollectionsController, type: :controller do
   routes { Hydra::Collections::Engine.routes }
   let(:user) { FactoryGirl.create(:odegaard) }
@@ -7,6 +5,10 @@ describe CollectionsController, type: :controller do
 
   it 'uses the overridden presenter' do
     expect(subject.presenter_class).to eq(MyCollectionPresenter)
+  end
+
+  it 'uses the overridden form' do
+    expect(subject.edit_form_class).to eq(MyCollectionEditForm)
   end
 
   describe '#update' do
