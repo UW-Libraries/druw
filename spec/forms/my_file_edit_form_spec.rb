@@ -5,6 +5,8 @@ describe MyFileEditForm do
     it { is_expected.to include(:license) }
     it { is_expected.to include(:grant_award_number) }
     it { is_expected.to include(:complex_creators) }
+    it { is_expected.to include(:dec_latitude) }
+    it { is_expected.to include(:dec_longitude) }
   end
 
   describe '.build_permitted_params' do

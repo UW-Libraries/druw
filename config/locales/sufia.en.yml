@@ -6,19 +6,28 @@ en:
         license: "License"
         complex_creators: "Creator"
         grant_award_number: "Grant or Award Number"
+        dec_latitude: "Latitude"
+        dec_longitude: "Longitude"
       collection:
         accrual_policy: "Accrual Policy"
         accrual_periodicity: "Frequency"
         complex_creators: "Creator"
         grant_award_number: "Grant or Award Number"
+        dec_latitude: "Latitude"
+        dec_longitude: "Longitude"
     metadata_help:
       generic_file:
         alternative: "An alternative name for a file."
         license: "A legal document giving official permission to do something with the resource."
         complex_creators_html: "The person or group responsible for the uploaded work. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot; &lt;em&gt;This is a required field&lt;/em&gt;."
-        grant_award_number: "This is the number from the granting organization"
+        grant_award_number: "An alpha-numeric string identifying the funding grant under which the eprint was written."
+        dec_latitude: "The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive."
+        dec_longitude: "The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive."
       collection:
         accrual_policy: "The policy governing the addition of items to a collection."
         accrual_periodicity: "The frequency with which items are added to a collection."
         complex_creators_html: "The person or group responsible for the uploaded work. Usually this is the author of the content. Personal names should be entered with the last name first, e.g. &quot;Smith, John.&quot; &lt;em&gt;This is a required field&lt;/em&gt;."
-        grant_award_number: "This is the number from the granting organization"
+        grant_award_number: "An alpha-numeric string identifying the funding grant under which the eprint was written."
+        dec_latitude: "The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive."
+        dec_longitude: "The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive."
+
