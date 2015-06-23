@@ -8,7 +8,7 @@ describe CollectionsController, type: :controller do
   end
 
   it 'uses the overridden form' do
-    expect(subject.edit_form_class).to eq(MyCollectionEditForm)
+    expect(subject.form_class).to eq(MyCollectionEditForm)
   end
 
   describe '#update' do

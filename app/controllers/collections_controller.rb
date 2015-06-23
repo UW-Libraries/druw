@@ -2,12 +2,13 @@
 
 class CollectionsController < ApplicationController
   include Sufia::CollectionsControllerBehavior
+  before_filter :remove_selection_flash, only: :new
 
   def presenter_class
     MyCollectionPresenter
   end
 
-  def edit_form_class
+  def form_class
     MyCollectionEditForm
   end
 
