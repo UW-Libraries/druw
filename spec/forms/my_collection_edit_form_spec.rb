@@ -9,5 +9,8 @@ describe MyCollectionEditForm do
     it { is_expected.to include(:accrual_policy) }
     it { is_expected.to include(:dec_latitude) }
     it { is_expected.to include(:dec_longitude) }
+    it { is_expected.to include(:other_date) }
+    it { is_expected.to include(:temporal) }
+    it { is_expected.to include(:abstract) }
   end
 end

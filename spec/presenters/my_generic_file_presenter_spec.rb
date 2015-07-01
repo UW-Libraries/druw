@@ -7,5 +7,8 @@ describe MyGenericFilePresenter do
     it { is_expected.to include(:grant_award_number) }
     it { is_expected.to include(:dec_latitude) }
     it { is_expected.to include(:dec_longitude) }
+    it { is_expected.to include(:other_date) }
+    it { is_expected.to include(:temporal) }
+    it { is_expected.to include(:abstract) }
   end
 end

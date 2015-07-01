@@ -5,8 +5,11 @@ describe GenericFile do
   it { is_expected.to respond_to(:complex_creators) }
   it { is_expected.to respond_to(:dec_latitude) }
   it { is_expected.to respond_to(:dec_longitude) }
-
-  describe 'complex creators' do
+  it { is_expected.to respond_to(:other_date) }
+  it { is_expected.to respond_to(:temporal) }
+  it { is_expected.to respond_to(:abstract) }
+ 
+ describe 'complex creators' do
     subject do
       described_class.create(title: ['title1']) do |gf|
         gf.apply_depositor_metadata('dpt')
