@@ -8,4 +8,7 @@ describe Collection do
   it { is_expected.to respond_to(:alternative) }
   it { is_expected.to respond_to(:dec_latitude) }
   it { is_expected.to respond_to(:dec_longitude) }
+  it { is_expected.to respond_to(:other_date) }
+  it { is_expected.to respond_to(:temporal) }
+  it { is_expected.to respond_to(:abstract) }
 end

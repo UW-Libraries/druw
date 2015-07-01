@@ -7,6 +7,9 @@ describe MyFileEditForm do
     it { is_expected.to include(:complex_creators) }
     it { is_expected.to include(:dec_latitude) }
     it { is_expected.to include(:dec_longitude) }
+    it { is_expected.to include(:other_date) }
+    it { is_expected.to include(:temporal) }
+    it { is_expected.to include(:abstract) }
   end
 
   describe '.build_permitted_params' do

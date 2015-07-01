@@ -29,6 +29,18 @@ module CommonMetadata
       index.as :stored_searchable
     end
 
+    property :temporal, predicate: ::RDF::Vocab::DC.temporal do |index|
+      index.as :stored_searchable
+    end
+
+    property :other_date, predicate: ::RDF::Vocab::DC.date do |index|
+      index.as :stored_searchable
+    end
+
+    property :abstract, predicate: ::RDF::Vocab::DC.abstract do |index|
+      index.as :stored_searchable
+    end
+
     has_and_belongs_to_many :complex_creators, predicate: ::RDF::Vocab::DC.creator, class_name: 'ComplexCreator'
 
     #CONTRIBUTORS.each do |field_name, predicate|
