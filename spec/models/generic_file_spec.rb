@@ -8,6 +8,7 @@ describe GenericFile do
   it { is_expected.to respond_to(:other_date) }
   it { is_expected.to respond_to(:temporal) }
   it { is_expected.to respond_to(:abstract) }
+  it { is_expected.to respond_to(:toc) }
  
  describe 'complex creators' do
     subject do

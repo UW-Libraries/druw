@@ -41,6 +41,10 @@ module CommonMetadata
       index.as :stored_searchable
     end
 
+    property :toc, predicate: ::RDF::Vocab::DC.tableOfContents do |index|
+      index.as :stored_searchable
+    end
+
     has_and_belongs_to_many :complex_creators, predicate: ::RDF::Vocab::DC.creator, class_name: 'ComplexCreator'
 
     #CONTRIBUTORS.each do |field_name, predicate|
