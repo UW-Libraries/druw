@@ -10,5 +10,6 @@ describe MyBatchEditForm do
     it { is_expected.to include(:temporal) }
     it { is_expected.to include(:other_date) }
     it { is_expected.to include(:abstract) }
+    it { is_expected.to include(:toc) }
   end
 end
