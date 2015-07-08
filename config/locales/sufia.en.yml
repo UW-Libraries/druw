@@ -2,6 +2,7 @@ en:
   simple_form:
     labels:
       generic_file:
+        description: "Description"
         alternative: "Alternative Title"
         license: "License"
         complex_creators: "Creator"
@@ -13,6 +14,7 @@ en:
         abstract: "Abstract"
         toc: "Table of Contents"
       collection:
+        description: "Description"
         accrual_method: "Accrual Method"
         accrual_policy: "Accrual Policy"
         accrual_periodicity: "Frequency"
