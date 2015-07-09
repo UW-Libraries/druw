@@ -34,10 +34,12 @@ module CommonMetadata
     end
 
     property :other_date, predicate: ::RDF::Vocab::DC.date do |index|
+      index.type :date
       index.as :stored_searchable
     end
 
     property :abstract, predicate: ::RDF::Vocab::DC.abstract do |index|
+      index.type :text
       index.as :stored_searchable
     end
 
