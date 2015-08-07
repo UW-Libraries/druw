@@ -46,3 +46,6 @@ public/assets
 
 # Ignore simplecov reports
 /coverage
+
+# Ignore bash history
+.bash_history

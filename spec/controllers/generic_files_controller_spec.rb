@@ -16,37 +16,6 @@ describe GenericFilesController, type: :controller do
       GenericFile.create { |f| f.apply_depositor_metadata(user) }
     end
 
-    context 'with added complex_creators' do
-      let(:attributes) do
-        {
-          complex_creators_attributes: [
-            { agent_name: ["Foo Bar"] },
-            { agent_name: ["Baz Quux"], preferred_name: ['B.Q.'] },
-            { agent_name: ["Fuzz Ball"] }
-          ]
-        }
-      end
-      before do
-        post :update, id: generic_file, generic_file: attributes
-      end
-      subject { generic_file.reload }
-      it 'creates ComplexCreator instances' do
-        expect(ComplexCreator.count).to eq 3
-      end
-      it 'has three complex_creators' do
-        expect(subject.complex_creators.count).to eq 3
-      end
-      it 'assigns agents to the complex_creators field' do
-        complex_creators = subject.complex_creators
-        agent_names = complex_creators.map(&:agent_name)
-        preferred_names  = complex_creators.map(&:preferred_name)
-        expect(agent_names).to include ['Foo Bar']
-        expect(agent_names).to include ['Baz Quux']
-        expect(agent_names).to include ['Fuzz Ball']
-        expect(preferred_names).to include ['B.Q.']
-      end
-    end
-
     context 'with an alternative title' do
       let(:generic_file) { GenericFile.create { |f| f.apply_depositor_metadata(user.user_key) } }
       let(:alt_title) { ['Totally awesome'] }
