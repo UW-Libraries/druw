@@ -1,0 +1,6 @@
+
+<% if f.object.class.multiple? key %>
+  <%= f.input :abstract, as: :multi_value_with_help, input_html: { rows: '12', type: 'textarea'}, required: false %>
+<% else %>
+  <%= f.input :abstract, as: :text, input_html: { rows: '12' } %>
+<% end %>
