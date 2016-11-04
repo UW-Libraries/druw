@@ -1,20 +1,27 @@
 class Ability
   include Hydra::Ability
+  
+  include CurationConcerns::Ability
   include Sufia::Ability
 
-  def featured_work_abilities
-    can [:create, :destroy, :update], FeaturedWork if admin_user?
-  end
+  self.ability_logic += [:everyone_can_create_curation_concerns]
 
-  def editor_abilities
-    if admin_user?
-      can :create, TinymceAsset
-      can [:create, :update], ContentBlock
+  # Define any customized permissions here.
+  def custom_permissions
+    # app/models/ability.rb
+    if current_user.admin?
+      can [:create, :show, :add_user, :remove_user, :index, :edit, :update, :destroy], Role
     end
-    can :read, ContentBlock
-  end
+    # Limits deleting objects to a the admin user
+    #
+    # if current_user.admin?
+    #   can [:destroy], ActiveFedora::Base
+    # end
 
-  def admin_user?
-    current_user.admin?
+    # Limits creating new objects to a specific group
+    #
+    # if user_groups.include? 'special_group'
+    #   can [:create], ActiveFedora::Base
+    # end
   end
 end

@@ -3,7 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'jettywrapper'
-Jettywrapper.hydra_jetty_version = "v8.1.1"
-
 Rails.application.load_tasks
+
+require 'solr_wrapper/rake_task' unless Rails.env.production?

@@ -16,9 +16,6 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  # Set a default URL for password reset messages
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -30,6 +27,10 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+  # yet still be able to expire them through the digest params.
+  config.assets.digest = true
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
@@ -37,4 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+# BEGIN ANSIBLE MANAGED BLOCK
+  class Application < Rails::Application
+    config.web_console.whitelisted_ips = '10.0.2.2'
+  end
+# END ANSIBLE MANAGED BLOCK
 end
