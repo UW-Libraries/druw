@@ -1,48 +1,11 @@
 en:
-  simple_form:
-    labels:
-      generic_file:
-        description: "Description"
-        alternative: "Alternative Title"
-        license: "License"
-        grant_award_number: "Grant or Award Number"
-        dec_latitude: "Latitude"
-        dec_longitude: "Longitude"
-        other_date: "Other Date"
-        temporal: "Temporal"
-        abstract: "Abstract"
-        toc: "Table of Contents"
-      collection:
-        description: "Description"
-        accrual_method: "Accrual Method"
-        accrual_policy: "Accrual Policy"
-        accrual_periodicity: "Frequency"
-        grant_award_number: "Grant or Award Number"
-        dec_latitude: "Latitude"
-        dec_longitude: "Longitude"
-        other_date: "Other Date"
-        temporal: "Temporal"
-        abstract: "Abstract"
-        toc: "Table of Contents"
-    metadata_help:
-      generic_file:
-        alternative: "An alternative name for a file."
-        license: "A legal document giving official permission to do something with the resource."
-        grant_award_number: "An alpha-numeric string identifying the funding grant under which the eprint was written."
-        dec_latitude: "The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive."
-        dec_longitude: "The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive."
-        other_date: "Date that cannot be expressed with the other date properties (Temporal, Date Valid, Date Available, Date Issued). Enter YYYY-MM-DD. For date ranges, enter YYYY-MM-DD/YYYY-MM-DD."
-        temporal: "Temporal characteristics of the resource. Enter any pertinent time periods represented in the dataset. Enter a date, a date range, or a descriptive term or phrase"
-        abstract: "A summary of the dataset"
-        toc: "A list of subunits of the resource"
-      collection:
-        accrual_method: "The method by which items are added to a collection."
-        accrual_policy: "The policy governing the addition of items to a collection."
-        accrual_periodicity: "The frequency with which items are added to a collection."
-        grant_award_number: "An alpha-numeric string identifying the funding grant under which the eprint was written."
-        dec_latitude: "The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive."
-        dec_longitude: "The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive."
-        other_date: "Date that cannot be expressed with the other date properties (Temporal, Date Valid, Date Available, Date Issued). Enter YYYY-MM-DD. For date ranges, enter YYYY-MM-DD/YYYY-MM-DD." 
-        temporal: "Temporal characteristics of the resource. Enter any pertinent time periods represented in the dataset. Enter a date, a date range, or a descriptive term or phrase"
-        abstract: "A summary of the dataset"
-        toc: "A list of subunits of the resource"
+  sufia:
+    product_name:       "Sufia"
+    product_twitter_handle: "@HydraSphere"
+    institution_name:   "Institution Name"
+#    institution_name_full:   "The Institution Name"
+    account_name:       "My Institution Account Id"
+    directory:
+      suffix:           "@example.org"
+    footer:
+      copyright_html: "<strong>Copyright &copy; 2016 Project Hydra</strong> Licensed under the Apache License, Version 2.0"

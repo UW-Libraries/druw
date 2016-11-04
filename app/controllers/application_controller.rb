@@ -1,14 +1,17 @@
 class ApplicationController < ActionController::Base
+  helper Openseadragon::OpenseadragonHelper
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
-  # Adds Sufia behaviors into the application controller
+  include Hydra::Controller::ControllerBehavior
+
+  # Adds CurationConcerns behaviors to the application controller.
+  include CurationConcerns::ApplicationControllerBehavior  
+  # Adds Sufia behaviors into the application controller 
   include Sufia::Controller
 
-  layout 'sufia-one-column'
+  include CurationConcerns::ThemedLayoutController
+  with_themed_layout '1_column'
 
-  def remove_selection_flash
-    flash[:notice] = nil if flash[:notice] == 'Select something first'
-  end
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

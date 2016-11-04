@@ -1,2 +1,0 @@
-class MyBatchEditForm < MyFileEditForm
-end
