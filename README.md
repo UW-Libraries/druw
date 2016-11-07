@@ -48,16 +48,16 @@ Edit druw_home if you want it to install in someplace other than /home/vagrant/d
     ansible-playbook -i inventory druw.yml
 
 * You will have to start the following commands manually. You will probably also have to hit enter to return your prompt after each service starts up.   
-        cd /home/vagrant/druw
+    `cd /home/vagrant/druw`
 
 * Start development solr   
-        bundle exec solr_wrapper -d solr/config/ --collection_name hydra-development &   
+    `bundle exec solr_wrapper -d solr/config/ --collection_name hydra-development &`
 
 * Start FCRepo - your fedora project instance   
-        bundle exec fcrepo_wrapper -p 8984 &
+    `bundle exec fcrepo_wrapper -p 8984 &`
 
 * Start development rails server (needs to start as sudo until I figure out perms)   
-        sudo rails server -b 0.0.0.0
+    `sudo rails server -b 0.0.0.0`
 
 ## Check DRUW (Sufia) is Running
 Open a browser and go to http://localhost:3000. The initial load will take a bit (you'll see activity in SSH window as the rails server processes the request).
