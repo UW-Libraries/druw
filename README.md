@@ -12,7 +12,7 @@ This repository builds a research data repository based on the Fedora/Hydra/Sufi
 On Windows, you might be given a choice between libvirt or virtualbox. Choose *virtualbox*.
 
 ## Check that it has installed
-    vagrant box list`
+    vagrant box list
 
 and you should see 'centos/7' listed
 
