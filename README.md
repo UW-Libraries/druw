@@ -66,8 +66,7 @@ Open a browser and go to http://localhost:3000. The initial load will take a bit
 Go to http://localhost:3000/users/sign_up and create a new user (you will be making this user an admin in the next step).
 
 ## Create admin user
-Follow the instructions on the main hydra sufia github page under admin users.  https://github.com/projecthydra/sufia/wiki/Making-Admin-Users-in-Sufia (via https://github.com/projecthydra/sufia/wiki/Sufia-Management-Guide)
-
+Follow the instructions on the main hydra sufia github page under admin users.  https://github.com/projecthydra/sufia/wiki/Making-Admin-Users-in-Sufia 
 
  - First create a user from your browser at localhost:3000
  - Open another terminal and vagrant ssh in: `vagrant ssh `
