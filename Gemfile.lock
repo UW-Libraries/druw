@@ -111,7 +111,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
-    autoprefixer-rails (6.5.1.1)
+    autoprefixer-rails (6.5.2)
       execjs
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
@@ -395,14 +395,14 @@ GEM
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
-    openseadragon (0.3.0)
+    openseadragon (0.3.1)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
     os (0.9.6)
     parslet (1.7.1)
       blankslate (>= 2.0, <= 4.0)
     posix-spawn (0.3.12)
-    public_suffix (2.0.3)
+    public_suffix (2.0.4)
     qa (0.10.2)
       activerecord-import
       deprecation
@@ -464,8 +464,7 @@ GEM
       rdf (~> 2.1)
     rdf-xsd (2.0.0)
       rdf (~> 2.0)
-    rdoc (4.2.2)
-      json (~> 1.4)
+    rdoc (4.3.0)
     redic (1.5.0)
       hiredis
     redis (3.3.1)
