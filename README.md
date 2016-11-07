@@ -39,8 +39,8 @@ Edit druw_home if you want it to install in someplace other than /home/vagrant/d
     cd ~   
     git clone git@bitbucket.org:uwlib/druw.git
 
-## cd to ~/drew/config, then copy all *.yml.template files to *.yml.
-    cd ~/drew/config   
+## cd to ~/druw/config, then copy all *.yml.template files to *.yml.
+    cd ~/druw/config   
     for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done
 
 ## Change to vagrant sync dir and run ansible playbook for druw.yml
