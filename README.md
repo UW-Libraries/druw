@@ -42,9 +42,9 @@ scp [yourbitbucketprivatekey] ~/.ssh
 `git clone git@bitbucket.org:uwlib/druw.git`
 
 ## cd to $DRUW_HOME/config, then copy all *.yml.template files to *.yml.
-```cd $DRUW_HOME/config   
+    cd $DRUW_HOME/config   
 
-for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done```
+    for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done
 
 ## Change to vagrant sync dir and run ansible playbook for druw.yml
 `cd /vagrant`   
