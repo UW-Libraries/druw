@@ -74,3 +74,15 @@ Follow the instructions on the main hydra sufia github page under admin users.  
  - Start a rails console: `RAILS_ENV=development bundle exec rails c`
  - Search or scroll down to "Add an initial admin user via command-line" in that github page mentioned above.
  - Follow those directions.
+
+---
+
+## Build demo site
+
+Edit vars.yml
+
+ - ansible_target - change to demoserver
+ - application_home - point it to someplace that your user account can access
+ - druw_home - change it to /var/druw
+
+Run ansible-playbook
