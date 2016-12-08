@@ -4,6 +4,8 @@
  *= require_self
 */
 
+@import 'local_sass_variables';
+
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 @import 'blacklight/blacklight';
