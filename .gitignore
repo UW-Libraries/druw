@@ -32,6 +32,7 @@ config/blacklight.yml
 
 # Ignore this file for security reasons
 config/initializers/secret_token.rb
+config/initializers/devise.rb
 
 # Ignore jetty
 jetty/

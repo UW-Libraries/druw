@@ -26,6 +26,9 @@ and you should see 'centos/7' listed
 Edit application_home if you want it to install in someplace other than /home/vagrant/sufia   
 Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
 
+## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
+    cp config/initializers/devise.rb.template config/initializers/devise.rb
+
 ## Start your vagrant box
     vagrant up --provider virtualbox
 
