@@ -79,10 +79,29 @@ Follow the instructions on the main hydra sufia github page under admin users.  
 
 ## Build demo site
 
-Edit vars.yml
+Edit config/vars.yml
 
  - ansible_target - change to demoserver
  - application_home - point it to someplace that your user account can access
  - druw_home - change it to /var/druw
 
-Run ansible-playbook
+Edit config/secrets.yml
+
+ - create a rails secret ```bundle exec rake secret```
+ - In production stanza, add the line ```secret_key_base = 'your key that you just generated"```
+
+Edit config/initializers/devise.rb
+
+ - create a rails secret ```bundle exec rake secret```
+ - add the line ```config.secret_key = 'your key that you just generated"```
+
+Edit fedora.yml
+
+ - change url in production stanza to ```url: http://127.0.0.1:8080/fedora/rest```
+
+Create fedora /prod container
+
+ - in a browser, go to http://localhost:8080/fedora/rest
+ - Under 'Create New Child Resource' Add Type: container, Identifier: prod
+
+Run ```ansible-playbook -i inventory --ask-become-pass druw-fullstack.yml```
