@@ -4,3 +4,50 @@
    This is an SCSS file, so you can use any defined variables and mixins.
 */
 
+/* Restyle the image header on the homepage */
+.image-masthead .background-container {
+   -webkit-filter: none;
+           filter: none;
+}
+.image-masthead .background-container-gradient {
+   background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}
+
+.image-masthead .navbar {
+   background-color: transparent;
+   border-bottom-width: 0;
+}
+
+.image-masthead {
+   border-bottom: none;
+}
+
+.image-masthead .navbar .row::before, 
+.image-masthead .navbar .row::after {
+   content: "";
+   clear: both;
+}
+
+.image-masthead .navbar li > a { 
+   background: #4B2E83; /* switch to scss or create local colors */
+   color: #fff;
+   border-radius: 9px 9px 0 0;
+}
+
+.image-masthead .navbar .active > a, .image-masthead .navbar .active > a:hover, .image-masthead .navbar .active > a:focus {
+    background-color: #85754D;
+    color: #fff;
+}
+.image-masthead .navbar li > a:hover, .image-masthead .navbar li > a:focus {
+    color: #000;
+    background-color: #e8e3d3;
+}
+.image-masthead .navbar li + li {
+  margin-left: 2px;
+}
+
+/* Would greatly prefer using flex to center this eventually */
+form#search-form-header .input-group {
+    margin-bottom: 0;
+}
+
