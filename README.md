@@ -16,18 +16,14 @@ On Windows, you might be given a choice between libvirt or virtualbox. Choose *v
 
 and you should see 'centos/7' listed
 
-## Clone uwlib's vagrant-ansible-sufia repo
-    git clone git@bitbucket.org:uwlib/vagrant-ansible-sufia.git
-    cd vagrant-ansible-sufia
+## Clone uwlib's vagrant-ansible-druw repo
+    git clone git@bitbucket.org:uwlib/vagrant-ansible-druw.git
+    cd vagrant-ansible-druw
 
 ## Copy vars.yml.template to vars.yml.
     cp vars.yml.template vars.yml
 
 Edit application_home if you want it to install in someplace other than /home/vagrant/sufia   
-Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
-
-## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
-    cp config/initializers/devise.rb.template config/initializers/devise.rb
 
 ## Start your vagrant box
     vagrant up --provider virtualbox
@@ -45,6 +41,11 @@ Edit druw_home if you want it to install in someplace other than /home/vagrant/d
 ## cd to ~/druw/config, then copy all *.yml.template files to *.yml.
     cd ~/druw/config   
     for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done
+
+Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
+
+## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
+    cp config/initializers/devise.rb.template config/initializers/devise.rb
 
 ## Change to vagrant sync dir and run ansible playbook for druw.yml
     cd /vagrant   
