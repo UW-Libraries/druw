@@ -47,6 +47,11 @@ group :development do
   gem 'spring'
 end
 
+group :development do
+  gem 'xray-rails'
+end
+
+
 gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
 
@@ -62,3 +67,4 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem 'hydra-role-management'
+
