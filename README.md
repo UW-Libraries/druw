@@ -91,7 +91,7 @@ Follow the instructions on the main hydra sufia github page under admin users.  
 
 As with building development instance above
 
-## Clone vagrant-sufia-druw
+## Clone vagrant-ansible-druw
 
 Edit config/vars.yml
 
