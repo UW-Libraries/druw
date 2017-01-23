@@ -34,6 +34,12 @@ Edit application_home if you want it to install in someplace other than /home/va
 ## scp your bitbucket private key into .ssh dir
     scp [yourbitbucketprivatekey] ~/.ssh
 
+If the git clone below doesn't work, you might need to do either of the following:
+
+1. Rename your private key to `id_rsa`
+
+2. Change its permissions: `chmod 600 [yourprivatekey]`
+
 ## Clone this repo into wherever you specified druw_home to be in vars.yml
     cd ~   
     git clone git@bitbucket.org:uwlib/druw.git
