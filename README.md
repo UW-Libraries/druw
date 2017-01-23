@@ -89,16 +89,34 @@ Follow the instructions on the main hydra sufia github page under admin users.  
 
 ## Build demo site
 
+As with building development instance above
+
+## Clone vagrant-sufia-druw
+
 Edit config/vars.yml
 
  - ansible_target - change to demoserver
  - application_home - point it to someplace that your user account can access
  - druw_home - change it to /var/druw
 
+## ssh into vm
+
+## Clone this repo and move it /var/druw
+    cd ~   
+    git clone git@bitbucket.org:uwlib/druw.git
+    mv druw /var
+
+## cd to /var/druw/config, then copy all *.yml.template files to *.yml.
+    cd /var/druw/config   
+    for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done
+
 Edit config/secrets.yml
 
  - create a rails secret ```bundle exec rake secret```
  - In production stanza, add the line ```secret_key_base = 'your key that you just generated"```
+
+## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
+    cp config/initializers/devise.rb.template config/initializers/devise.rb
 
 Edit config/initializers/devise.rb
 
@@ -113,5 +131,8 @@ Create fedora /prod container
 
  - in a browser, go to http://localhost:8080/fedora/rest
  - Under 'Create New Child Resource' Add Type: container, Identifier: prod
+
+## Disable selinux for now
+    sudo setenforce 0
 
 Run ```ansible-playbook -i inventory --ask-become-pass druw-fullstack.yml```
