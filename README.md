@@ -16,15 +16,14 @@ On Windows, you might be given a choice between libvirt or virtualbox. Choose *v
 
 and you should see 'centos/7' listed
 
-## Clone uwlib's vagrant-ansible-sufia repo
-    git clone git@bitbucket.org:uwlib/vagrant-ansible-sufia.git
-    cd vagrant-ansible-sufia
+## Clone uwlib's vagrant-ansible-druw repo
+    git clone git@bitbucket.org:uwlib/vagrant-ansible-druw.git
+    cd vagrant-ansible-druw
 
 ## Copy vars.yml.template to vars.yml.
     cp vars.yml.template vars.yml
 
 Edit application_home if you want it to install in someplace other than /home/vagrant/sufia   
-Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
 
 ## Start your vagrant box
     vagrant up --provider virtualbox
@@ -42,6 +41,11 @@ Edit druw_home if you want it to install in someplace other than /home/vagrant/d
 ## cd to ~/druw/config, then copy all *.yml.template files to *.yml.
     cd ~/druw/config   
     for f in `ls *.yml.template |rev | cut -d '.' --complement -f 1 |rev`; do cp $f{.template,}; done
+
+Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
+
+## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
+    cp config/initializers/devise.rb.template config/initializers/devise.rb
 
 ## Change to vagrant sync dir and run ansible playbook for druw.yml
     cd /vagrant   
@@ -74,3 +78,34 @@ Follow the instructions on the main hydra sufia github page under admin users.  
  - Start a rails console: `RAILS_ENV=development bundle exec rails c`
  - Search or scroll down to "Add an initial admin user via command-line" in that github page mentioned above.
  - Follow those directions.
+
+---
+
+## Build demo site
+
+Edit config/vars.yml
+
+ - ansible_target - change to demoserver
+ - application_home - point it to someplace that your user account can access
+ - druw_home - change it to /var/druw
+
+Edit config/secrets.yml
+
+ - create a rails secret ```bundle exec rake secret```
+ - In production stanza, add the line ```secret_key_base = 'your key that you just generated"```
+
+Edit config/initializers/devise.rb
+
+ - create a rails secret ```bundle exec rake secret```
+ - add the line ```config.secret_key = 'your key that you just generated"```
+
+Edit fedora.yml
+
+ - change url in production stanza to ```url: http://127.0.0.1:8080/fedora/rest```
+
+Create fedora /prod container
+
+ - in a browser, go to http://localhost:8080/fedora/rest
+ - Under 'Create New Child Resource' Add Type: container, Identifier: prod
+
+Run ```ansible-playbook -i inventory --ask-become-pass druw-fullstack.yml```

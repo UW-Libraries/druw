@@ -1,7 +1,10 @@
 development:
   user: fedoraAdmin
   password: fedoraAdmin
+  # Uncomment the following if you are using fcrepo_wrapper
   url: http://127.0.0.1:<%= ENV['FCREPO_DEVELOPMENT_PORT'] || 8984 %>/rest
+  # Uncomment the following if using Fedora Repository
+  #url: http://127.0.0.1:8080/fedora/rest
   base_path: /dev
 test:
   user: fedoraAdmin
