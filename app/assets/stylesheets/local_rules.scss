@@ -51,9 +51,19 @@ form#search-form-header .input-group {
     margin-bottom: 0;
 }
 
-
+.patch {
+    background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
+    background-size: 100% 100%;
+    display: block;
+    height: 45px;
+    position: absolute;
+    text-indent: -999px;
+    top: 0;
+    width: 65px;
+    z-index: 3001;
+}
 .wordmark {
-  background: image-url("uwlib_wordmark.png") no-repeat 0 0 #4b2e83;
+  background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
   background-size:100% 100%;
   display:block;
   position:absolute;
