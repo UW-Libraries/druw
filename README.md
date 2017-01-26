@@ -126,11 +126,6 @@ Edit /var/druw/config/initializers/devise.rb
  - add the line ```config.secret_key = 'your key that you just copied from private.yml.template"```
  - After this entire thing is built you could generate a secret key if you wanted to replace this ```bundle exec rake secret```
 
-Create fedora /prod container
-
- - in a browser, go to http://localhost:8080/fedora/rest
- - Under 'Create New Child Resource' Add Type: container, Identifier: prod
-
 ## Disable selinux for now
     sudo setenforce 0
 
