@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
@@ -29,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use thin as the app server
+gem 'thin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -36,8 +38,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
-
-gem 'thin'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -50,7 +50,6 @@ end
 group :development do
   gem 'xray-rails'
 end
-
 
 gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
@@ -67,4 +66,5 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem 'hydra-role-management'
+gem 'pg'
 
