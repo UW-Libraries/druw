@@ -4,7 +4,8 @@
    This is an SCSS file, so you can use any defined variables and mixins.
 */
 
-/* Restyle the image header on the homepage */
+@import 'local_sass_variables';
+
 .image-masthead .background-container {
    -webkit-filter: none;
            filter: none;
@@ -13,70 +14,83 @@
    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
-.image-masthead .navbar {
-   background-color: transparent;
-   border-bottom-width: 0;
+/* ###### GENERAL CSS ##### */
+
+.flex_hfill {
+   flex: 1 0 auto;
 }
 
-.image-masthead {
-   border-bottom: none;
+/* ### dropdown ### */
+.dropdown-menu > li {
+   padding: 0.125em 0;
+}
+.dropdown-menu > li > a {
+   color: #000;
+   position: relative;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+   background-color: darken($uw-purple, 10%);
+   color: $uw-yellow;
 }
 
-.image-masthead .navbar .row::before, 
-.image-masthead .navbar .row::after {
-   content: "";
-   clear: both;
+/* ##### HEADER / BANNER ##### */
+
+header[role=banner] {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;   
+   background-color: $uw-purple;
+}
+header[role=banner] div.flex_row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
 }
 
-.image-masthead .navbar li > a { 
-   background: #4B2E83; /* switch to scss or create local colors */
-   color: #fff;
-   border-radius: 9px 9px 0 0;
+/* ### LOGOS ### */
+#header_logo_container {
+   position: static;
+   flex: 0 0 auto;
+   width: 210px;
+   height: 45px;
 }
-
-.image-masthead .navbar .active > a, .image-masthead .navbar .active > a:hover, .image-masthead .navbar .active > a:focus {
-    background-color: #85754D;
-    color: #fff;
-}
-.image-masthead .navbar li > a:hover, .image-masthead .navbar li > a:focus {
-    color: #000;
-    background-color: #e8e3d3;
-}
-.image-masthead .navbar li + li {
-  margin-left: 2px;
-}
-
-/* Would greatly prefer using flex to center this eventually */
-form#search-form-header .input-group {
-    margin-bottom: 0;
-}
-
 .patch {
-    background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
-    background-size: 100% 100%;
-    display: block;
-    height: 45px;
-    position: absolute;
-    text-indent: -999px;
-    top: 0;
-    width: 65px;
-    z-index: 3001;
+   background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
+   background-size: 100% 100%;
+   display: block;
+   height: 45px;
+   position: absolute;
+   text-indent: -999px;
+   top: 0;
+   width: 65px;
+   z-index: 3001;
 }
 .wordmark {
-  background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
-  background-size:100% 100%;
-  display:block;
-  position:absolute;
-  top:0;
-  left:80px;
-  height:45px;
-  overflow:hidden;
-  text-indent:-9999px;
-  width:130px;
-  z-index:3002
+   background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
+   background-size:100% 100%;
+   display:block;
+   position:absolute;
+   top:0;
+   left:80px;
+   height:45px;
+   overflow:hidden;
+   text-indent:-9999px;
+   width:130px;
+   z-index:3002
 }
 
 @media(min-width:768px) {
+   #header_logo_container {
+      width: 325px;
+      height: 65px;
+   }
+
    .patch {
       height:65px;
       width:95px
@@ -86,4 +100,186 @@ form#search-form-header .input-group {
       width:200px;
       left:125px
    }
+}
+/* ### NOTIFICATIONS ### */
+#header_notifications_container {
+   flex: 0 0 auto;
+}
+#header_notifications_container a {
+   border-color: transparent;
+}
+#header_notifications_container a:hover,
+#header_notifications_container a:focus {
+   color: $uw-yellow;
+}
+
+#header_notifications_container a:focus {
+   outline: none;
+}
+
+#header_notifications_container .label {
+   background-color: #000; /*$uw-darkgrey;*/
+   font-size: inherit;
+   font-weight: normal;
+}
+#header_notifications_container .text {
+   display: none;
+}
+@media(min-width:768px) {
+   #header_notifications_container .text {
+      display: inline-block;
+   }
+}
+/* ##### USER MENU ##### */
+#user_login_link,
+#user_menu_button {
+   border-color: transparent;
+   font-weight: normal;
+}
+#user_login_link:hover,
+#user_login_link:focus, 
+#user_menu_button:hover,
+#user_menu_button:focus {
+   color: $uw-yellow;
+}
+#user_menu_container ul.dropdown-menu {
+   background-color: $uw-lightgrey;
+}
+
+header[role=banner] nav {
+   background-color: $uw-darkgrey;
+
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+
+   position: relative;
+
+
+}
+
+header[role=banner] nav #header_navbar {
+   flex: 0 0 auto;
+   margin-bottom: 0;
+   padding: 0;
+   border-radius: 0;
+   border: 0;
+
+   position: static;
+   min-height: 3.5em;
+   height: 3.5em;
+   max-height: 3.5em;
+}
+
+
+header[role=banner] nav #header_navbar .navbar-header {
+   float: none;
+}
+
+#header_navbar button.navbar-toggle {
+   border-color: #fff;
+   float: none;
+   margin-right: 0;
+}
+
+#header_navbar button.navbar-toggle[aria-expanded=true] {
+   box-shadow: inset 5px 5px 4px 0 rgba(0,0,0,0.75);
+   
+}
+#header_navbar button.navbar-toggle[aria-expanded=true] span.icon-bar {
+   
+}
+
+
+
+#header_navbar button.navbar-toggle:hover,
+#header_navbar button.navbar-toggle:focus {
+   border-color: $uw-yellow;
+}
+#header_navbar button.navbar-toggle:focus {
+   outline: dotted 1px #fff;
+}
+#header_navbar button.navbar-toggle:hover span.icon-bar,
+#header_navbar button.navbar-toggle:focus span.icon-bar {
+   background-color: $uw-yellow;
+}
+
+
+
+#header_navbar button.navbar-toggle span.icon-bar{
+   background-color: #fff;
+}
+
+
+
+#header_navmenu {
+   padding-left: 0;
+   padding-right: 0;
+
+}
+#header_navmenu.in ul {
+   float: none;
+   position: absolute;
+   z-index: 1000;
+   top: 3.5em;
+   right: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   background-color: $uw-darkgrey;
+}
+@media(min-width:768px) {
+   #header_navmenu.in ul {
+       position: static;
+
+   }
+}
+#header_navmenu ul li a {
+   padding-top: 0;
+   padding-bottom: 0;
+   display: block;
+   vertical-align: middle;
+   min-height: 3.5em; /* make a sass variable for this */
+   height: 3.5em;
+   max-height: 3.5em;
+   line-height: 3.5em;
+}
+#header_navmenu ul li a,
+#header_navmenu ul li a:visited {
+   color: #fff;
+}
+#header_navmenu ul li a:hover,
+#header_navmenu ul li a:focus {
+   color: #fff;
+   background-color: $uw-metal-gold;
+}
+#header_navmenu ul li a:focus {
+   outline: dotted 1px #fff;
+}
+
+
+
+
+#header_search { 
+   flex: 1 0 auto;
+   margin-left: 15px;
+   background-color: yellow;
+}
+#header_search form#search-form-header {
+   float: right;
+   width: 100%;
+   margin-top: 0;
+}
+@media(min-width:768px) {
+   #header_search form#search-form-header {
+       width: 70%;
+   }
+}
+#header_search form#search-form-header div.input-group {
+   margin-bottom: 0;
 }

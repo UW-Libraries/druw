@@ -12,3 +12,6 @@ en:
 
     footer:
       copyright_html: "<strong>Copyright &copy; 2016 Project Hydra</strong> Licensed under the Apache License, Version 2.0"
+
+    controls:
+      hello: "Hello"

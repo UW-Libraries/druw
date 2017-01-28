@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     end
   end
 
+  %w(hello).each do |action|
+      get action, controller: 'static', action: action, as: action
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
