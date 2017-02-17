@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+#gem 'rails', '4.2.7.1'
+#gem 'rails', '5.0.0.1'
+gem 'rails', '5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -51,8 +53,9 @@ group :development do
   gem 'xray-rails'
 end
 
-gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.2.0'
+gem 'sufia', git: 'https://github.com/projecthydra/sufia.git', tag: 'v7.3.0.rc1'
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
+gem 'blacklight_advanced_search', '~> 6.0'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
