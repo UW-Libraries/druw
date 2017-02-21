@@ -21,3 +21,10 @@ $uw-lightgrey: #f0f0f0;
 
 
 $brand-primary: $uw-purple;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$font-size-base: 16px !default;
+$headings-font-weight: 600 !default;
+
