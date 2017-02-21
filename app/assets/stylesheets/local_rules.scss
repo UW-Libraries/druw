@@ -6,6 +6,12 @@
 
 @import 'local_sass_variables';
 
+
+.image-masthead {
+   border-bottom: none;
+   margin-bottom: 0;
+}
+
 .image-masthead .background-container {
    -webkit-filter: none;
            filter: none;
@@ -32,6 +38,41 @@
 .dropdown-menu > li > a:focus {
    background-color: darken($uw-purple, 10%);
    color: $uw-yellow;
+}
+
+a:hover,
+a:focus {
+   color: $uw-metal-gold;
+}
+
+main a {
+  font-weight: bold;
+}
+
+/* external links */
+a.external:after {
+   content: "\e164";
+   font-family: 'Glyphicons Halflings';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1rem;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   display: inline-table;
+   position: relative;
+   top: -2px;
+}
+
+.form-control {
+   color: #000;
+}
+
+.btn-primary {
+   border-color: $brand-primary;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:active:focus {
+    background-color: $uw-metal-gold;
+    border-color: $uw-metal-gold;
 }
 
 /* ##### HEADER / BANNER ##### */
@@ -268,7 +309,6 @@ header[role=banner] nav #header_navbar .navbar-header {
 #header_search { 
    flex: 1 0 auto;
    margin-left: 15px;
-   background-color: yellow;
 }
 #header_search form#search-form-header {
    float: right;
@@ -283,3 +323,36 @@ header[role=banner] nav #header_navbar .navbar-header {
 #header_search form#search-form-header div.input-group {
    margin-bottom: 0;
 }
+
+input#search-field-header {
+   border-color: #fff;
+}
+
+input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   color: $uw-darkgrey !important;
+   font-style: italic;
+   opacity: 0.875;  
+}
+input#search-field-header::-moz-placeholder { /* Firefox 19+ */
+   color: $uw-darkgrey !important;
+   font-style: italic;  
+   opacity: 0.875;  
+}
+input#search-field-header:-ms-input-placeholder { /* IE 10+ */
+   color: $uw-darkgrey !important;
+   font-style: italic;  
+   opacity: 0.875;  
+}
+input#search-field-header:-moz-placeholder { /* Firefox 18- */
+   color: $uw-darkgrey !important;
+   font-style: italic;
+   opacity: 0.875;  
+}
+
+input#search-field-header:focus {
+   border-color: $uw-gold;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6); 
+}
+
+
