@@ -32,8 +32,15 @@
         </div>
         <div class="collapse navbar-collapse" id="header_navmenu">
            <ul class="nav navbar-nav">
-             <li class="active"><a href="#">Home</a></li>
-             <li><a href="help">Help</a></li>
+             <li class="active">
+                <a class="btn" href="#">Home</a>
+             </li>
+             <li>
+                <%= render partial: 'local/about_menu' %>
+             </li>
+             <li>
+                <a class="btn" href="help">Help</a>
+             </li>
           </ul>
         </div>
      </div>

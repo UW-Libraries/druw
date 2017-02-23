@@ -43,11 +43,18 @@
 
 /* ###### GENERAL CSS ##### */
 
+.btn {
+   padding: 0.375em 0.75em;
+}
+
 .flex_hfill {
    flex: 1 0 auto;
 }
 
 /* ### dropdown ### */
+.dropdown-menu {
+   background-color: $uw-lightgrey;
+}
 .dropdown-menu > li {
    padding: 0.125em 0;
 }
@@ -59,6 +66,18 @@
 .dropdown-menu > li > a:focus {
    background-color: darken($uw-purple, 10%);
    color: $uw-yellow;
+}
+button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
+   display: none;
+}
+button.dropdown-toggle[aria-expanded="false"] span.glyphicon-menu-up {
+   display: none;
+}
+
+#user_menu.open > button.dropdown-toggle,
+#header_navbar button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
 }
 
 a:hover,
@@ -91,7 +110,11 @@ a.external:after {
 .btn-primary {
    border-color: $brand-primary;
 }
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:active:focus {
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary:active:focus {
     background-color: $uw-metal-gold;
     border-color: $uw-metal-gold;
 }
@@ -172,7 +195,8 @@ header[role=banner] div.flex_row {
 }
 #header_notifications_container a:hover,
 #header_notifications_container a:focus {
-   color: $uw-yellow;
+   color: #fff;
+   background-color: $uw-metal-gold;
 }
 
 #header_notifications_container a:focus {
@@ -202,15 +226,15 @@ header[role=banner] div.flex_row {
 #user_login_link:focus, 
 #user_menu_button:hover,
 #user_menu_button:focus {
-   color: $uw-yellow;
+   color: #fff;
+   background-color: $uw-metal-gold;
 }
-#user_menu_container ul.dropdown-menu {
-   background-color: $uw-lightgrey;
+#user_menu > ul {
+   z-index: 20;
 }
 
 header[role=banner] nav {
    background-color: $uw-darkgrey;
-
    display: flex;
    flex-direction: row;
    flex-wrap: nowrap;
@@ -219,10 +243,7 @@ header[role=banner] nav {
    align-items: center;
    padding-left: 15px;
    padding-right: 15px;
-
    position: relative;
-
-
 }
 
 header[role=banner] nav #header_navbar {
@@ -231,28 +252,38 @@ header[role=banner] nav #header_navbar {
    padding: 0;
    border-radius: 0;
    border: 0;
-
    position: static;
-   min-height: 3.5em;
-   height: 3.5em;
-   max-height: 3.5em;
+   min-height: 3.25em;
+   height: 3.25em;
+   max-height: 3.25em;
+}
+@media(min-width:768px) {
+   header[role=banner] nav #header_navbar {
+      display: flex;
+      align-items: center;
+   }
 }
 
 
 header[role=banner] nav #header_navbar .navbar-header {
    float: none;
+   height: 100%;
+   display: flex;
+   align-items: center;
 }
 
 #header_navbar button.navbar-toggle {
-   border-color: #fff;
+   border-color: transparent;
    float: none;
    margin-right: 0;
+   padding: 0.375em 0.75em;
+   min-height: 2.25em;  
+   background-color: $uw-purple; 
+}
+#header_navbar button.navbar-toggle span.icon-bar {
+   border-color: #fff;
 }
 
-#header_navbar button.navbar-toggle[aria-expanded=true] {
-   box-shadow: inset 5px 5px 4px 0 rgba(0,0,0,0.75);
-   
-}
 #header_navbar button.navbar-toggle[aria-expanded=true] span.icon-bar {
    
 }
@@ -261,14 +292,10 @@ header[role=banner] nav #header_navbar .navbar-header {
 
 #header_navbar button.navbar-toggle:hover,
 #header_navbar button.navbar-toggle:focus {
-   border-color: $uw-yellow;
+   background-color: $uw-metal-gold;
 }
 #header_navbar button.navbar-toggle:focus {
    outline: dotted 1px #fff;
-}
-#header_navbar button.navbar-toggle:hover span.icon-bar,
-#header_navbar button.navbar-toggle:focus span.icon-bar {
-   background-color: $uw-yellow;
 }
 
 
@@ -284,46 +311,110 @@ header[role=banner] nav #header_navbar .navbar-header {
    padding-right: 0;
 
 }
-#header_navmenu.in ul {
+#header_navmenu.in > ul {
    float: none;
    position: absolute;
    z-index: 1000;
-   top: 3.5em;
+   top: 3.25em;
    right: 0;
    left: 0;
    width: 100%;
    margin: 0;
    background-color: $uw-darkgrey;
+   z-index: 10;
 }
-@media(min-width:768px) {
-   #header_navmenu.in ul {
-       position: static;
-
-   }
+#header_navmenu.in > ul .btn {
+   border-radius: 0;
 }
-#header_navmenu ul li a {
-   padding-top: 0;
-   padding-bottom: 0;
+#about_menu {
+   display: block;
+}
+#about_menu > .btn {
+   float: none;
+}
+#header_navmenu > ul > li > a,
+#about_menu > a,
+#about_menu > button
+{
+   padding: 0.375em  0.75em;
    display: block;
    vertical-align: middle;
-   min-height: 3.5em; /* make a sass variable for this */
-   height: 3.5em;
-   max-height: 3.5em;
-   line-height: 3.5em;
 }
-#header_navmenu ul li a,
-#header_navmenu ul li a:visited {
-   color: #fff;
+#about_menu > button.dropdown-toggle {
+   display: none;
 }
-#header_navmenu ul li a:hover,
-#header_navmenu ul li a:focus {
-   color: #fff;
-   background-color: $uw-metal-gold;
-}
-#header_navmenu ul li a:focus {
-   outline: dotted 1px #fff;
+#header_navmenu > ul > li > a {
+  border-color: #333 transparent;
 }
 
+@media(min-width:768px) {
+   #header_navmenu.in > ul {
+       position: static;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+   }
+   #header_navmenu > ul > li + li {
+      margin-left: 0.75em;
+   }
+   #header_navmenu.in > ul .btn {
+      border-radius: $border-radius-base;
+   }
+   #header_navmenu > ul > li > a,
+   #about_menu > a,
+   #about_menu > button
+   {
+      background-color: $uw-purple;
+      border-color: transparent;
+   }
+   #about_menu {
+      display: inline-block;
+   }
+   #about_menu > .btn {
+      float: left;
+   }
+   #about_menu > a {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+   }
+   #about_menu > button.dropdown-toggle {
+      display: inline-block;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+   }
+}
+
+#header_navmenu > ul > li > a,
+#header_navmenu > ul > li > a:visited,
+#about_menu > a,
+#about_menu > a:visited,
+#about_menu > button
+{
+   color: #fff;
+}
+
+
+#header_navmenu > ul > li > a:hover,
+#header_navmenu > ul > li > a:focus,
+#header_navmenu > ul > li > button:hover,
+#header_navmenu > ul > li > button:focus,
+#about_menu > a:hover,
+#about_menu > a:focus,
+#about_menu > button:hover,
+#about_menu > button:focus {
+   background-color: $uw-metal-gold;
+}
+#header_navmenu > ul > li > a:focus,
+#header_navmenu >  ul > li > button:focus,
+#about_menu > a:focus,
+#about_menu > button:focus {
+   outline: dotted 1px #fff;
+}
+#header_navmenu > ul > li > .btn-group > button.dropdown-toggle {
+   padding-left: 0.375em;
+   padding-right: 0.375em;
+   margin-left: 1px;
+}
 
 
 
@@ -347,6 +438,8 @@ header[role=banner] nav #header_navbar .navbar-header {
 
 input#search-field-header {
    border-color: #fff;
+   padding: 0.375em 0.75em;
+   height: auto;
 }
 
 input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -375,5 +468,4 @@ input#search-field-header:focus {
    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6);
            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6); 
 }
-
 
