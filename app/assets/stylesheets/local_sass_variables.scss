@@ -13,10 +13,20 @@ $uw-gold: #B7A57A;
 $uw-web-gold: #E8E3D3;
 $uw-red: #C61029;
 $uw-yellow: #D7A900;
-$uw-green: #165788;
+$uw-blue: #165788;
+$uw-green: #4A7C01;
 $uw-orange: #C75B12;
-$uw-darkgrey: #444;
-$uw-lightgrey: #D0D0D0;
+$uw-darkgrey: #282828;
+$uw-lightgrey: #f0f0f0;
 
+$border-radius-base: 4px !default;
+$text-color: #000 !default;
 
 $brand-primary: $uw-purple;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$font-size-base: 16px !default;
+$headings-font-weight: 600 !default;
+
