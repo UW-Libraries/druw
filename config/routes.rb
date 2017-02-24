@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  %w(help faq).each do |action|
+  %w(hello help faq).each do |action|
       get action, controller: 'static', action: action, as: action
   end
 
