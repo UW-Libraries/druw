@@ -6,7 +6,9 @@
 
 @import 'local_sass_variables';
 
-
+/* -------------------------------------------- */
+/* ---- Draft Watermark on Static Sections ---- */
+/* -------------------------------------------- */
 #content-wrapper section.draft {
    position: relative;
 }
@@ -28,11 +30,13 @@
     transform: rotate(18deg);
 }
 
+/* --------------------------- */
+/* ---- Suzzallo Masthead ---- */
+/* --------------------------- */
 .image-masthead {
    border-bottom: none;
    margin-bottom: 0;
 }
-
 .image-masthead .background-container {
    -webkit-filter: none;
            filter: none;
@@ -41,54 +45,19 @@
    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
-/* ###### GENERAL CSS ##### */
+/* --------------------- */
+/* ---- GENERAL CSS ---- */
+/* --------------------- */
 
-.btn {
-   padding: 0.375em 0.75em;
-}
-
-.flex_hfill {
-   flex: 1 0 auto;
-}
-
-/* ### dropdown ### */
-.dropdown-menu {
-   background-color: $uw-lightgrey;
-}
-.dropdown-menu > li {
-   padding: 0.125em 0;
-}
-.dropdown-menu > li > a {
-   color: #000;
-   position: relative;
-}
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-   background-color: darken($uw-purple, 10%);
-   color: $uw-yellow;
-}
-button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
-   display: none;
-}
-button.dropdown-toggle[aria-expanded="false"] span.glyphicon-menu-up {
-   display: none;
-}
-
-#user_menu.open > button.dropdown-toggle,
-#header_navbar button.navbar-toggle[aria-expanded=true], 
-#about_menu.open > button.dropdown-toggle {
-   box-shadow: inset 2px 3px 5px #000000, 0px 1px 1px #333;
-}
-
+/* LINKS*/
 a:hover,
 a:focus {
    color: $uw-metal-gold;
 }
-
+/* links in main section of pages get bold */
 main a {
   font-weight: bold;
 }
-
 /* external links */
 a.external:after {
    content: "\e164";
@@ -103,10 +72,22 @@ a.external:after {
    top: -2px;
 }
 
+/* make inputs have black text (not gray) */
 .form-control {
    color: #000;
 }
 
+/* CSS equivalent of LaTeX's \hfill for use in flex */
+.flex_hfill {
+   flex: 1 0 auto;
+}
+
+/* --------------------------- */
+/* ---- Bootstrap Buttons ---- */
+/* --------------------------- */
+.btn {
+   @extend %local-button-padding;
+}
 .btn-primary {
    border-color: $brand-primary;
 }
@@ -115,12 +96,74 @@ a.external:after {
 .btn-primary:active, 
 .btn-primary.active, 
 .btn-primary:active:focus {
-    background-color: $uw-metal-gold;
-    border-color: $uw-metal-gold;
+    @extend %local-button-hover-focus;
 }
 
-/* ##### HEADER / BANNER ##### */
-
+/* ------------------------ */
+/* ---- DROPDOWN MENUS ---- */
+/* ------------------------ */
+.dropdown-menu {
+   background-color: $uw-light-grey;
+}
+.dropdown-menu > li {
+   padding: 0.125em 0;
+}
+.dropdown-menu > li > a {
+   color: #000;
+   position: relative;
+   padding: 0.2em 1.25em;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+/*   background-color: $uw-purple;
+   color: $uw-yellow;*/
+   @extend %local-button-hover-focus;
+   outline: none;
+}
+.dropdown-menu > li > a:hover:before,
+.dropdown-menu > li > a:focus:before {
+   content:"\e250";
+   left: 0.125em;
+}
+.dropdown-menu > li > a:hover:after,
+.dropdown-menu > li > a:focus:after {
+   content: "\e251";
+   right: 0.125em;
+}
+.dropdown-menu > li > a:hover:before,
+.dropdown-menu > li > a:hover:after,
+.dropdown-menu > li > a:focus:before,
+.dropdown-menu > li > a:focus:after {
+   font-family: 'Glyphicons Halflings';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1em;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   position: absolute;
+}
+/* we have customized to use a glyphicon chevron for the carat */
+button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
+   display: none;
+}
+button.dropdown-toggle[aria-expanded="false"] span.glyphicon-menu-up {
+   display: none;
+}
+/* when the dropdown is open, the button looks inset */
+#user_menu.open > button.dropdown-toggle,
+#main_navigation button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
+}
+/* divider in dropdown menu */
+.dropdown-menu .divider {
+   background-color: $uw-medium-grey;
+   margin: 0;
+   padding: 0;
+}
+/* ------------------------- */
+/* ---- HEADER / BANNER ---- */
+/* ------------------------- */
 header[role=banner] {
    display: block;
    margin-left: auto;
@@ -138,14 +181,16 @@ header[role=banner] div.flex_row {
    padding-right: 15px;
 }
 
-/* ### LOGOS ### */
+/* ----------------------- */
+/* ---- HEADER: LOGOS ---- */
+/* ----------------------- */
 #header_logo_container {
    position: static;
    flex: 0 0 auto;
-   width: 210px;
+   width: 210px; /* uwlib_logo left + width */
    height: 45px;
 }
-.patch {
+.uw_logo {
    background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
    background-size: 100% 100%;
    display: block;
@@ -156,37 +201,38 @@ header[role=banner] div.flex_row {
    width: 65px;
    z-index: 3001;
 }
-.wordmark {
+.uwlib_logo {
    background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
-   background-size:100% 100%;
-   display:block;
-   position:absolute;
-   top:0;
-   left:80px;
-   height:45px;
-   overflow:hidden;
-   text-indent:-9999px;
-   width:130px;
-   z-index:3002
+   background-size: 100% 100%;
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 80px; /* 15px space between logos */
+   height: 45px;
+   overflow:h idden;
+   text-indent: -9999px;
+   width: 130px;
+   z-index: 3002
 }
-
-@media(min-width:768px) {
+@media(min-width:768px) { /* enlarge UW and Library logos when wider window */
    #header_logo_container {
-      width: 325px;
+      width: 325px; /* uwlib logo left + uwlib logo width */
       height: 65px;
    }
-
-   .patch {
+   .uw_logo {
       height:65px;
       width:95px
    }
-   .wordmark {
-      height:65px;
-      width:200px;
-      left:125px
+   .uwlib_logo {
+      height: 65px;
+      width: 200px;
+      left: 125px /* 30px space between the two logos */
    }
 }
-/* ### NOTIFICATIONS ### */
+
+/* ------------------------------- */
+/* ---- HEADER: NOTIFICATIONS ---- */
+/* ------------------------------- */
 #header_notifications_container {
    flex: 0 0 auto;
 }
@@ -195,28 +241,28 @@ header[role=banner] div.flex_row {
 }
 #header_notifications_container a:hover,
 #header_notifications_container a:focus {
-   color: #fff;
-   background-color: $uw-metal-gold;
+    @extend %local-button-hover-focus;
 }
-
 #header_notifications_container a:focus {
    outline: none;
 }
-
 #header_notifications_container .label {
-   background-color: #000; /*$uw-darkgrey;*/
+   background-color: #000;
    font-size: inherit;
    font-weight: normal;
 }
 #header_notifications_container .text {
    display: none;
 }
-@media(min-width:768px) {
+@media(min-width:768px) { /* only show the text when wider window */
    #header_notifications_container .text {
       display: inline-block;
    }
 }
-/* ##### USER MENU ##### */
+
+/* --------------------------- */
+/* ---- HEADER: USER MENU ---- */
+/* --------------------------- */
 #user_login_link,
 #user_menu_button {
    border-color: transparent;
@@ -226,15 +272,17 @@ header[role=banner] div.flex_row {
 #user_login_link:focus, 
 #user_menu_button:hover,
 #user_menu_button:focus {
-   color: #fff;
-   background-color: $uw-metal-gold;
+    @extend %local-button-hover-focus;
 }
 #user_menu > ul {
-   z-index: 20;
+   z-index: 20; /* so that the menu goes over the nav menu when it appears */
 }
 
+/* --------------------------------- */
+/* ---- HEADER: MAIN NAVIGATION ---- */
+/* --------------------------------- */
 header[role=banner] nav {
-   background-color: $uw-darkgrey;
+   background-color: $uw-dark-grey;
    display: flex;
    flex-direction: row;
    flex-wrap: nowrap;
@@ -245,179 +293,147 @@ header[role=banner] nav {
    padding-right: 15px;
    position: relative;
 }
-
-header[role=banner] nav #header_navbar {
+header[role=banner] nav #main_navigation {
    flex: 0 0 auto;
    margin-bottom: 0;
    padding: 0;
    border-radius: 0;
    border: 0;
    position: static;
-   min-height: 3.25em;
-   height: 3.25em;
-   max-height: 3.25em;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
 }
-@media(min-width:768px) {
-   header[role=banner] nav #header_navbar {
+@media(min-width:768px) { 
+   header[role=banner] nav #main_navigation {
       display: flex;
       align-items: center;
    }
 }
 
-
-header[role=banner] nav #header_navbar .navbar-header {
+/* -------------------------------------------------- */
+/* ---- Main Menu Header (includes toggle button ---- */
+/* -------------------------------------------------- */
+header[role=banner] nav #main_navigation .navbar-header {
    float: none;
    height: 100%;
    display: flex;
    align-items: center;
 }
-
-#header_navbar button.navbar-toggle {
+#main_navigation button.navbar-toggle {
    border-color: transparent;
    float: none;
    margin-right: 0;
-   padding: 0.375em 0.75em;
+   @extend %local-button-padding;
    min-height: 2.25em;  
    background-color: $uw-purple; 
 }
-#header_navbar button.navbar-toggle span.icon-bar {
+#main_navigation button.navbar-toggle span.icon-bar {
    border-color: #fff;
 }
-
-#header_navbar button.navbar-toggle[aria-expanded=true] span.icon-bar {
-   
+#main_navigation button.navbar-toggle:hover,
+#main_navigation button.navbar-toggle:focus {
+    @extend %local-button-hover-focus;
 }
-
-
-
-#header_navbar button.navbar-toggle:hover,
-#header_navbar button.navbar-toggle:focus {
-   background-color: $uw-metal-gold;
-}
-#header_navbar button.navbar-toggle:focus {
-   outline: dotted 1px #fff;
-}
-
-
-
-#header_navbar button.navbar-toggle span.icon-bar{
+#main_navigation button.navbar-toggle span.icon-bar{
    background-color: #fff;
 }
 
-
-
-#header_navmenu {
+/* ------------------------------------------------ */
+/* ---- Main Menu (the actual collapsing menu) ---- */
+/* ------------------------------------------------ */
+#main_navigation div.navbar-collapse {
    padding-left: 0;
    padding-right: 0;
-
 }
-#header_navmenu.in > ul {
+#main_navigation div.navbar-collapse.in > ul {
    float: none;
    position: absolute;
    z-index: 1000;
-   top: 3.25em;
+   top: $main-menu-height; /* makes the open menu (narrow) line up with grey bar */
    right: 0;
    left: 0;
    width: 100%;
    margin: 0;
-   background-color: $uw-darkgrey;
-   z-index: 10;
+   background-color: $uw-dark-grey;
+   z-index: 10; /* goes under an open user menu */
 }
-#header_navmenu.in > ul .btn {
-   border-radius: 0;
-}
-#about_menu {
-   display: block;
-}
-#about_menu > .btn {
-   float: none;
-}
-#header_navmenu > ul > li > a,
-#about_menu > a,
-#about_menu > button
-{
-   padding: 0.375em  0.75em;
+#main_navigation div.navbar-collapse > ul > li > .btn,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   @extend %local-button-padding;
    display: block;
    vertical-align: middle;
+   border-radius: 0;
+   border-color: #333 transparent transparent;   
 }
-#about_menu > button.dropdown-toggle {
+/* ---- Split Button in Main Menu ---- */
+#main_navigation div.navbar-collapse > ul > li > div.btn-group {
+   display: block;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   float: none;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
    display: none;
+   padding-left: 0.375em;
+   padding-right: 0.375em;   
+   margin-left: 1px;
 }
-#header_navmenu > ul > li > a {
-  border-color: #333 transparent;
+#main_navigation div.navbar-collapse > ul > li > a,
+#main_navigation div.navbar-collapse > ul > li > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button {
+   color: #fff;
+}
+#main_navigation div.navbar-collapse > ul > li > a:hover,
+#main_navigation div.navbar-collapse > ul > li > a:focus,
+#main_navigation div.navbar-collapse > ul > li > button:hover,
+#main_navigation div.navbar-collapse > ul > li > button:focus,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:hover,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:focus {
+   @extend %local-button-hover-focus;
 }
 
 @media(min-width:768px) {
-   #header_navmenu.in > ul {
+   #main_navigation div.navbar-collapse.in > ul {
        position: static;
        display: flex;
        justify-content: flex-start;
        align-items: center;
    }
-   #header_navmenu > ul > li + li {
+   #main_navigation div.navbar-collapse > ul > li + li {
       margin-left: 0.75em;
    }
-   #header_navmenu.in > ul .btn {
+   #main_navigation div.navbar-collapse > ul > li > .btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
       border-radius: $border-radius-base;
    }
-   #header_navmenu > ul > li > a,
-   #about_menu > a,
-   #about_menu > button
-   {
+   #main_navigation div.navbar-collapse > ul > li > a,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
       background-color: $uw-purple;
       border-color: transparent;
    }
-   #about_menu {
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group {
       display: inline-block;
    }
-   #about_menu > .btn {
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
       float: left;
    }
-   #about_menu > a {
-      border-bottom-right-radius: 0;
-      border-top-right-radius: 0;
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > a {
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
    }
-   #about_menu > button.dropdown-toggle {
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
       display: inline-block;
-      border-bottom-left-radius: 0;
-      border-top-left-radius: 0;
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
    }
 }
 
-#header_navmenu > ul > li > a,
-#header_navmenu > ul > li > a:visited,
-#about_menu > a,
-#about_menu > a:visited,
-#about_menu > button
-{
-   color: #fff;
-}
-
-
-#header_navmenu > ul > li > a:hover,
-#header_navmenu > ul > li > a:focus,
-#header_navmenu > ul > li > button:hover,
-#header_navmenu > ul > li > button:focus,
-#about_menu > a:hover,
-#about_menu > a:focus,
-#about_menu > button:hover,
-#about_menu > button:focus {
-   background-color: $uw-metal-gold;
-}
-#header_navmenu > ul > li > a:focus,
-#header_navmenu >  ul > li > button:focus,
-#about_menu > a:focus,
-#about_menu > button:focus {
-   outline: dotted 1px #fff;
-}
-#header_navmenu > ul > li > .btn-group > button.dropdown-toggle {
-   padding-left: 0.375em;
-   padding-right: 0.375em;
-   margin-left: 1px;
-}
-
-
-
+/*--------------------- */
+/* ---- SEARCH BAR ---- */
+/*--------------------- */
 #header_search { 
    flex: 1 0 auto;
    margin-left: 15px;
@@ -429,43 +445,40 @@ header[role=banner] nav #header_navbar .navbar-header {
 }
 @media(min-width:768px) {
    #header_search form#search-form-header {
-       width: 70%;
+       width: 85%;
    }
 }
 #header_search form#search-form-header div.input-group {
    margin-bottom: 0;
 }
-
 input#search-field-header {
    border-color: #fff;
-   padding: 0.375em 0.75em;
+   @extend %local-button-padding;
    height: auto;
 }
-
+/* search bar placeholder - have to be separate so browsers get them */
 input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-   color: $uw-darkgrey !important;
+   color: $uw-dark-grey !important;
    font-style: italic;
    opacity: 0.875;  
 }
 input#search-field-header::-moz-placeholder { /* Firefox 19+ */
-   color: $uw-darkgrey !important;
+   color: $uw-dark-grey !important;
    font-style: italic;  
    opacity: 0.875;  
 }
 input#search-field-header:-ms-input-placeholder { /* IE 10+ */
-   color: $uw-darkgrey !important;
+   color: $uw-dark-grey !important;
    font-style: italic;  
    opacity: 0.875;  
 }
 input#search-field-header:-moz-placeholder { /* Firefox 18- */
-   color: $uw-darkgrey !important;
+   color: $uw-dark-grey !important;
    font-style: italic;
    opacity: 0.875;  
 }
-
 input#search-field-header:focus {
    border-color: $uw-gold;
    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6);
            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6); 
 }
-
