@@ -8,4 +8,9 @@ class Work < ActiveFedora::Base
   # Change this to restrict which works can be added as a child.
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
+
+  property :doi, predicate: ::RDF::Vocab::DC.identifier, multiple: false do |index|
+    index.as :stored_searchable
+  end
+
 end
