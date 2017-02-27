@@ -66,4 +66,4 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem 'hydra-role-management'
-
+gem 'ezid-client'
