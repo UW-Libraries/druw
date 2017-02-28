@@ -9,8 +9,8 @@
     <li>
        <a class="dropdown-item" href="#">About</a>
     </li>
-    <li>
-       <a class="dropdown-item" href="#">FAQ</a>
+    <li <%= 'class=active' if current_page?(faq_path) %>>
+        <%= link_to t(:'sufia.statics.faq'), faq_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li>
        <a class="dropdown-item" href="#">Collection Policy</a>
