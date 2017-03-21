@@ -119,10 +119,11 @@ a.external:after {
    color: $uw-yellow;*/
    @extend %local-button-hover-focus;
    outline: none;
-}
+}i
+/*
 .dropdown-menu > li > a:hover:before,
 .dropdown-menu > li > a:focus:before {
-   content:"\e250";
+   content: "\e250";
    left: 0.125em;
 }
 .dropdown-menu > li > a:hover:after,
@@ -149,18 +150,26 @@ button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
 button.dropdown-toggle[aria-expanded="false"] span.glyphicon-menu-up {
    display: none;
 }
-/* when the dropdown is open, the button looks inset */
-#user_menu.open > button.dropdown-toggle,
-#main_navigation button.navbar-toggle[aria-expanded=true], 
-#about_menu.open > button.dropdown-toggle {
-   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
-}
 /* divider in dropdown menu */
 .dropdown-menu .divider {
    background-color: $uw-medium-grey;
    margin: 0;
    padding: 0;
 }
+/* when the dropdown is open, the button looks inset */
+#user_menu.open > button.dropdown-toggle,
+#main_navigation button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
+   padding-top: calc(#{$button-tb-padding} + 2px);
+   padding-bottom: calc(#{$button-tb-padding} - 2px);
+}
+/* adjust glyphicons in user_menu */
+#user_menu > button.dropdown-toggle .glyphicon {
+   top: 2px;
+}
+
+
 /* ------------------------- */
 /* ---- HEADER / BANNER ---- */
 /* ------------------------- */
@@ -276,6 +285,12 @@ header[role=banner] div.flex_row {
 }
 #user_menu > ul {
    z-index: 20; /* so that the menu goes over the nav menu when it appears */
+}
+
+@media (max-width: 767px) {
+   #user_menu_button .visible-xs-block {
+      display: inline-block !important;
+   }
 }
 
 /* --------------------------------- */
@@ -478,7 +493,7 @@ input#search-field-header:-moz-placeholder { /* Firefox 18- */
    opacity: 0.875;  
 }
 input#search-field-header:focus {
-   border-color: $uw-gold;
-   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6);
-           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-gold, 0.6); 
+   border-color: $uw-orange;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6); 
 }

@@ -37,9 +37,13 @@ $headings-font-weight: 600 !default;
 
 $main-menu-height: 3.25em;
 
+$button-tb-padding: 0.375em;
+$button-lr-padding: 0.75em;
+
 %local-button-padding {
-    padding: 0.375em 0.75em;
+    padding: $button-tb-padding $button-lr-padding;
 }
+
 
 %local-button-hover-focus {
     background-color: $uw-metal-gold;
