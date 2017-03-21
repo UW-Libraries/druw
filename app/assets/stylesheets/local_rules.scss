@@ -88,9 +88,6 @@ a.external:after {
 .btn {
    @extend %local-button-padding;
 }
-.btn-primary {
-   border-color: $brand-primary;
-}
 .btn-primary:hover, 
 .btn-primary:focus, 
 .btn-primary:active, 
@@ -115,40 +112,15 @@ a.external:after {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-/*   background-color: $uw-purple;
-   color: $uw-yellow;*/
    @extend %local-button-hover-focus;
    outline: none;
-}i
-/*
-.dropdown-menu > li > a:hover:before,
-.dropdown-menu > li > a:focus:before {
-   content: "\e250";
-   left: 0.125em;
-}
-.dropdown-menu > li > a:hover:after,
-.dropdown-menu > li > a:focus:after {
-   content: "\e251";
-   right: 0.125em;
-}
-.dropdown-menu > li > a:hover:before,
-.dropdown-menu > li > a:hover:after,
-.dropdown-menu > li > a:focus:before,
-.dropdown-menu > li > a:focus:after {
-   font-family: 'Glyphicons Halflings';
-   font-style: normal;
-   font-weight: normal;
-   font-size: 1em;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   position: absolute;
 }
 /* we have customized to use a glyphicon chevron for the carat */
 button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
-   display: none;
+   display: none !important;
 }
-button.dropdown-toggle[aria-expanded="false"] span.glyphicon-menu-up {
-   display: none;
+button.dropdown-toggle[aria-expanded="false"] span.glyphicon.glyphicon-menu-up {
+   display: none !important;
 }
 /* divider in dropdown menu */
 .dropdown-menu .divider {
