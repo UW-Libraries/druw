@@ -1,6 +1,7 @@
 en:
   sufia:
     product_name:       "DRUW"
+    product_long_name:  "Data Repository at the University of Washington"
     product_twitter_handle: "@HydraSphere"
     institution_name:   "University of Washington"
 #    institution_name_full:   "The Institution Name"
@@ -16,3 +17,4 @@ en:
     statics:
       hello: "Hello"
       faq: "Frequently Asked Questions"
+      terms_of_use: "Terms of Use"

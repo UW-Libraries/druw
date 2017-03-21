@@ -15,8 +15,8 @@
     <li>
        <a class="dropdown-item" href="#">Collection Policy</a>
     </li>
-    <li>
-       <a class="dropdown-item" href="#">Terms of Use</a>
+    <li <%= 'class=active' if current_page?(terms_of_use_path) %>>
+        <%= link_to t(:'sufia.statics.terms_of_use'), terms_of_use_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li>
        <a class="dropdown-item" href="#">Terms of Deposit</a>

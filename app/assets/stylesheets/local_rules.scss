@@ -6,28 +6,45 @@
 
 @import 'local_sass_variables';
 
-/* -------------------------------------------- */
-/* ---- Draft Watermark on Static Sections ---- */
-/* -------------------------------------------- */
+/* ------------------------- */
+/* ---- Static Sections ---- */
+/* ------------------------- */
+#content-wrapper section ul li {
+   margin-bottom: 11px;
+}
 #content-wrapper section.draft {
    position: relative;
 }
+#content-wrapper section.draft:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   border: 3px dashed rgba($uw-red, 0.2);
+}
 #content-wrapper section.draft:after {
-    content: "DRAFT";
-    position: absolute;
-    display: inline-flex;
-    justify-content: center;
-    box-sizing: border-box;     
-    height: auto;
-    top: 37.5%;
-    text-align: center;
-    width: auto;
-    font-size: 400%;
-    color: $uw-red;
-    line-height: 1;
-    pointer-events: none;  
-    opacity: 0.3;
-    transform: rotate(18deg);
+   content: "DRAFT";
+   position: absolute;
+   box-sizing: border-box;     
+   top: 8px;
+   right: 8px;
+   width: auto;
+   font-size: 5rem;
+   color: $uw-red;
+   pointer-events: none;  
+   opacity: 0.2;
+   display: inline-block;
+   line-height: 80%;
+}
+#content-wrapper section a[href="null"] {
+}
+#content-wrapper section a[href="null"]:after {
+   content: "[link needed]";
+   font-style: normal;
+   font-size: 0.75em;
+   vertical-align: super;
 }
 
 /* --------------------------- */
@@ -81,6 +98,13 @@ a.external:after {
 .flex_hfill {
    flex: 1 0 auto;
 }
+
+/* turn off some browser styling on abbr as bootstrap handles it*/
+abbr {
+   text-decoration: none !important;
+   border-bottom: 2px dotted $uw-purple !important;
+}
+
 
 /* --------------------------- */
 /* ---- Bootstrap Buttons ---- */
