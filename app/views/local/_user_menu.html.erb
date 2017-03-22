@@ -11,6 +11,14 @@
             <span class="glyphicon glyphicon-menu-up" ></span>
         </button>
         <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <% if can? :read, :admin_dashboard %>
+               <li role="menuitem">
+                  <%= link_to t("sufia.toolbar.admin.menu"), sufia.admin_path %>
+               </li>
+               <li role="separator" class="divider"></li>
+            <% end %>
+         
+
             <li role="menuitem"><%= link_to t("sufia.toolbar.dashboard.my"), sufia.dashboard_index_path %></li>
 
             <li role="separator" class="divider"></li>
