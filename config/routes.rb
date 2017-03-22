@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  %w(hello help faq terms_of_use withdrawal).each do |action|
+  %w(hello help faq terms_of_use withdrawal privacy).each do |action|
       get action, controller: 'static', action: action, as: action
   end
 
