@@ -4,7 +4,7 @@ module StaticHelper
    end 
 
    def get_page_title
-      t('sufia.controls.' + action_name)
+      t('sufia.statics.' + action_name)
    end
 
    def default_page_title
