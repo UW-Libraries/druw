@@ -41,6 +41,11 @@
                 <%= render partial: 'local/about_menu' %>
              </li>
 
+
+             <li>
+                <%= render partial: 'local/deposit_menu' %>
+             </li>
+
              <li <%= 'class=active' if current_page?(sufia.help_path) %>>
                 <%= link_to t(:'sufia.controls.help'), sufia.help_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
              </li>
