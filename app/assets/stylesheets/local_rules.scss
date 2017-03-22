@@ -176,7 +176,8 @@ button.dropdown-toggle[aria-expanded="false"] span.glyphicon.glyphicon-menu-up {
 /* when the dropdown is open, the button looks inset */
 #user_menu.open > button.dropdown-toggle,
 #main_navigation button.navbar-toggle[aria-expanded=true], 
-#about_menu.open > button.dropdown-toggle {
+#about_menu.open > button.dropdown-toggle,
+#deposit_menu.open > button.dropdown-toggle {
    box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
    padding-top: calc(#{$button-tb-padding} + 2px);
    padding-bottom: calc(#{$button-tb-padding} - 2px);
