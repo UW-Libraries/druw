@@ -17,9 +17,20 @@ a[href="#"] {
 #content-wrapper h2 {
    color: $uw-metal-gold;
 }
-#content-wrapper section ul li {
-   margin-bottom: 11px;
+#content-wrapper p {
+   line-height: 1.5;
 }
+
+p, ul, ol,
+#content-wrapper section ul li {
+   margin-bottom: 0.5rem;
+}
+#content-wrapper blockquote {
+   font-size: inherit;
+   padding: 0 2em;
+   margin-bottom: 0.5rem;
+}
+
 #content-wrapper section.draft {
    position: relative;
 }
