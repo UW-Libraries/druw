@@ -9,20 +9,20 @@
     <li>
        <a class="dropdown-item" href="#">About</a>
     </li>
-    <li <%= 'class=active' if current_page?(faq_path) %>>
+    <li>
         <%= link_to t(:'sufia.statics.faq'), faq_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li>
        <a class="dropdown-item" href="#">Collection Policy</a>
     </li>
-    <li <%= 'class=active' if current_page?(terms_of_use_path) %>>
+    <li>
         <%= link_to t(:'sufia.statics.terms_of_use'), terms_of_use_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li>
        <a class="dropdown-item" href="#">Terms of Deposit</a>
     </li>
     <li>
-       <a class="dropdown-item" href="#">Withdrawal Policy</a>
+       <%= link_to t(:'sufia.statics.withdrawal'), withdrawal_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li>
        <a class="dropdown-item" href="#">Protected Information Policy</a>
