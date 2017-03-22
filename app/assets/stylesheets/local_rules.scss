@@ -6,9 +6,17 @@
 
 @import 'local_sass_variables';
 
+a[href="#"] {
+   color: $uw-orange !important;
+}
+
+
 /* ------------------------- */
 /* ---- Static Sections ---- */
 /* ------------------------- */
+#content-wrapper h2 {
+   color: $uw-metal-gold;
+}
 #content-wrapper section ul li {
    margin-bottom: 11px;
 }
@@ -23,6 +31,7 @@
    left: 0;
    right: 0;
    border: 3px dashed rgba($uw-red, 0.2);
+   z-index: -1;
 }
 #content-wrapper section.draft:after {
    content: "DRAFT";
@@ -37,6 +46,7 @@
    opacity: 0.2;
    display: inline-block;
    line-height: 80%;
+   z-index: -1;
 }
 #content-wrapper section a[href="null"] {
 }
