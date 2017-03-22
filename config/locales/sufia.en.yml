@@ -17,5 +17,6 @@ en:
     statics:
       hello: "Hello"
       faq: "Frequently Asked Questions"
+      privacy: "Privacy Policy"
       terms_of_use: "Terms of Use"
       withdrawal: "Withdrawal Policy"
