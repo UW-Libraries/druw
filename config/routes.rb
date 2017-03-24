@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     end
   end
 
-  %w(collection_policy help faq privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
+  %w(about collection_policy help faq privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
       get action, controller: 'static', action: action, as: action
   end
 

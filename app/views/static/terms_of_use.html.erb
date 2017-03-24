@@ -12,31 +12,8 @@
         in the metadata that accompanies each file. Usually the terms will 
         fall under one of four categories:
     </p>
-    <ul>
-        <li><a href="null">All Rights Reserved</a>
-            <p> The rights holder does not allow any copying or derivative
-                works. If you wish to use the material in a way that exceeds
-                fair use, you must contact the author/rights holder to obtain
-                explicit approval.
-            </p>
-        </li>
-        <li><a href="https://creativecommons.org/licenses/">Creative Commons</a>
-            <p> A set of licenses that outline users’ responsibilities
-                regarding attribution, commercialization, derivative works, and
-                licensing of derivative works.
-            </p>
-        </li>
-        <li><a href="null">CC0</a>
-            <p> The rights holder waives all of their interests in the work;
-                you may use the material any way you wish.
-            </p>
-        </li>
-        <li><a href="https://creativecommons.org/about/pdm/">Public Domain</a>
-            <p> The materials are free of any known IP restrictions, and you
-                may use the material in any way.
-            </p>
-        </li>
-    </ul>
+    
+    <%= render partial: '/local/licenses_list' %>
 
     <p> While <%= t('sufia.product_name') %> is committed to supporting the 
         forthcoming <a href="null">UW Policy on Open Access</a>, some of the 
@@ -48,7 +25,7 @@
         <a href="null">Copyright FAQ</a> for more information on intellectual 
         property rights. If you have any questions about how an item in 
         <%= t('sufia.product_name') %> may be used, please 
-        <a href="null">contact the repository librarian</a>.
+        <%=contact_link('contact the repository librarian')%>.
     </p>
     
     <p> By using <%= t('sufia.product_name') %>, you agree to the following conditions:
