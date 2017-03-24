@@ -8,7 +8,11 @@ module StaticHelper
    end
 
    def default_page_title
-      get_page_title + ' // ' + get_repo_name
+      if controller_name == 'static'
+	 controller_name + '  ' + get_page_title + ' // ' + get_repo_name
+      else
+         super
+      end
    end
 
    def static_page_h1 
