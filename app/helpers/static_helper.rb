@@ -15,6 +15,8 @@ module StaticHelper
       get_page_title
    end
 
-
+   def contact_link(linktext)
+       link_to linktext, about_path(:anchor => 'about_contact')
+   end
 end 
 

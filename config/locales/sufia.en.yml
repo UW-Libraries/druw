@@ -19,6 +19,7 @@ en:
          new: "New Work"
 
     statics:
+      about: "About"
       collection_policy: "Collection Policy"
       faq: "Frequently Asked Questions"
       privacy: "Privacy Policy"

@@ -9,7 +9,7 @@
         from the following categories:
     </p>
     <%= render partial: '/local/licenses_list' %>
-    <p> Please <a href="null">contact the repository librarian</a> if these 
+    <p> Please <%=contact_link('contact the repository librarian')%> if these 
         options are insufficient.
     </p>
     
@@ -43,7 +43,7 @@
         <li>Depositor has read, understood, and agreed to the 
             <%=t('sufia.product_name')%> <a href="null">policies and terms</a>
         </li>
-        <li>>As <%= t('sufia.product_name') %> is a resource of the University
+        <li>As <%= t('sufia.product_name') %> is a resource of the University
             of Washington, you agree to the
             <a href="https://www.washington.edu/online/terms/">University of
             Washington Website Terms and Conditions of Use</a>, including all
@@ -51,7 +51,7 @@
         </li>      
     </ul>
     
-    <p> UW reserves the right to <%=link_to t(:'sufia.statics.withdrawal') do%>
+    <p> UW reserves the right to <%=link_to withdrawal_path do%>
         withdraw<%end%> files that have violated these Terms of Deposit.
     </p>
 </div>
