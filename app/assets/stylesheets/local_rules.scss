@@ -14,7 +14,8 @@ a[href="#"] {
 /* ------------------------- */
 /* ---- Static Sections ---- */
 /* ------------------------- */
-#content-wrapper h2 {
+#content-wrapper h2,
+#content-wrapper h3 {
    color: $uw-metal-gold;
 }
 #content-wrapper p {
@@ -22,7 +23,8 @@ a[href="#"] {
 }
 
 p, ul, ol,
-#content-wrapper section ul li {
+#content-wrapper section ul li,
+#content-wrapper section ol li {
    margin-bottom: 0.5rem;
 }
 #content-wrapper blockquote {
@@ -31,10 +33,10 @@ p, ul, ol,
    margin-bottom: 0.5rem;
 }
 
-#content-wrapper section.draft {
+#content-wrapper .draft {
    position: relative;
 }
-#content-wrapper section.draft:before {
+#content-wrapper .draft:before {
    content: "";
    position: absolute;
    top: 0;
@@ -44,7 +46,7 @@ p, ul, ol,
    border: 3px dashed rgba($uw-red, 0.2);
    z-index: -1;
 }
-#content-wrapper section.draft:after {
+#content-wrapper .draft:after {
    content: "DRAFT";
    position: absolute;
    box-sizing: border-box;     
@@ -90,11 +92,12 @@ p, ul, ol,
 /* LINKS*/
 a:hover,
 a:focus {
-   color: $uw-metal-gold;
+   color: $uw-purple;
 }
 /* links in main section of pages get bold */
 main a {
   font-weight: bold;
+  color: $uw-blue;
 }
 /* external links */
 a.external:after {

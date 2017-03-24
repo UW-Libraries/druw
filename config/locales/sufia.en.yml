@@ -19,7 +19,7 @@ en:
          new: "New Work"
 
     statics:
-      hello: "Hello"
+      collection_policy: "Collection Policy"
       faq: "Frequently Asked Questions"
       privacy: "Privacy Policy"
       protected_info: "Protected Information Policy"
