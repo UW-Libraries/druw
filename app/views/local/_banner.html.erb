@@ -40,7 +40,11 @@
              <li>
                 <%= render partial: 'local/about_menu' %>
              </li>
-
+             
+             <li>
+                <%= link_to "Browse", search_catalog_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             </li>
+             
              <li>
                 <%= render partial: 'local/deposit_menu' %>
              </li>
