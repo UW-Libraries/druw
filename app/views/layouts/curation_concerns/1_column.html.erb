@@ -6,8 +6,9 @@
 
 <body>
 <a href="#skip_to_content" class="sr-only">Skip to Content</a>
-<%= render partial: '/masthead' %>
-<%= render partial: '/controls' %>
+
+<%= render partial: '/local/banner' %>
+
 <%= render partial: '/flash_msg' %>
 <div id="content-wrapper" class="container">
   <%= render_breadcrumbs builder: Sufia::BootstrapBreadcrumbsBuilder %>

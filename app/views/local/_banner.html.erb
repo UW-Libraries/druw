@@ -42,7 +42,7 @@
              </li>
              
              <li>
-                <%= link_to "Browse", search_catalog_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+                <%= link_to "Browse", main_app.search_catalog_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
              </li>
              
              <li>
@@ -50,7 +50,7 @@
              </li>
 
              <li <%= 'class=active' if current_page?(sufia.help_path) %>>
-                <%= link_to t(:'sufia.controls.help'), sufia.help_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+                <%= link_to t(:'sufia.statics.help'), sufia.help_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
              </li>
 
           </ul>
