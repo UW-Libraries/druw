@@ -1,0 +1,67 @@
+<header role="banner">
+  <div class="flex_row"> 
+     <div id="header_logo_container">
+        <%= render partial: '/logo' %>
+     </div>
+  
+     <!-- makes horizontal space -->
+     <div class="flex_hfill"></div>
+
+     <div id="header_notifications_container">
+        <% if user_signed_in? %>
+           <%= link_to sufia.notifications_path, class: 'btn btn-primary' do %>
+              <span class="text">Notifications</span>
+              <%= render partial: 'users/notify_number' %>
+           <% end %>
+        <% end %> 
+     </div>
+
+     <div id="user_menu_container">
+        <%= render partial: '/local/user_menu' %>
+     </div>
+  </div>
+  <nav class="flex_row" role="navigation">
+
+     <div id="main_navigation" class="navbar">
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+           </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main_menu">
+           <ul class="nav navbar-nav">
+             <li <%= 'class=active' if current_page?(sufia.root_path) %>>
+                <%= link_to t(:'sufia.controls.home'), sufia.root_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             </li>
+
+
+             <li>
+                <%= render partial: 'local/about_menu' %>
+             </li>
+             
+             <li>
+                <%= link_to "Browse", search_catalog_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             </li>
+             
+             <li>
+                <%= render partial: 'local/deposit_menu' %>
+             </li>
+
+             <li <%= 'class=active' if current_page?(sufia.help_path) %>>
+                <%= link_to t(:'sufia.controls.help'), sufia.help_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             </li>
+
+          </ul>
+        </div>
+     </div>
+
+
+     <div id="header_search">
+        <%= render partial: 'catalog/search_form' %>
+     </div>
+
+
+  </nav>
+</header>

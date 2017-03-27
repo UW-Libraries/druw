@@ -34,6 +34,10 @@ Rails.application.routes.draw do
     end
   end
 
+  %w(about collection_policy help faq privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
+      get action, controller: 'static', action: action, as: action
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

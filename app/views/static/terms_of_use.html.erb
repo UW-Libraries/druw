@@ -1,0 +1,50 @@
+<div class="draft">
+    <p> The ability to view materials in 
+        <abbr title="<%=t('sufia.product_long_name')%>">
+        <%= t('sufia.product_name') %></abbr> is a stand-alone permission. 
+        Materials’ availability does not imply that they may be used in any 
+        way the accessor wishes; apart from <a href="null">fair use</a>, the 
+        intellectual property owner (often the author) of the materials has 
+        the right to dictate the terms of use - including whether users can 
+        copy and distribute the material. <%= t('sufia.product_name') %> requires 
+        all depositors to indicate their wishes for these terms, often by 
+        assigning a license to the materials. This information is recorded 
+        in the metadata that accompanies each file. Usually the terms will 
+        fall under one of four categories:
+    </p>
+    
+    <%= render partial: '/local/licenses_list' %>
+
+    <p> While <%= t('sufia.product_name') %> is committed to supporting the 
+        forthcoming <a href="null">UW Policy on Open Access</a>, some of the 
+        materials in <%= t('sufia.product_name') %> Archive are under a 
+        limited-time embargo. If you would like to use the material before the 
+        embargo period ends, you must contact the author to obtain express 
+        permission. See our <a href="null">Data Citation Guide</a> for 
+        attribution and citation best practices, and our 
+        <a href="null">Copyright FAQ</a> for more information on intellectual 
+        property rights. If you have any questions about how an item in 
+        <%= t('sufia.product_name') %> may be used, please 
+        <%=contact_link('contact the repository librarian')%>.
+    </p>
+    
+    <p> By using <%= t('sufia.product_name') %>, you agree to the following conditions:
+    </p>
+    <ul>
+        <li>Apart from fair use or express permission from the rights holder, 
+            you will use the materials only as permitted by the license that 
+            accompanies it and give attribution to the author(s) when the 
+            license indicates it is required.
+        </li>
+        <li>You will not use the materials to identify individuals or otherwise
+            infringe the privacy or confidentiality of individuals discovered 
+            inadvertently or intentionally in the materials.
+        </li>
+        <li>As <%= t('sufia.product_name') %> is a resource of the University 
+            of Washington, you agree to the 
+            <a href="https://www.washington.edu/online/terms/">University of 
+            Washington Website Terms and Conditions of Use</a>, including all 
+            disclaimer of warranties, exclusions and limitations of liability.
+        </li>
+    </ul>
+</div>

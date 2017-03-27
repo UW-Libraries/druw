@@ -4,7 +4,77 @@
    This is an SCSS file, so you can use any defined variables and mixins.
 */
 
-/* Restyle the image header on the homepage */
+@import 'local_sass_variables';
+
+a[href="#"] {
+   color: $uw-orange !important;
+}
+
+
+/* ------------------------- */
+/* ---- Static Sections ---- */
+/* ------------------------- */
+#content-wrapper h2,
+#content-wrapper h3 {
+   color: $uw-metal-gold;
+}
+#content-wrapper p {
+   line-height: 1.5;
+}
+
+p, ul, ol,
+#content-wrapper ul li,
+#content-wrapper ol li {
+   margin-bottom: 0.5rem;
+}
+#content-wrapper blockquote {
+   font-size: inherit;
+   padding: 0 2em;
+   margin-bottom: 0.5rem;
+}
+
+#content-wrapper .draft {
+   position: relative;
+}
+#content-wrapper .draft:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   border: 3px dashed rgba($uw-red, 0.2);
+   z-index: -1;
+}
+#content-wrapper .draft:after {
+   content: "DRAFT";
+   position: absolute;
+   box-sizing: border-box;     
+   top: 8px;
+   right: 8px;
+   width: auto;
+   font-size: 5rem;
+   color: $uw-red;
+   pointer-events: none;  
+   opacity: 0.2;
+   display: inline-block;
+   line-height: 80%;
+   z-index: -1;
+}
+#content-wrapper a[href="null"]:after {
+   content: "[link needed]";
+   font-style: normal;
+   font-size: 0.75em;
+   vertical-align: super;
+}
+
+/* --------------------------- */
+/* ---- Suzzallo Masthead ---- */
+/* --------------------------- */
+.image-masthead {
+   border-bottom: none;
+   margin-bottom: 0;
+}
 .image-masthead .background-container {
    -webkit-filter: none;
            filter: none;
@@ -13,67 +83,436 @@
    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
-.image-masthead .navbar {
-   background-color: transparent;
-   border-bottom-width: 0;
+/* --------------------- */
+/* ---- GENERAL CSS ---- */
+/* --------------------- */
+
+/* LINKS*/
+a:hover,
+a:focus {
+   color: $uw-purple;
+}
+/* links in main section of pages get bold */
+main a {
+  font-weight: bold;
+  color: $uw-blue;
+}
+/* external links */
+a.external:after {
+   content: "\e164";
+   font-family: 'Glyphicons Halflings';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1rem;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   display: inline-table;
+   position: relative;
+   top: -2px;
 }
 
-.image-masthead {
-   border-bottom: none;
+/* make inputs have black text (not gray) */
+.form-control {
+   color: #000;
 }
 
-.image-masthead .navbar .row::before, 
-.image-masthead .navbar .row::after {
-   content: "";
-   clear: both;
+/* CSS equivalent of LaTeX's \hfill for use in flex */
+.flex_hfill {
+   flex: 1 0 auto;
 }
 
-.image-masthead .navbar li > a { 
-   background: #4B2E83; /* switch to scss or create local colors */
-   color: #fff;
-   border-radius: 9px 9px 0 0;
-}
-
-.image-masthead .navbar .active > a, .image-masthead .navbar .active > a:hover, .image-masthead .navbar .active > a:focus {
-    background-color: #85754D;
-    color: #fff;
-}
-.image-masthead .navbar li > a:hover, .image-masthead .navbar li > a:focus {
-    color: #000;
-    background-color: #e8e3d3;
-}
-.image-masthead .navbar li + li {
-  margin-left: 2px;
-}
-
-/* Would greatly prefer using flex to center this eventually */
-form#search-form-header .input-group {
-    margin-bottom: 0;
+/* turn off some browser styling on abbr as bootstrap handles it*/
+abbr {
+   text-decoration: none !important;
+   border-bottom: 2px dotted $uw-purple !important;
 }
 
 
-.wordmark {
-  background: image-url("uwlib_wordmark.png") no-repeat 0 0 #4b2e83;
-  background-size:100% 100%;
-  display:block;
-  position:absolute;
-  top:0;
-  left:80px;
-  height:45px;
-  overflow:hidden;
-  text-indent:-9999px;
-  width:130px;
-  z-index:3002
+/* --------------------------- */
+/* ---- Bootstrap Buttons ---- */
+/* --------------------------- */
+.btn {
+   @extend %local-button-padding;
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary:active:focus {
+    @extend %local-button-hover-focus;
 }
 
-@media(min-width:768px) {
-   .patch {
+/* ------------------------ */
+/* ---- DROPDOWN MENUS ---- */
+/* ------------------------ */
+.dropdown-menu {
+   background-color: $uw-light-grey;
+}
+.dropdown-menu > li {
+   padding: 0.125em 0;
+}
+.dropdown-menu > li > a {
+   color: #000;
+   position: relative;
+   padding: 0.2em 1.25em;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+   @extend %local-button-hover-focus;
+   outline: none;
+}
+/* we have customized to use a glyphicon chevron for the carat */
+button.dropdown-toggle[aria-expanded="true"] span.glyphicon-menu-down {
+   display: none !important;
+}
+button.dropdown-toggle[aria-expanded="false"] span.glyphicon.glyphicon-menu-up {
+   display: none !important;
+}
+/* divider in dropdown menu */
+.dropdown-menu .divider {
+   background-color: $uw-medium-grey;
+   margin: 0;
+   padding: 0;
+}
+/* when the dropdown is open, the button looks inset */
+#user_menu.open > button.dropdown-toggle,
+#main_navigation button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle,
+#deposit_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
+   padding-top: calc(#{$button-tb-padding} + 2px);
+   padding-bottom: calc(#{$button-tb-padding} - 2px);
+}
+/* adjust glyphicons in user_menu */
+#user_menu > button.dropdown-toggle .glyphicon {
+   top: 2px;
+}
+
+
+/* ------------------------- */
+/* ---- HEADER / BANNER ---- */
+/* ------------------------- */
+header[role=banner] {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;   
+   background-color: $uw-purple;
+}
+header[role=banner] div.flex_row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* ----------------------- */
+/* ---- HEADER: LOGOS ---- */
+/* ----------------------- */
+#header_logo_container {
+   position: static;
+   flex: 0 0 auto;
+   width: 210px; /* uwlib_logo left + width */
+   height: 45px;
+}
+.uw_logo {
+   background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
+   background-size: 100% 100%;
+   display: block;
+   height: 45px;
+   position: absolute;
+   text-indent: -999px;
+   top: 0;
+   width: 65px;
+   z-index: 3001;
+}
+.uwlib_logo {
+   background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
+   background-size: 100% 100%;
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 80px; /* 15px space between logos */
+   height: 45px;
+   overflow:h idden;
+   text-indent: -9999px;
+   width: 130px;
+   z-index: 3002
+}
+@media(min-width:768px) { /* enlarge UW and Library logos when wider window */
+   #header_logo_container {
+      width: 325px; /* uwlib logo left + uwlib logo width */
+      height: 65px;
+   }
+   .uw_logo {
       height:65px;
       width:95px
    }
-   .wordmark {
-      height:65px;
-      width:200px;
-      left:125px
+   .uwlib_logo {
+      height: 65px;
+      width: 200px;
+      left: 125px /* 30px space between the two logos */
    }
+}
+
+/* ------------------------------- */
+/* ---- HEADER: NOTIFICATIONS ---- */
+/* ------------------------------- */
+#header_notifications_container {
+   flex: 0 0 auto;
+}
+#header_notifications_container a {
+   border-color: transparent;
+}
+#header_notifications_container a:hover,
+#header_notifications_container a:focus {
+    @extend %local-button-hover-focus;
+}
+#header_notifications_container a:focus {
+   outline: none;
+}
+#header_notifications_container .label {
+   background-color: #000;
+   font-size: inherit;
+   font-weight: normal;
+}
+#header_notifications_container .text {
+   display: none;
+}
+@media(min-width:768px) { /* only show the text when wider window */
+   #header_notifications_container .text {
+      display: inline-block;
+   }
+}
+
+/* --------------------------- */
+/* ---- HEADER: USER MENU ---- */
+/* --------------------------- */
+#user_login_link,
+#user_menu_button {
+   border-color: transparent;
+   font-weight: normal;
+}
+#user_login_link:hover,
+#user_login_link:focus, 
+#user_menu_button:hover,
+#user_menu_button:focus {
+    @extend %local-button-hover-focus;
+}
+#user_menu > ul {
+   z-index: 20; /* so that the menu goes over the nav menu when it appears */
+}
+
+@media (max-width: 767px) {
+   #user_menu_button .visible-xs-block {
+      display: inline-block !important;
+   }
+}
+
+/* --------------------------------- */
+/* ---- HEADER: MAIN NAVIGATION ---- */
+/* --------------------------------- */
+header[role=banner] nav {
+   background-color: $uw-dark-grey;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+   position: relative;
+}
+header[role=banner] nav #main_navigation {
+   flex: 0 0 auto;
+   margin-bottom: 0;
+   padding: 0;
+   border-radius: 0;
+   border: 0;
+   position: static;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
+}
+@media(min-width:768px) { 
+   header[role=banner] nav #main_navigation {
+      display: flex;
+      align-items: center;
+   }
+}
+
+/* -------------------------------------------------- */
+/* ---- Main Menu Header (includes toggle button ---- */
+/* -------------------------------------------------- */
+header[role=banner] nav #main_navigation .navbar-header {
+   float: none;
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+#main_navigation button.navbar-toggle {
+   border-color: transparent;
+   float: none;
+   margin-right: 0;
+   @extend %local-button-padding;
+   min-height: 2.25em;  
+   background-color: $uw-purple; 
+}
+#main_navigation button.navbar-toggle span.icon-bar {
+   border-color: #fff;
+}
+#main_navigation button.navbar-toggle:hover,
+#main_navigation button.navbar-toggle:focus {
+    @extend %local-button-hover-focus;
+}
+#main_navigation button.navbar-toggle span.icon-bar{
+   background-color: #fff;
+}
+
+/* ------------------------------------------------ */
+/* ---- Main Menu (the actual collapsing menu) ---- */
+/* ------------------------------------------------ */
+#main_navigation div.navbar-collapse {
+   padding-left: 0;
+   padding-right: 0;
+}
+#main_navigation div.navbar-collapse.in > ul {
+   float: none;
+   position: absolute;
+   z-index: 1000;
+   top: $main-menu-height; /* makes the open menu (narrow) line up with grey bar */
+   right: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   background-color: $uw-dark-grey;
+   z-index: 10; /* goes under an open user menu */
+}
+#main_navigation div.navbar-collapse > ul > li > .btn,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   @extend %local-button-padding;
+   display: block;
+   vertical-align: middle;
+   border-radius: 0;
+   border-color: #333 transparent transparent;   
+}
+/* ---- Split Button in Main Menu ---- */
+#main_navigation div.navbar-collapse > ul > li > div.btn-group {
+   display: block;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   float: none;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+   display: none;
+   padding-left: 0.375em;
+   padding-right: 0.375em;   
+   margin-left: 1px;
+}
+#main_navigation div.navbar-collapse > ul > li > a,
+#main_navigation div.navbar-collapse > ul > li > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button {
+   color: #fff;
+}
+#main_navigation div.navbar-collapse > ul > li > a:hover,
+#main_navigation div.navbar-collapse > ul > li > a:focus,
+#main_navigation div.navbar-collapse > ul > li > button:hover,
+#main_navigation div.navbar-collapse > ul > li > button:focus,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:hover,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:focus {
+   @extend %local-button-hover-focus;
+}
+
+@media(min-width:768px) {
+   #main_navigation div.navbar-collapse.in > ul {
+       position: static;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+   }
+   #main_navigation div.navbar-collapse > ul > li + li {
+      margin-left: 0.75em;
+   }
+   #main_navigation div.navbar-collapse > ul > li > .btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      border-radius: $border-radius-base;
+   }
+   #main_navigation div.navbar-collapse > ul > li > a,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      background-color: $uw-purple;
+      border-color: transparent;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group {
+      display: inline-block;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      float: left;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > a {
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+      display: inline-block;
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+   }
+}
+
+/*--------------------- */
+/* ---- SEARCH BAR ---- */
+/*--------------------- */
+#header_search { 
+   flex: 1 0 auto;
+   margin-left: 15px;
+}
+#header_search form#search-form-header {
+   float: right;
+   width: 100%;
+   margin-top: 0;
+}
+@media(min-width:768px) {
+   #header_search form#search-form-header {
+       width: 85%;
+   }
+}
+#header_search form#search-form-header div.input-group {
+   margin-bottom: 0;
+}
+input#search-field-header {
+   border-color: #fff;
+   @extend %local-button-padding;
+   height: auto;
+}
+/* search bar placeholder - have to be separate so browsers get them */
+input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;  
+}
+input#search-field-header::-moz-placeholder { /* Firefox 19+ */
+   color: $uw-dark-grey !important;
+   font-style: italic;  
+   opacity: 0.875;  
+}
+input#search-field-header:-ms-input-placeholder { /* IE 10+ */
+   color: $uw-dark-grey !important;
+   font-style: italic;  
+   opacity: 0.875;  
+}
+input#search-field-header:-moz-placeholder { /* Firefox 18- */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;  
+}
+input#search-field-header:focus {
+   border-color: $uw-orange;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6); 
 }
