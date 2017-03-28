@@ -11,6 +11,40 @@ a[href="#"] {
 }
 
 
+a.skip-link {
+    position: absolute;
+    top: 0.5em;
+    left: -12em;
+    display: inline-block;
+    color: transparent;
+    background: transparent;
+    -webkit-transition: left .5s ease-out, background .25s linear;
+            transition: left .5s ease-out, background .25s linear;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(0,0,0);
+    font-weight: bold;
+    z-index: 5000;
+    border-radius: 0px $border-radius-base $border-radius-base 0px;    
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+}
+
+a.skip-link:focus {
+    pointer-events: auto;
+    margin: 0;
+    position: absolute;
+    background: $uw-yellow;
+    color: #000;
+    outline:0;
+    left: 0;
+    -webkit-transition: left .5s ease-in, background .25s linear;
+            transition: left .5s ease-in, background .25s linear;
+}
+a.skip-link:hover {
+    text-decoration: underline;
+}
+
 /* ------------------------- */
 /* ---- Static Sections ---- */
 /* ------------------------- */
@@ -219,26 +253,33 @@ header[role=banner] div.flex_row {
    height: 45px;
 }
 .uw_logo {
-   background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
+   background-color: $uw-purple;
+   background-image: image-url("uw_patch.png");
+   background-repeat: no-repeat; 
+   background-position: 0 0;
    background-size: 100% 100%;
    display: block;
    height: 45px;
    position: absolute;
-   text-indent: -999px;
    top: 0;
    width: 65px;
    z-index: 3001;
+   overflow: hidden;
+   color: transparent !important;
 }
 .uwlib_logo {
-   background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
+   background-color: $uw-purple;
+   background-image: image-url("uwlib_wordmark.png");
+   background-repeat: no-repeat;
+   background-position: 0 0;
    background-size: 100% 100%;
    display: block;
    position: absolute;
    top: 0;
    left: 80px; /* 15px space between logos */
    height: 45px;
-   overflow:h idden;
-   text-indent: -9999px;
+   overflow: hidden;
+   color: transparent !important;
    width: 130px;
    z-index: 3002
 }
@@ -257,6 +298,12 @@ header[role=banner] div.flex_row {
       left: 125px /* 30px space between the two logos */
    }
 }
+.uw_logo:focus,
+.uwlib_logo:focus {
+   outline: 1px dotted $uw-yellow;  
+   outline-offset: -1px;
+}
+
 
 /* ------------------------------- */
 /* ---- HEADER: NOTIFICATIONS ---- */
