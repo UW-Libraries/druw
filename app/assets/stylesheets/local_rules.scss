@@ -521,67 +521,89 @@ header[role=banner] nav #main_navigation .navbar-header {
 /*--------------------- */
 #header_search { 
    flex: 1 0 auto;
-   margin-left: 15px;
+   margin-left: 2.25rem;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
 }
-#header_search form#search-form-header {
-   float: right;
-   width: 100%;
-   margin-top: 0;
+
+form#search-form-header {
+   display: flex;
 }
-@media(min-width:768px) {
-   #header_search form#search-form-header {
-       width: 85%;
-   }
-}
-#header_search form#search-form-header div.input-group {
-   margin-bottom: 0;
-}
+
 input#search-field-header {
-   border-color: #fff;
    @extend %local-button-padding;
-   height: auto;
+   border-radius: $border-radius-base 0 0 $border-radius-base;
+   border: solid 1px #fff;
+   color: #000;
+   display: block;
+   flex: 1 0 auto;
+   font-size: inherit;
+   background-color: #fff;
+   background-image: none;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+   font-family: inherit;
+   min-width: 0 !important;  
+}
+input#search-field-header:focus {
+   border-color: $uw-orange;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
 }
 /* search bar placeholder - have to be separate so browsers get them */
 input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
    color: $uw-dark-grey !important;
    font-style: italic;
-   opacity: 0.875;  
+   opacity: 0.875;
 }
 input#search-field-header::-moz-placeholder { /* Firefox 19+ */
    color: $uw-dark-grey !important;
-   font-style: italic;  
-   opacity: 0.875;  
+   font-style: italic;
+   opacity: 0.875;
 }
 input#search-field-header:-ms-input-placeholder { /* IE 10+ */
    color: $uw-dark-grey !important;
-   font-style: italic;  
-   opacity: 0.875;  
+   font-style: italic;
+   opacity: 0.875;
 }
 input#search-field-header:-moz-placeholder { /* Firefox 18- */
    color: $uw-dark-grey !important;
    font-style: italic;
-   opacity: 0.875;  
+   opacity: 0.875;
 }
-input#search-field-header:focus {
-   border-color: $uw-orange;
-   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
-           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6); 
+
+
+button#search-submit-header {
+   flex: 0 0 auto;
+   border-radius: 0 $border-radius-base $border-radius-base 0;
 }
 
 /* ---------------- */
 /* ---- footer ---- */
 /* ---------------- */
 /* make the footer sticky */
+
+
 html {
    height: 100%;
 }
 body {
-   min-height: 100%;
+   height: 100vh;
    display: flex;
    flex-direction: column;
 }
 main {
-   flex: 1;
+   flex: 1 0 auto;
 }   
+footer { 
+   flex-shrink: 0;
+}
 
 
+/* ---- IE FIXES ---- */
+/* undoes some sidebar borking bootstrap does to IE */
+@-ms-viewport{ width: auto !important; }
