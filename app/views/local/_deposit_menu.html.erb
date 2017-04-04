@@ -1,5 +1,5 @@
 <div class="btn-group" id="deposit_menu">
-   <%= link_to [:new, Sufia.primary_work_type.model_name.singular_route_key],
+   <%= link_to [main_app, :new, Sufia.primary_work_type.model_name.singular_route_key],
        class: "btn" do %>
        Deposit
    <% end %> 
@@ -11,7 +11,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li role="menuitem">
-       <%= link_to t('sufia.toolbar.works.new'),  [:new, Sufia.primary_work_type.model_name.singular_route_key], :'class'=>'dropdown-item' %>
+       <%= link_to t('sufia.toolbar.works.new'),  [main_app, :new, Sufia.primary_work_type.model_name.singular_route_key], :'class'=>'dropdown-item' %>
     </li>
     <li role="menuitem">
        <%= link_to t("sufia.toolbar.works.batch"), sufia.new_batch_upload_path, :'class'=>'dropdown-item' %>

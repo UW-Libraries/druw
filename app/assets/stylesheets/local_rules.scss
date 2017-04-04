@@ -10,6 +10,79 @@ a[href="#"] {
    color: $uw-orange !important;
 }
 
+#content-wrapper .draft {
+   position: relative;
+}
+#content-wrapper .draft:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   border: 3px dashed rgba($uw-red, 0.2);
+   z-index: -1;
+}
+#content-wrapper .draft:after {
+   content: "DRAFT";
+   position: absolute;
+   box-sizing: border-box;
+   top: 8px;
+   right: 8px;
+   width: auto;
+   font-size: 5rem;
+   color: $uw-red;
+   pointer-events: none;
+   opacity: 0.2;
+   display: inline-block;
+   line-height: 80%;
+   z-index: -1;
+}
+#content-wrapper a[href="null"]:after {
+   content: "[link needed]";
+   font-style: normal;
+   font-size: 0.75em;
+   vertical-align: super;
+}
+
+
+
+/* -------------------- */
+/* ---- Skip Links ---- */
+/* -------------------- */
+a.skip-link {
+    position: absolute;
+    top: 0.5em;
+    left: -12em;
+    display: inline-block;
+    color: transparent;
+    background: transparent;
+    -webkit-transition: left .5s ease-out, background .25s linear;
+            transition: left .5s ease-out, background .25s linear;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(0,0,0);
+    font-weight: bold;
+    z-index: 5000;
+    border-radius: 0px $border-radius-base $border-radius-base 0px;    
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+}
+
+a.skip-link:focus {
+    pointer-events: auto;
+    margin: 0;
+    position: absolute;
+    background: $uw-yellow;
+    color: #000;
+    outline:0;
+    left: 0;
+    -webkit-transition: left .5s ease-in, background .25s linear;
+            transition: left .5s ease-in, background .25s linear;
+}
+a.skip-link:hover {
+    text-decoration: underline;
+}
 
 /* ------------------------- */
 /* ---- Static Sections ---- */
@@ -31,41 +104,6 @@ p, ul, ol,
    font-size: inherit;
    padding: 0 2em;
    margin-bottom: 0.5rem;
-}
-
-#content-wrapper .draft {
-   position: relative;
-}
-#content-wrapper .draft:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   border: 3px dashed rgba($uw-red, 0.2);
-   z-index: -1;
-}
-#content-wrapper .draft:after {
-   content: "DRAFT";
-   position: absolute;
-   box-sizing: border-box;     
-   top: 8px;
-   right: 8px;
-   width: auto;
-   font-size: 5rem;
-   color: $uw-red;
-   pointer-events: none;  
-   opacity: 0.2;
-   display: inline-block;
-   line-height: 80%;
-   z-index: -1;
-}
-#content-wrapper a[href="null"]:after {
-   content: "[link needed]";
-   font-style: normal;
-   font-size: 0.75em;
-   vertical-align: super;
 }
 
 /* --------------------------- */
@@ -194,8 +232,8 @@ button.dropdown-toggle[aria-expanded="false"] span.glyphicon.glyphicon-menu-up {
 /* ------------------------- */
 header[role=banner] {
    display: block;
-   margin-left: auto;
-   margin-right: auto;   
+   margin-left: 0;
+   margin-right: 0;   
    background-color: $uw-purple;
 }
 header[role=banner] div.flex_row {
@@ -219,26 +257,33 @@ header[role=banner] div.flex_row {
    height: 45px;
 }
 .uw_logo {
-   background: image-url("uw_patch.png") no-repeat 0 0 $uw-purple;
+   background-color: $uw-purple;
+   background-image: image-url("uw_patch.png");
+   background-repeat: no-repeat; 
+   background-position: 0 0;
    background-size: 100% 100%;
    display: block;
    height: 45px;
    position: absolute;
-   text-indent: -999px;
    top: 0;
    width: 65px;
    z-index: 3001;
+   overflow: hidden;
+   color: transparent !important;
 }
 .uwlib_logo {
-   background: image-url("uwlib_wordmark.png") no-repeat 0 0 $uw-purple;
+   background-color: $uw-purple;
+   background-image: image-url("uwlib_wordmark.png");
+   background-repeat: no-repeat;
+   background-position: 0 0;
    background-size: 100% 100%;
    display: block;
    position: absolute;
    top: 0;
    left: 80px; /* 15px space between logos */
    height: 45px;
-   overflow:h idden;
-   text-indent: -9999px;
+   overflow: hidden;
+   color: transparent !important;
    width: 130px;
    z-index: 3002
 }
@@ -257,6 +302,12 @@ header[role=banner] div.flex_row {
       left: 125px /* 30px space between the two logos */
    }
 }
+.uw_logo:focus,
+.uwlib_logo:focus {
+   outline: 1px dotted $uw-yellow;  
+   outline-offset: -1px;
+}
+
 
 /* ------------------------------- */
 /* ---- HEADER: NOTIFICATIONS ---- */
@@ -470,49 +521,89 @@ header[role=banner] nav #main_navigation .navbar-header {
 /*--------------------- */
 #header_search { 
    flex: 1 0 auto;
-   margin-left: 15px;
+   margin-left: 2.25rem;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
 }
-#header_search form#search-form-header {
-   float: right;
-   width: 100%;
-   margin-top: 0;
+
+form#search-form-header {
+   display: flex;
 }
-@media(min-width:768px) {
-   #header_search form#search-form-header {
-       width: 85%;
-   }
-}
-#header_search form#search-form-header div.input-group {
-   margin-bottom: 0;
-}
+
 input#search-field-header {
-   border-color: #fff;
    @extend %local-button-padding;
-   height: auto;
+   border-radius: $border-radius-base 0 0 $border-radius-base;
+   border: solid 1px #fff;
+   color: #000;
+   display: block;
+   flex: 1 0 auto;
+   font-size: inherit;
+   background-color: #fff;
+   background-image: none;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+   font-family: inherit;
+   min-width: 0 !important;  
+}
+input#search-field-header:focus {
+   border-color: $uw-orange;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
 }
 /* search bar placeholder - have to be separate so browsers get them */
 input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
    color: $uw-dark-grey !important;
    font-style: italic;
-   opacity: 0.875;  
+   opacity: 0.875;
 }
 input#search-field-header::-moz-placeholder { /* Firefox 19+ */
    color: $uw-dark-grey !important;
-   font-style: italic;  
-   opacity: 0.875;  
+   font-style: italic;
+   opacity: 0.875;
 }
 input#search-field-header:-ms-input-placeholder { /* IE 10+ */
    color: $uw-dark-grey !important;
-   font-style: italic;  
-   opacity: 0.875;  
+   font-style: italic;
+   opacity: 0.875;
 }
 input#search-field-header:-moz-placeholder { /* Firefox 18- */
    color: $uw-dark-grey !important;
    font-style: italic;
-   opacity: 0.875;  
+   opacity: 0.875;
 }
-input#search-field-header:focus {
-   border-color: $uw-orange;
-   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
-           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6); 
+
+
+button#search-submit-header {
+   flex: 0 0 auto;
+   border-radius: 0 $border-radius-base $border-radius-base 0;
 }
+
+/* ---------------- */
+/* ---- footer ---- */
+/* ---------------- */
+/* make the footer sticky */
+
+
+html {
+   height: 100%;
+}
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+main {
+   flex: 1 0 auto;
+}   
+footer { 
+   flex-shrink: 0;
+}
+
+
+/* ---- IE FIXES ---- */
+/* undoes some sidebar borking bootstrap does to IE */
+@-ms-viewport{ width: auto !important; }
