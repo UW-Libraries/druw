@@ -51,7 +51,7 @@ a[href="#"] {
 /* ---- Skip Links ---- */
 /* -------------------- */
 a.skip-link {
-    position: absolute;
+    position: fixed;
     top: 0.5em;
     left: -12em;
     display: inline-block;
@@ -72,7 +72,7 @@ a.skip-link {
 a.skip-link:focus {
     pointer-events: auto;
     margin: 0;
-    position: absolute;
+    position: fixed;
     background: $uw-yellow;
     color: #000;
     outline:0;
@@ -226,15 +226,58 @@ button.dropdown-toggle[aria-expanded="false"] span.glyphicon.glyphicon-menu-up {
    top: 2px;
 }
 
+/* ------------------------ */
+/* ---- Page Structure ---- */
+/* ------------------------ */
+
+/*
+header#page-header, main#content, footer#page-footer {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  header#page-header, main#content, footer#page-footer {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  header#page-header, main#content, footer#page-footer {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  header#page-header, main#content, footer#page-footer {
+    width: 1170px;
+  }
+}
+*/
+
+
+/* make the footer sticky */
+html {
+   height: 100%;
+}
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+main {
+   flex: 1 0 auto;
+}
+footer {
+   flex-shrink: 0;
+}
+
 
 /* ------------------------- */
 /* ---- HEADER / BANNER ---- */
 /* ------------------------- */
 header[role=banner] {
    display: block;
-   margin-left: 0;
-   margin-right: 0;   
    background-color: $uw-purple;
+   position: relative;
 }
 header[role=banner] div.flex_row {
    display: flex;
@@ -450,6 +493,7 @@ header[role=banner] nav #main_navigation .navbar-header {
    vertical-align: middle;
    border-radius: 0;
    border-color: #333 transparent transparent;   
+   line-height: 1.42857;
 }
 /* ---- Split Button in Main Menu ---- */
 #main_navigation div.navbar-collapse > ul > li > div.btn-group {
@@ -585,25 +629,62 @@ button#search-submit-header {
 /* ---------------- */
 /* ---- footer ---- */
 /* ---------------- */
-/* make the footer sticky */
 
-
-html {
-   height: 100%;
-}
-body {
-   height: 100vh;
+.image-masthead .site-title {
    display: flex;
    flex-direction: column;
-}
-main {
-   flex: 1 0 auto;
-}   
-footer { 
-   flex-shrink: 0;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 0.5em;
+   width: 80%;
+   padding: 0;
 }
 
+div#site-title-message {
+   background-color: rgba($uw-dark-grey, 0.75);
+   color: #fff;
+   padding: 1em;
+   margin: 1em 0 0.5em;
+   width: 95%;
+   border-radius: 2 * $border-radius-base;
+}
 
+div#site-title-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-bottom: 0.5em;
+} 
+
+div#site-title-buttons .btn {
+   min-width: 10em;
+   margin: 0.5em 0.25em;
+}
+
+@media (min-width: 768px) {
+   .image-masthead .site-title { 
+      flex-direction: row;
+   }
+   div#site-title-message {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      margin-right: 3.25em;
+      flex: 1 0 auto;
+      max-width: 75%;
+   }
+   div#site-title-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-botton: 0;
+   }
+   div#site-title-buttons .btn {
+      flex: 0 0 auto;
+      margin: 0.375em 0;
+   }
+}
+
+/* ------------------ */
 /* ---- IE FIXES ---- */
+/* ------------------ */
 /* undoes some sidebar borking bootstrap does to IE */
 @-ms-viewport{ width: auto !important; }

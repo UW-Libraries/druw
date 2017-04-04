@@ -8,20 +8,10 @@
 
 <%= render '/local/banner' %>
 
-<div class="image-masthead">
-  <div class="background-container" style="background-image: url('<%= asset_path Sufia.config.banner_image %>')"></div>
-  <span class="background-container-gradient"></span>
-
-  <div class="container site-title-container">
-    <div class="site-title" >
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non pulvinar est. Morbi dictum nisl ac ultrices sodales. Mauris posuere sodales augue, eget mattis lacus commodo sed. Ut et arcu a risus mollis fringilla id ultrices arcu. Suspendisse potenti. Nulla facilisi. In porta nibh sem, ac venenatis odio consequat nec. Nam ipsum elit, rhoncus in velit sit amet, hendrerit vehicula quam. Mauris scelerisque suscipit ex. Vestibulum vestibulum dui ac porttitor varius. Vestibulum in elit tellus. Vivamus ultricies luctus magna eu feugiat. </p>  
- 
-    </div>
-  </div>
-
-</div>
-
 <main role="main" id="content">
+   <%= render '/local/image_masthead' if controller_name == 'homepage' %>
+
+
    
    <%= render '/flash_msg' %>
    <div id="content-wrapper" class="container">
