@@ -9,7 +9,10 @@
 <%= render '/local/banner' %>
 
 <main role="main" id="content">
-   <%= render '/local/image_masthead' if controller_name == 'homepage' %>
+
+   <% if controller_name == 'homepage' || controller_name == 'static' %>
+      <%= render '/local/image_masthead' %>
+   <% end %>
 
 
    

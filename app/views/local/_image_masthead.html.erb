@@ -2,6 +2,7 @@
   <div class="background-container" style="background-image: url('<%= asset_path Sufia.config.banner_image %>')"></div>
   <span class="background-container-gradient"></span>
 
+  <% if controller_name == 'homepage' %>
     <div class="site-title" >
        <div id="site-title-message">
           <p>
@@ -26,7 +27,7 @@
 
        </div>
     </div>
-
+  <% end %>
 </div>
 
 
