@@ -136,6 +136,10 @@ main a {
   font-weight: bold;
   color: $uw-blue;
 }
+main a:focus {
+  outline: dotted 1px;
+  outline-offset: 2px;
+}
 /* external links */
 a.external:after {
    content: "\e164";
@@ -653,9 +657,9 @@ button#search-submit-header {
    border-radius: 0 $border-radius-base $border-radius-base 0;
 }
 
-/* ---------------- */
-/* ---- footer ---- */
-/* ---------------- */
+/* -------------------------------- */
+/* ---- image masthead content ---- */
+/* -------------------------------- */
 
 .image-masthead .site-title {
    display: flex;
@@ -709,6 +713,32 @@ div#site-title-buttons .btn {
       flex: 0 0 auto;
       margin: 0.375em 0;
    }
+}
+
+/* --------------------- */
+/* ---- Page Footer ---- */
+/* --------------------- */
+footer#page-footer p {
+   margin-bottom: 0;
+   color: $uw-medium-grey;
+}
+footer#page-footer a {
+   color: $uw-medium-grey;
+   display: inline-block;
+}
+footer#page-footer a:hover,
+footer#page-footer a:focus {
+   color: $uw-light-grey;
+}
+footer#page-footer span.separator:before {
+   content: " | ";
+   padding: 0 0.25rem;
+   display: inline-block;
+}
+
+footer#page-footer a:focus {
+   outline-offset: 2px;
+   outline: dotted 1px;
 }
 
 /* ------------------ */
