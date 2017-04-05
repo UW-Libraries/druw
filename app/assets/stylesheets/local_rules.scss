@@ -166,6 +166,32 @@ abbr {
    border-bottom: 2px dotted $uw-purple !important;
 }
 
+/* -------------------------- */
+/* ---- Bootstrap Alerts ---- */
+/* -------------------------- */
+.alert-success {
+   background-color: #4A7C01;
+   border-color: #000;
+   color: #fff;
+   text-align: center;
+   font-size: 2rem;
+   display: table;
+   margin-left: auto;
+   margin-right: auto;
+}
+.alert-success button.close {
+   opacity: 1;
+   text-shadow: initial;
+   font-size: 32px; /* rem not working in FF */
+}
+.alert-success button.close:hover,
+.alert-success button.close:focus {
+   opacity: 1;
+   color: $uw-yellow;
+}
+.alert-success button.close:focus {
+   outline: dotted 1px #fff;
+}
 
 /* --------------------------- */
 /* ---- Bootstrap Buttons ---- */
