@@ -20,7 +20,7 @@ module StaticHelper
    end
 
    def contact_link(linktext)
-       link_to linktext, about_path(:anchor => 'about_contact')
+       link_to linktext, main_app.about_path(:anchor => 'about_contact')
    end
 end 
 
