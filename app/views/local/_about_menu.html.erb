@@ -1,5 +1,5 @@
 <div class="btn-group" id="about_menu">
-  <%= link_to t(:'sufia.statics.about'), sufia.about_path, :'class'=>"btn" %>
+  <%= link_to t(:'sufia.statics.about'), main_app.about_path, :'class'=>"btn" %>
   <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="sr-only">Toggle Dropdown</span>
     <span class="glyphicon glyphicon-menu-down" ></span>
@@ -7,7 +7,7 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li role="menuitem">
-        <%= link_to t(:'sufia.statics.about'), sufia.about_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+        <%= link_to t(:'sufia.statics.about'), main_app.about_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
     </li>
     <li role="menuitem">
         <%= link_to t(:'sufia.statics.faq'), main_app.faq_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
