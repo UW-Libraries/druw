@@ -4,8 +4,14 @@ module CurationConcerns
   module Actors
     class WorkActor < CurationConcerns::Actors::BaseActor
       def create(attributes)
-        unless ENV['EZID_USER'] and ENV['EZID_USER'].empty?
-          Rails.logger.info "Minting DOI [" + ENV['EZID_USER'] + "]"
+        ezid_user = Rails.application.secrets.ezid_user
+        ezid_password = Rails.application.secrets.ezid_password
+        if ezid_user 
+          Ezid::Client.configure do |config|
+            config.user = ezid_user
+            config.password = ezid_password
+          end
+          Rails.logger.info "Minting DOI [#{ezid_user}]"
           shoulder = "doi:10.5072/FK2" # test shoulder
           metadata = Ezid::Metadata.new.tap do |md|
             md.datacite_title = attributes['title'].first
@@ -20,7 +26,7 @@ module CurationConcerns
             identifier = Ezid::Identifier.mint shoulder, metadata
             attributes['doi'] = identifier.id 
           rescue Ezid::Error
-            Rails.logger.error "Problem connection to EZID service" 
+            Rails.logger.error "Problem connecting to EZID service" 
           end
         end
         super
