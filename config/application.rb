@@ -28,5 +28,13 @@ module Sufia
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # The compile method (default in tinymce-rails 4.5.2) doesn't work when also
+    # using tinymce-rails-imageupload, so revert to the :copy method
+    # https://github.com/spohlenz/tinymce-rails/issues/183
+    config.tinymce.install = :copy
+
+    config.assets.precompile += %w( tinymce/plugins/uploadimage/plugin.js tinymce/plugins/uploadimage/langs/en.js )
+
   end
 end

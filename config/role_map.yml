@@ -21,3 +21,8 @@ test:
 
 production:
   # Add roles for users here.
+  admin_policy_object_editor:
+    - archivist1@example.com
+  researcher:
+    - archivist1@example.com
+    - researcher1@example.com

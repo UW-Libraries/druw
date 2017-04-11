@@ -71,3 +71,5 @@ group :development, :test do
   gem 'rspec-rails'
 end
 gem 'ezid-client'
+gem 'hydra-role-management'
+gem 'pg'
