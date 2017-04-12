@@ -51,14 +51,17 @@ If the git clone below doesn't work, you might need to do either of the followin
 Edit druw_home if you want it to install in someplace other than /home/vagrant/druw
 
 ## Copy config/initializers/devise.rb.template to config/initializers/devise.rb
-    cp config/initializers/devise.rb.template config/initializers/devise.rb
+    cp ~/druw/config/initializers/devise.rb.template ~/druw/config/initializers/devise.rb
 
 ## Change to vagrant sync dir and run ansible playbook for druw.yml
     cd /vagrant   
     ansible-playbook -i inventory druw.yml
 
-* You will have to start the following commands manually. You will probably also have to hit enter to return your prompt after each service starts up.   
-    `cd /home/vagrant/druw`
+## Start Up DRUW for the First Time
+
+ You will have to start the following commands manually. You will probably also have to hit enter to return your prompt after each service starts up.   
+
+* `cd /home/vagrant/druw`
 
 * Start development solr   
     `bundle exec solr_wrapper -d solr/config/ --collection_name hydra-development &`
@@ -66,8 +69,13 @@ Edit druw_home if you want it to install in someplace other than /home/vagrant/d
 * Start FCRepo - your fedora project instance   
     `bundle exec fcrepo_wrapper -p 8984 &`
 
+* Create a default admin set. You only need to do this step ONCE when you first create your new VM:
+    `rake sufia:default_admin_set:create`
+
 * Start development rails server (needs to start as sudo until I figure out perms)   
     `sudo rails server -b 0.0.0.0`
+
+When you start up DRUW in the future, you will only need to start up Solr, FCrepo, and Rails. You do NOT need to recreate the default admin set.
 
 ## Check DRUW (Sufia) is Running
 Open a browser and go to http://localhost:3000. The initial load will take a bit (you'll see activity in SSH window as the rails server processes the request).
