@@ -6,7 +6,7 @@ module CurationConcerns
       def create(attributes)
         ezid_user = Rails.application.secrets.ezid_user
         ezid_password = Rails.application.secrets.ezid_password
-        if ezid_user 
+        if ezid_user && attributes[:doi] 
           Ezid::Client.configure do |config|
             config.user = ezid_user
             config.password = ezid_password
