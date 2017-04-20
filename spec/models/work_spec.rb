@@ -3,7 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe Work do
-  it "has tests" do
-    skip "Add your tests here"
+  describe "metadata" do
+    it "has descriptive metadata" do
+      expect(subject).to respond_to(:doi)
+    end
   end
 end
+
