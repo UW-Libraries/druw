@@ -2,9 +2,13 @@
 
 This repository builds a research data repository based on the Fedora/Hydra/Sufia platform.
 
+---
+
 ## This README is out of date as of 2017-05-16
 
-This readme is from the 0.7.x version of DRUW. It will need to be updated as vagrant-ansible-druw is updated for Hyrax 2.
+The below readme based on the 0.7.x version of [vagrant-ansible-druw](https://bitbucket.org/uwlib/vagrant-ansible-druw). This repository itself is current with a Hyrax 2 app that can be used with a Ruby/Rails environment created via the [Hyrax Community](https://github.com/projecthydra-labs/hyrax) instructions or the [vagrant-ansible-sufia](https://bitbucket.org/uwlib/vagrant-ansible-sufia) script.
+
+---
 
 ## Development box prerequisites:
  - Vagrant
