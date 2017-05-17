@@ -8,6 +8,8 @@ This repository builds a research data repository based on the Fedora/Hydra/Sufi
 
 The below readme based on the 0.7.x version of [vagrant-ansible-druw](https://bitbucket.org/uwlib/vagrant-ansible-druw). This repository itself is current with a Hyrax 2 app that can be used with a Ruby/Rails environment created via the [Hyrax Community](https://github.com/projecthydra-labs/hyrax) instructions or the [vagrant-ansible-sufia](https://bitbucket.org/uwlib/vagrant-ansible-sufia) script.
 
+Git workflow can be found in the DRUW wiki: https://bitbucket.org/uwlib/druw/wiki/Git_Workflow_and_Notes
+
 ---
 
 ## Development box prerequisites:
