@@ -26,7 +26,6 @@ config/database.yml
 config/fedora.yml
 config/solr.yml
 config/redis.yml
-config/devise.yml
 config/hydra-ldap.yml
 config/browse_everything_providers.yml
 config/analytics.yml
@@ -34,7 +33,6 @@ config/secrets.yml
 config/blacklight.yml
 
 # Ignore this file for security reasons
-config/initializers/secret_token.rb
 config/initializers/devise.rb
 
 # Ignore jetty
