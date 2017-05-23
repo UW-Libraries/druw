@@ -1,0 +1,86 @@
+/*
+   Include all CSS rules for UW's Sufia here.
+
+   This is an SCSS file, so you can use any defined variables and mixins.
+*/
+
+@import 'local_sass_variables';
+
+a[href="#"] {
+   color: $uw-orange !important;
+}
+
+#content-wrapper .draft {
+   position: relative;
+}
+#content-wrapper .draft:before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   border: 3px dashed rgba($uw-red, 0.2);
+   z-index: -1;
+}
+#content-wrapper .draft:after {
+   content: "DRAFT";
+   position: absolute;
+   box-sizing: border-box;
+   top: 8px;
+   right: 8px;
+   width: auto;
+   font-size: 5rem;
+   color: $uw-red;
+   pointer-events: none;
+   opacity: 0.2;
+   display: inline-block;
+   line-height: 80%;
+   z-index: -1;
+}
+#content-wrapper a[href="null"]:after {
+   content: "[link needed]";
+   font-style: normal;
+   font-size: 0.75em;
+   vertical-align: super;
+}
+
+
+
+/* -------------------- */
+/* ---- Skip Links ---- */
+/* -------------------- */
+a.skip-link {
+    position: fixed;
+    top: 0.5em;
+    left: -12em;
+    display: inline-block;
+    color: transparent;
+    background: transparent;
+    -webkit-transition: left .5s ease-out, background .25s linear;
+            transition: left .5s ease-out, background .25s linear;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(0,0,0);
+    font-weight: bold;
+    z-index: 5000;
+    border-radius: 0px $border-radius-base $border-radius-base 0px;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+}
+
+a.skip-link:focus {
+    pointer-events: auto;
+    margin: 0;
+    position: fixed;
+    background: $uw-yellow;
+    color: #000;
+    outline:0;
+    left: 0;
+    -webkit-transition: left .5s ease-in, background .25s linear;
+            transition: left .5s ease-in, background .25s linear;
+}
+a.skip-link:hover {
+    text-decoration: underline;
+}
+
