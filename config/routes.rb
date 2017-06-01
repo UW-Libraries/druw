@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+
+
   
   mount Blacklight::Engine => '/'
   
     concern :searchable, Blacklight::Routes::Searchable.new
+
+
+  %w((about collection_policy help faq privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
+      get action, controller: 'hyrax/static', action: action, as: action
+  end
+
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
