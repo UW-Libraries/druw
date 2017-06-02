@@ -47,6 +47,20 @@ a[href="#"] {
 
 
 
+/* --------------------------- */
+/* ---- Bootstrap Buttons ---- */
+/* --------------------------- */
+.btn {
+   @extend %local-button-padding;
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary:active:focus {
+    @extend %local-button-hover-focus;
+}
+
 /* -------------------- */
 /* ---- Skip Links ---- */
 /* -------------------- */
@@ -84,3 +98,128 @@ a.skip-link:hover {
     text-decoration: underline;
 }
 
+/* --------------------- */
+/* ---- GENERAL CSS ---- */
+/* --------------------- */
+
+/* LINKS*/
+a:hover,
+a:focus {
+   color: $uw-purple;
+}
+/* links in main section of pages get bold */
+main a {
+  font-weight: bold;
+  color: $uw-blue;
+}
+main a:focus {
+  outline: dotted 1px;
+  outline-offset: 2px;
+}
+/* external links */
+a.external:after {
+   content: "\e164";
+   font-family: 'Glyphicons Halflings';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1rem;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   display: inline-table;
+   position: relative;
+   top: -2px;
+}
+
+/* make inputs have black text (not gray) */
+.form-control {
+   color: #000;
+}
+
+/* CSS equivalent of LaTeX's \hfill for use in flex */
+.flex_hfill {
+   flex: 1 0 auto;
+}
+
+/* turn off some browser styling on abbr as bootstrap handles it*/
+abbr {
+   text-decoration: none !important;
+   border-bottom: 2px dotted $uw-purple !important;
+}
+
+/* ------------------------- */
+/* ---- HEADER / BANNER ---- */
+/* ------------------------- */
+header[role=banner] {
+   display: block;
+   background-color: $uw-purple;
+   position: relative;
+}
+header[role=banner] div.flex_row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* ----------------------- */
+/* ---- HEADER: LOGOS ---- */
+/* ----------------------- */
+#header_logo_container {
+   position: static;
+   flex: 0 0 auto;
+   width: 210px; /* uwlib_logo left + width */
+   height: 45px;
+}
+.uw_logo {
+   background-color: $uw-purple;
+   background-image: image-url("uw_patch.png");
+   background-repeat: no-repeat; 
+   background-position: 0 0;
+   background-size: 100% 100%;
+   display: block;
+   height: 45px;
+   position: absolute;
+   top: 0;
+   width: 65px;
+   overflow: hidden;
+   color: transparent !important;
+}
+.uwlib_logo {
+   background-color: $uw-purple;
+   background-image: image-url("uwlib_wordmark.png");
+   background-repeat: no-repeat;
+   background-position: 0 0;
+   background-size: 100% 100%;
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 80px; /* 15px space between logos */
+   height: 45px;
+   overflow: hidden;
+   color: transparent !important;
+   width: 130px;
+}
+@media(min-width:768px) { /* enlarge UW and Library logos when wider window */
+   #header_logo_container {
+      width: 325px; /* uwlib logo left + uwlib logo width */
+      height: 65px;
+   }
+   .uw_logo {
+      height:65px;
+      width:95px
+   }
+   .uwlib_logo {
+      height: 65px;
+      width: 200px;
+      left: 125px /* 30px space between the two logos */
+   }
+}
+.uw_logo:focus,
+.uwlib_logo:focus {
+   outline: 1px dotted $uw-yellow;  
+   outline-offset: -1px;
+}
