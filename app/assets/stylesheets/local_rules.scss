@@ -45,59 +45,6 @@ a[href="#"] {
    vertical-align: super;
 }
 
-
-
-/* --------------------------- */
-/* ---- Bootstrap Buttons ---- */
-/* --------------------------- */
-.btn {
-   @extend %local-button-padding;
-}
-.btn-primary:hover, 
-.btn-primary:focus, 
-.btn-primary:active, 
-.btn-primary.active, 
-.btn-primary:active:focus {
-    @extend %local-button-hover-focus;
-}
-
-/* -------------------- */
-/* ---- Skip Links ---- */
-/* -------------------- */
-a.skip-link {
-    position: fixed;
-    top: 0.5em;
-    left: -12em;
-    display: inline-block;
-    color: transparent;
-    background: transparent;
-    -webkit-transition: left .5s ease-out, background .25s linear;
-            transition: left .5s ease-out, background .25s linear;
-    overflow: hidden;
-    pointer-events: none;
-    transform: translate3d(0,0,0);
-    font-weight: bold;
-    z-index: 5000;
-    border-radius: 0px $border-radius-base $border-radius-base 0px;
-    padding: 0.5em 0.75em;
-    text-decoration: none;
-}
-
-a.skip-link:focus {
-    pointer-events: auto;
-    margin: 0;
-    position: fixed;
-    background: $uw-yellow;
-    color: #000;
-    outline:0;
-    left: 0;
-    -webkit-transition: left .5s ease-in, background .25s linear;
-            transition: left .5s ease-in, background .25s linear;
-}
-a.skip-link:hover {
-    text-decoration: underline;
-}
-
 /* --------------------- */
 /* ---- GENERAL CSS ---- */
 /* --------------------- */
@@ -144,6 +91,80 @@ a.external:after {
 abbr {
    text-decoration: none !important;
    border-bottom: 2px dotted $uw-purple !important;
+}
+
+
+/* --------------------------- */
+/* ---- Bootstrap Buttons ---- */
+/* --------------------------- */
+.btn {
+   @extend %local-button-padding;
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary:active:focus {
+    @extend %local-button-hover-focus;
+}
+
+/* ------------------------ */
+/* ---- Page Structure ---- */
+/* ------------------------ */
+
+/* make the footer sticky */
+html {
+   height: 100%;
+}
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 0; /* unsets Sufia's attempt to make a sticky footer */
+}
+main#content {
+   flex: 1 0 auto;
+}
+footer#page-footer {
+   flex-shrink: 0;
+}
+
+
+/* -------------------- */
+/* ---- Skip Links ---- */
+/* -------------------- */
+a.skip-link {
+    position: fixed;
+    top: 0.5em;
+    left: -12em;
+    display: inline-block;
+    color: transparent;
+    background: transparent;
+    -webkit-transition: left .5s ease-out, background .25s linear;
+            transition: left .5s ease-out, background .25s linear;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(0,0,0);
+    font-weight: bold;
+    z-index: 5000;
+    border-radius: 0px $border-radius-base $border-radius-base 0px;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+}
+
+a.skip-link:focus {
+    pointer-events: auto;
+    margin: 0;
+    position: fixed;
+    background: $uw-yellow;
+    color: #000;
+    outline:0;
+    left: 0;
+    -webkit-transition: left .5s ease-in, background .25s linear;
+            transition: left .5s ease-in, background .25s linear;
+}
+a.skip-link:hover {
+    text-decoration: underline;
 }
 
 /* ------------------------- */
@@ -223,3 +244,30 @@ header[role=banner] div.flex_row {
    outline: 1px dotted $uw-yellow;  
    outline-offset: -1px;
 }
+
+/* ------------------------------- */
+/* ---- HEADER: NOTIFICATIONS ---- */
+/* ------------------------------- */
+#header_notifications_container {
+   flex: 0 0 auto;
+}
+#header_notifications_container a {
+   border-color: transparent;
+}
+#header_notifications_container a:hover,
+#header_notifications_container a:focus {
+    @extend %local-button-hover-focus;
+}
+#header_notifications_container a:focus {
+   outline: none;
+}
+#header_notifications_container .label {
+   background-color: #000;
+   font-size: inherit;
+   font-weight: normal;
+   top: 0;
+}
+#header_notifications_container .label.invisible {
+   display: none;
+}
+

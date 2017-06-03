@@ -1,0 +1,21 @@
+<header role="banner" id="page-header">
+  <a href="#content" class="skip-link">Skip to Content</a>
+  <div class="flex_row">
+     <div id="header_logo_container">
+        <%= render partial: '/logo' %>
+     </div>
+
+     <!-- makes horizontal space -->
+     <div class="flex_hfill"></div>
+
+     <div id="header_notifications_container">
+        <% if user_signed_in? %>
+              <%= render partial: 'hyrax/users/notify_number' %>
+        <% end %>
+     </div>
+
+     <div id="user_menu_container">
+        <%= render partial: '/local/user_menu' %>
+     </div>
+  </div>
+</header>

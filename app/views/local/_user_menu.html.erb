@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+   SHOW MENU
+<% else %>
+   <%= link_to main_app.new_user_session_path, class:"btn btn-primary", id:"user_login_link" do %>
+      <%= t("hyrax.toolbar.profile.login") %>
+      <span class="fa fa-sign-in" aria-hidden="true"></span> 
+   <% end %>
+<% end %>
+
