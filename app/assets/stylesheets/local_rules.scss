@@ -109,6 +109,59 @@ abbr {
 }
 
 /* ------------------------ */
+/* ---- DROPDOWN MENUS ---- */
+/* ------------------------ */
+.dropdown-menu {
+   background-color: $uw-light-grey;
+}
+.dropdown-menu > li {
+   padding: 0.125em 0;
+}
+.dropdown-menu > li > a,
+.dropdown-menu > li > button {
+   color: #000;
+   background-color: inherit;
+   position: relative;
+   padding: 0.2em 1.25em;
+   border-radius: 0;
+   width: 100%;
+   text-align: left;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > button:hover,
+.dropdown-menu > li > button:focus {
+   @extend %local-button-hover-focus;
+   outline: none;
+}
+/* we have customized to use a glyphicon chevron for the carat */
+button.dropdown-toggle[aria-expanded="true"] span.fa.fa-chevron-down {
+   display: none !important;
+}
+button.dropdown-toggle[aria-expanded="false"] span.fa.fa-chevron-up {
+   display: none !important;
+}
+/* divider in dropdown menu */
+.dropdown-menu .divider {
+   background-color: $uw-medium-grey;
+   margin: 0;
+   padding: 0;
+}
+/* when the dropdown is open, the button looks inset */
+#user_menu.open > button.dropdown-toggle,
+#main_navigation button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle,
+#deposit_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
+   padding-top: calc(#{$button-tb-padding} + 2px);
+   padding-bottom: calc(#{$button-tb-padding} - 2px);
+}
+/* adjust glyphicons in user_menu */
+#user_menu > button.dropdown-toggle .glyphicon {
+   top: 2px;
+}
+
+/* ------------------------ */
 /* ---- Page Structure ---- */
 /* ------------------------ */
 
@@ -250,6 +303,7 @@ header[role=banner] div.flex_row {
 /* ------------------------------- */
 #header_notifications_container {
    flex: 0 0 auto;
+   margin-right: 0.75em;
 }
 #header_notifications_container a {
    border-color: transparent;
@@ -262,12 +316,37 @@ header[role=banner] div.flex_row {
    outline: none;
 }
 #header_notifications_container .label {
-   background-color: #000;
+   background-color: transparent;
    font-size: inherit;
    font-weight: normal;
    top: 0;
+   padding: 0 0 0 0.125em;
 }
 #header_notifications_container .label.invisible {
-   display: none;
+   visibility: visible;
 }
 
+
+/* --------------------------- */
+/* ---- HEADER: USER MENU ---- */
+/* --------------------------- */
+#user_login_link,
+#user_menu_button {
+   border-color: transparent;
+   font-weight: normal;
+}
+#user_login_link:hover,
+#user_login_link:focus, 
+#user_menu_button:hover,
+#user_menu_button:focus {
+    @extend %local-button-hover-focus;
+}
+#user_menu > ul {
+   z-index: 20; /* so that the menu goes over the nav menu when it appears */
+}
+
+@media (max-width: 767px) {
+   #user_menu_button .visible-xs-block {
+      display: inline-block !important;
+   }
+}
