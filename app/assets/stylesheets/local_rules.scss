@@ -49,6 +49,10 @@ a[href="#"] {
 /* ---- GENERAL CSS ---- */
 /* --------------------- */
 
+body {
+   min-width: 330px;
+}
+
 /* LINKS*/
 a:hover,
 a:focus {
@@ -91,6 +95,11 @@ a.external:after {
 abbr {
    text-decoration: none !important;
    border-bottom: 2px dotted $uw-purple !important;
+}
+
+p, ol, ul
+{
+   margin-bottom: 0.5rem;
 }
 
 
@@ -245,7 +254,7 @@ header[role=banner] div.flex_row {
 #header_logo_container {
    position: static;
    flex: 0 0 auto;
-   width: 210px; /* uwlib_logo left + width */
+   width: 195px; /* uwlib_logo left + width */
    height: 45px;
 }
 .uw_logo {
@@ -258,6 +267,7 @@ header[role=banner] div.flex_row {
    height: 45px;
    position: absolute;
    top: 0;
+   left: 0;
    width: 65px;
    overflow: hidden;
    color: transparent !important;
@@ -271,7 +281,7 @@ header[role=banner] div.flex_row {
    display: block;
    position: absolute;
    top: 0;
-   left: 80px; /* 15px space between logos */
+   left: 65px; /* 5px space between logos */
    height: 45px;
    overflow: hidden;
    color: transparent !important;
@@ -279,7 +289,7 @@ header[role=banner] div.flex_row {
 }
 @media(min-width:768px) { /* enlarge UW and Library logos when wider window */
    #header_logo_container {
-      width: 325px; /* uwlib logo left + uwlib logo width */
+      width: 295px; /* uwlib logo left + uwlib logo width */
       height: 65px;
    }
    .uw_logo {
@@ -289,7 +299,7 @@ header[role=banner] div.flex_row {
    .uwlib_logo {
       height: 65px;
       width: 200px;
-      left: 125px /* 30px space between the two logos */
+      left: 95px /* 0px space between the two logos */
    }
 }
 .uw_logo:focus,
@@ -303,7 +313,7 @@ header[role=banner] div.flex_row {
 /* ------------------------------- */
 #header_notifications_container {
    flex: 0 0 auto;
-   margin-right: 0.75em;
+   margin-right: 0.25em;
 }
 #header_notifications_container a {
    border-color: transparent;
@@ -349,4 +359,226 @@ header[role=banner] div.flex_row {
    #user_menu_button .visible-xs-block {
       display: inline-block !important;
    }
+}
+
+/* --------------------------------- */
+/* ---- HEADER: MAIN NAVIGATION ---- */
+/* --------------------------------- */
+header[role=banner] nav {
+   background-color: $uw-dark-grey;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+   position: relative;
+}
+header[role=banner] nav #main_navigation {
+   flex: 0 0 auto;
+   margin-bottom: 0;
+   padding: 0;
+   border-radius: 0;
+   border: 0;
+   position: static;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
+}
+@media(min-width:768px) { 
+   header[role=banner] nav #main_navigation {
+      display: flex;
+      align-items: center;
+   }
+}
+
+/* -------------------------------------------------- */
+/* ---- Main Menu Header (includes toggle button ---- */
+/* -------------------------------------------------- */
+header[role=banner] nav #main_navigation .navbar-header {
+   float: none;
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+#main_navigation button.navbar-toggle {
+   border-color: transparent;
+   float: none;
+   margin-right: 0;
+   @extend %local-button-padding;
+   min-height: 2.25em;  
+   background-color: $uw-purple; 
+}
+#main_navigation button.navbar-toggle span.icon-bar {
+   border-color: #fff;
+}
+#main_navigation button.navbar-toggle:hover,
+#main_navigation button.navbar-toggle:focus {
+    @extend %local-button-hover-focus;
+}
+#main_navigation button.navbar-toggle span.icon-bar{
+   background-color: #fff;
+}
+
+/* ------------------------------------------------ */
+/* ---- Main Menu (the actual collapsing menu) ---- */
+/* ------------------------------------------------ */
+#main_navigation div.navbar-collapse {
+   padding-left: 0;
+   padding-right: 0;
+}
+#main_navigation div.navbar-collapse.in > ul {
+   float: none;
+   position: absolute;
+   z-index: 1000;
+   top: $main-menu-height; /* makes the open menu (narrow) line up with grey bar */
+   right: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   background-color: $uw-dark-grey;
+   z-index: 10; /* goes under an open user menu */
+}
+#main_navigation div.navbar-collapse > ul > li > .btn,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   @extend %local-button-padding;
+   display: block;
+   vertical-align: middle;
+   border-radius: 0;
+   border-color: #333 transparent transparent;   
+   line-height: 1.42857;
+}
+/* ---- Split Button in Main Menu ---- */
+#main_navigation div.navbar-collapse > ul > li > div.btn-group {
+   display: block;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   float: none;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+   display: none;
+   padding-left: 0.375em;
+   padding-right: 0.375em;   
+   margin-left: 1px;
+}
+#main_navigation div.navbar-collapse > ul > li > a,
+#main_navigation div.navbar-collapse > ul > li > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button {
+   color: #fff;
+}
+#main_navigation div.navbar-collapse > ul > li > a:hover,
+#main_navigation div.navbar-collapse > ul > li > a:focus,
+#main_navigation div.navbar-collapse > ul > li > button:hover,
+#main_navigation div.navbar-collapse > ul > li > button:focus,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:hover,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:focus {
+   @extend %local-button-hover-focus;
+}
+
+@media(min-width:768px) {
+   #main_navigation div.navbar-collapse.in > ul {
+       position: static;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+   }
+   #main_navigation div.navbar-collapse > ul > li + li {
+      margin-left: 0.75em;
+   }
+   #main_navigation div.navbar-collapse > ul > li > .btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      border-radius: $border-radius-base;
+   }
+   #main_navigation div.navbar-collapse > ul > li > a,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      background-color: $uw-purple;
+      border-color: transparent;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group {
+      display: inline-block;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      float: left;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > a.btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.modal-btn {
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+      display: inline-block;
+   }
+}
+
+/* --------------------- */
+/* ---- Page Footer ---- */
+/* --------------------- */
+footer#page-footer {
+   border: 0;
+   background-color: $uw-dark-grey;
+}
+
+footer#page-footer p {
+   margin-bottom: 0;
+   color: $uw-light-grey;
+}
+footer#page-footer a {
+   color: $uw-light-grey;
+   display: inline-block;
+}
+footer#page-footer a:hover,
+footer#page-footer a:focus {
+   color: $uw-yellow;
+}
+footer#page-footer span.separator:before {
+   content: " | ";
+   padding: 0 0.25rem;
+   display: inline-block;
+}
+
+footer#page-footer a:focus {
+   outline-offset: 2px;
+   outline: dotted 1px;
+}
+
+/* ------------------------- */
+/* ---- Content Sections ---- */
+/* ------------------------- */
+#content-wrapper h2,
+#content-wrapper h3 {
+   color: $uw-metal-gold;
+}
+#content-wrapper p {
+   line-height: 1.5;
+}
+
+#content-wrapper ul li,
+#content-wrapper ol li {
+   margin-bottom: 0.5rem;
+}
+#content-wrapper blockquote {
+   font-size: inherit;
+   padding: 0 2em;
+   margin-bottom: 0.5rem;
+}
+
+
+/* --------------------------- */
+/* ---- Suzzallo Masthead ---- */
+/* --------------------------- */
+.image-masthead {
+   border-bottom: none;
+   margin-bottom: 0;
+   min-height: 85px;
+}
+.image-masthead .background-container {
+   -webkit-filter: none;
+           filter: none;
+}
+.image-masthead .background-container-gradient {
+   background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
