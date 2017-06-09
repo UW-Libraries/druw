@@ -45,6 +45,151 @@ a[href="#"] {
    vertical-align: super;
 }
 
+/* --------------------- */
+/* ---- GENERAL CSS ---- */
+/* --------------------- */
+
+body {
+   min-width: 330px;
+}
+
+/* LINKS*/
+a:hover,
+a:focus {
+   color: $uw-purple;
+}
+/* links in main section of pages get bold */
+main a {
+  font-weight: bold;
+  color: $uw-blue;
+}
+main a:focus {
+  outline: dotted 1px;
+  outline-offset: 2px;
+}
+/* external links */
+a.external:after {
+   content: "\e164";
+   font-family: 'Glyphicons Halflings';
+   font-style: normal;
+   font-weight: normal;
+   font-size: 1rem;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   display: inline-table;
+   position: relative;
+   top: -2px;
+}
+
+/* make inputs have black text (not gray) */
+.form-control {
+   color: #000;
+}
+
+/* CSS equivalent of LaTeX's \hfill for use in flex */
+.flex_hfill {
+   flex: 1 0 auto;
+}
+
+/* turn off some browser styling on abbr as bootstrap handles it*/
+abbr {
+   text-decoration: none !important;
+   border-bottom: 2px dotted $uw-purple !important;
+}
+
+p, ol, ul
+{
+   margin-bottom: 0.5rem;
+}
+
+
+/* --------------------------- */
+/* ---- Bootstrap Buttons ---- */
+/* --------------------------- */
+.btn {
+   @extend %local-button-padding;
+}
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary:active:focus {
+    @extend %local-button-hover-focus;
+}
+
+/* ------------------------ */
+/* ---- DROPDOWN MENUS ---- */
+/* ------------------------ */
+.dropdown-menu {
+   background-color: $uw-light-grey;
+}
+.dropdown-menu > li {
+   padding: 0.125em 0;
+}
+.dropdown-menu > li > a,
+.dropdown-menu > li > button {
+   color: #000;
+   background-color: inherit;
+   position: relative;
+   padding: 0.2em 1.25em;
+   border-radius: 0;
+   width: 100%;
+   text-align: left;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > button:hover,
+.dropdown-menu > li > button:focus {
+   @extend %local-button-hover-focus;
+   outline: none;
+}
+/* we have customized to use a glyphicon chevron for the carat */
+button.dropdown-toggle[aria-expanded="true"] span.fa.fa-chevron-down {
+   display: none !important;
+}
+button.dropdown-toggle[aria-expanded="false"] span.fa.fa-chevron-up {
+   display: none !important;
+}
+/* divider in dropdown menu */
+.dropdown-menu .divider {
+   background-color: $uw-medium-grey;
+   margin: 0;
+   padding: 0;
+}
+/* when the dropdown is open, the button looks inset */
+#user_menu.open > button.dropdown-toggle,
+#main_navigation button.navbar-toggle[aria-expanded=true], 
+#about_menu.open > button.dropdown-toggle,
+#deposit_menu.open > button.dropdown-toggle {
+   box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
+   padding-top: calc(#{$button-tb-padding} + 2px);
+   padding-bottom: calc(#{$button-tb-padding} - 2px);
+}
+/* adjust glyphicons in user_menu */
+#user_menu > button.dropdown-toggle .glyphicon {
+   top: 2px;
+}
+
+/* ------------------------ */
+/* ---- Page Structure ---- */
+/* ------------------------ */
+
+/* make the footer sticky */
+html {
+   height: 100%;
+}
+body {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 0; /* unsets Sufia's attempt to make a sticky footer */
+}
+main#content {
+   flex: 1 0 auto;
+}
+footer#page-footer {
+   flex-shrink: 0;
+}
 
 
 /* -------------------- */
@@ -84,3 +229,356 @@ a.skip-link:hover {
     text-decoration: underline;
 }
 
+/* ------------------------- */
+/* ---- HEADER / BANNER ---- */
+/* ------------------------- */
+header[role=banner] {
+   display: block;
+   background-color: $uw-purple;
+   position: relative;
+}
+header[role=banner] div.flex_row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* ----------------------- */
+/* ---- HEADER: LOGOS ---- */
+/* ----------------------- */
+#header_logo_container {
+   position: static;
+   flex: 0 0 auto;
+   width: 195px; /* uwlib_logo left + width */
+   height: 45px;
+}
+.uw_logo {
+   background-color: $uw-purple;
+   background-image: image-url("uw_patch.png");
+   background-repeat: no-repeat; 
+   background-position: 0 0;
+   background-size: 100% 100%;
+   display: block;
+   height: 45px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 65px;
+   overflow: hidden;
+   color: transparent !important;
+}
+.uwlib_logo {
+   background-color: $uw-purple;
+   background-image: image-url("uwlib_wordmark.png");
+   background-repeat: no-repeat;
+   background-position: 0 0;
+   background-size: 100% 100%;
+   display: block;
+   position: absolute;
+   top: 0;
+   left: 65px; /* 5px space between logos */
+   height: 45px;
+   overflow: hidden;
+   color: transparent !important;
+   width: 130px;
+}
+@media(min-width:768px) { /* enlarge UW and Library logos when wider window */
+   #header_logo_container {
+      width: 295px; /* uwlib logo left + uwlib logo width */
+      height: 65px;
+   }
+   .uw_logo {
+      height:65px;
+      width:95px
+   }
+   .uwlib_logo {
+      height: 65px;
+      width: 200px;
+      left: 95px /* 0px space between the two logos */
+   }
+}
+.uw_logo:focus,
+.uwlib_logo:focus {
+   outline: 1px dotted $uw-yellow;  
+   outline-offset: -1px;
+}
+
+/* ------------------------------- */
+/* ---- HEADER: NOTIFICATIONS ---- */
+/* ------------------------------- */
+#header_notifications_container {
+   flex: 0 0 auto;
+   margin-right: 0.25em;
+}
+#header_notifications_container a {
+   border-color: transparent;
+}
+#header_notifications_container a:hover,
+#header_notifications_container a:focus {
+    @extend %local-button-hover-focus;
+}
+#header_notifications_container a:focus {
+   outline: none;
+}
+#header_notifications_container .label {
+   background-color: transparent;
+   font-size: inherit;
+   font-weight: normal;
+   top: 0;
+   padding: 0 0 0 0.125em;
+}
+#header_notifications_container .label.invisible {
+   visibility: visible;
+}
+
+
+/* --------------------------- */
+/* ---- HEADER: USER MENU ---- */
+/* --------------------------- */
+#user_login_link,
+#user_menu_button {
+   border-color: transparent;
+   font-weight: normal;
+}
+#user_login_link:hover,
+#user_login_link:focus, 
+#user_menu_button:hover,
+#user_menu_button:focus {
+    @extend %local-button-hover-focus;
+}
+#user_menu > ul {
+   z-index: 20; /* so that the menu goes over the nav menu when it appears */
+}
+
+@media (max-width: 767px) {
+   #user_menu_button .visible-xs-block {
+      display: inline-block !important;
+   }
+}
+
+/* --------------------------------- */
+/* ---- HEADER: MAIN NAVIGATION ---- */
+/* --------------------------------- */
+header[role=banner] nav {
+   background-color: $uw-dark-grey;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-content: center;
+   align-items: center;
+   padding-left: 15px;
+   padding-right: 15px;
+   position: relative;
+}
+header[role=banner] nav #main_navigation {
+   flex: 0 0 auto;
+   margin-bottom: 0;
+   padding: 0;
+   border-radius: 0;
+   border: 0;
+   position: static;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
+}
+@media(min-width:768px) { 
+   header[role=banner] nav #main_navigation {
+      display: flex;
+      align-items: center;
+   }
+}
+
+/* -------------------------------------------------- */
+/* ---- Main Menu Header (includes toggle button ---- */
+/* -------------------------------------------------- */
+header[role=banner] nav #main_navigation .navbar-header {
+   float: none;
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+#main_navigation button.navbar-toggle {
+   border-color: transparent;
+   float: none;
+   margin-right: 0;
+   @extend %local-button-padding;
+   min-height: 2.25em;  
+   background-color: $uw-purple; 
+}
+#main_navigation button.navbar-toggle span.icon-bar {
+   border-color: #fff;
+}
+#main_navigation button.navbar-toggle:hover,
+#main_navigation button.navbar-toggle:focus {
+    @extend %local-button-hover-focus;
+}
+#main_navigation button.navbar-toggle span.icon-bar{
+   background-color: #fff;
+}
+
+/* ------------------------------------------------ */
+/* ---- Main Menu (the actual collapsing menu) ---- */
+/* ------------------------------------------------ */
+#main_navigation div.navbar-collapse {
+   padding-left: 0;
+   padding-right: 0;
+}
+#main_navigation div.navbar-collapse.in > ul {
+   float: none;
+   position: absolute;
+   z-index: 1000;
+   top: $main-menu-height; /* makes the open menu (narrow) line up with grey bar */
+   right: 0;
+   left: 0;
+   width: 100%;
+   margin: 0;
+   background-color: $uw-dark-grey;
+   z-index: 10; /* goes under an open user menu */
+}
+#main_navigation div.navbar-collapse > ul > li > .btn,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   @extend %local-button-padding;
+   display: block;
+   vertical-align: middle;
+   border-radius: 0;
+   border-color: #333 transparent transparent;   
+   line-height: 1.42857;
+}
+/* ---- Split Button in Main Menu ---- */
+#main_navigation div.navbar-collapse > ul > li > div.btn-group {
+   display: block;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+   float: none;
+}
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+   display: none;
+   padding-left: 0.375em;
+   padding-right: 0.375em;   
+   margin-left: 1px;
+}
+#main_navigation div.navbar-collapse > ul > li > a,
+#main_navigation div.navbar-collapse > ul > li > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > a:visited,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > button {
+   color: #fff;
+}
+#main_navigation div.navbar-collapse > ul > li > a:hover,
+#main_navigation div.navbar-collapse > ul > li > a:focus,
+#main_navigation div.navbar-collapse > ul > li > button:hover,
+#main_navigation div.navbar-collapse > ul > li > button:focus,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:hover,
+#main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn:focus {
+   @extend %local-button-hover-focus;
+}
+
+@media(min-width:768px) {
+   #main_navigation div.navbar-collapse.in > ul {
+       position: static;
+       display: flex;
+       justify-content: flex-start;
+       align-items: center;
+   }
+   #main_navigation div.navbar-collapse > ul > li + li {
+      margin-left: 0.75em;
+   }
+   #main_navigation div.navbar-collapse > ul > li > .btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      border-radius: $border-radius-base;
+   }
+   #main_navigation div.navbar-collapse > ul > li > a,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      background-color: $uw-purple;
+      border-color: transparent;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group {
+      display: inline-block;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
+      float: left;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > a.btn,
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.modal-btn {
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+   }
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+      display: inline-block;
+   }
+}
+
+/* --------------------- */
+/* ---- Page Footer ---- */
+/* --------------------- */
+footer#page-footer {
+   border: 0;
+   background-color: $uw-dark-grey;
+}
+
+footer#page-footer p {
+   margin-bottom: 0;
+   color: $uw-light-grey;
+}
+footer#page-footer a {
+   color: $uw-light-grey;
+   display: inline-block;
+}
+footer#page-footer a:hover,
+footer#page-footer a:focus {
+   color: $uw-yellow;
+}
+footer#page-footer span.separator:before {
+   content: " | ";
+   padding: 0 0.25rem;
+   display: inline-block;
+}
+
+footer#page-footer a:focus {
+   outline-offset: 2px;
+   outline: dotted 1px;
+}
+
+/* ------------------------- */
+/* ---- Content Sections ---- */
+/* ------------------------- */
+#content-wrapper h2,
+#content-wrapper h3 {
+   color: $uw-metal-gold;
+}
+#content-wrapper p {
+   line-height: 1.5;
+}
+
+#content-wrapper ul li,
+#content-wrapper ol li {
+   margin-bottom: 0.5rem;
+}
+#content-wrapper blockquote {
+   font-size: inherit;
+   padding: 0 2em;
+   margin-bottom: 0.5rem;
+}
+
+
+/* --------------------------- */
+/* ---- Suzzallo Masthead ---- */
+/* --------------------------- */
+.image-masthead {
+   border-bottom: none;
+   margin-bottom: 0;
+   min-height: 85px;
+}
+.image-masthead .background-container {
+   -webkit-filter: none;
+           filter: none;
+}
+.image-masthead .background-container-gradient {
+   background: linear-gradient(transparent, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+}

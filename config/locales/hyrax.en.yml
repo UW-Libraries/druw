@@ -43,7 +43,8 @@ en:
           subject_tesim: Subject
           title_tesim: Title
   hyrax:
-    product_name:           "Hyrax"
+    product_name:           "DRUW"
+    product_long_name:      "Data Repository at the University of Washington"
     product_twitter_handle: "@HydraSphere"
     institution_name:       "Institution"
     institution_name_full:  "The Institution Name"
@@ -53,3 +54,14 @@ en:
     footer:
       copyright_html: "<strong>Copyright &copy; 2017 Project Hydra</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Project Hydra</a>.
+
+    statics:
+      about: "About"
+      collection_policy: "Collection Policy"
+      faq: "Frequently Asked Questions"
+      help: "Help"
+      privacy: "Privacy Policy"
+      protected_info: "Protected Information Policy"
+      terms_of_deposit: "Terms of Deposit"
+      terms_of_use: "Terms of Use"
+      withdrawal: "Withdrawal Policy"
