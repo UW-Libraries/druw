@@ -165,10 +165,6 @@ button.dropdown-toggle[aria-expanded="false"] span.fa.fa-chevron-up {
    padding-top: calc(#{$button-tb-padding} + 2px);
    padding-bottom: calc(#{$button-tb-padding} - 2px);
 }
-/* adjust glyphicons in user_menu */
-#user_menu > button.dropdown-toggle .glyphicon {
-   top: 2px;
-}
 
 /* ------------------------ */
 /* ---- Page Structure ---- */
