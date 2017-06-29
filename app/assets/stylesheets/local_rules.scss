@@ -240,8 +240,7 @@ header[role=banner] div.flex_row {
    justify-content: center;
    align-content: center;
    align-items: center;
-   padding-left: 15px;
-   padding-right: 15px;
+   padding: 0 $local-page-lr-padding;
 }
 
 /* ----------------------- */
@@ -368,8 +367,7 @@ header[role=banner] nav {
    justify-content: space-between;
    align-content: center;
    align-items: center;
-   padding-left: 15px;
-   padding-right: 15px;
+   padding: 0 $local-page-lr-padding;
    position: relative;
 }
 header[role=banner] nav #main_navigation {
@@ -378,7 +376,7 @@ header[role=banner] nav #main_navigation {
    padding: 0;
    border-radius: 0;
    border: 0;
-   position: static;
+   position: static; 
    min-height: $main-menu-height;
    height: $main-menu-height;
    max-height: $main-menu-height;
@@ -488,9 +486,6 @@ header[role=banner] nav #main_navigation .navbar-header {
    #main_navigation div.navbar-collapse > ul > li > .btn,
    #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
       border-radius: $border-radius-base;
-   }
-   #main_navigation div.navbar-collapse > ul > li > a,
-   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .btn {
       background-color: $uw-purple;
       border-color: transparent;
    }
@@ -508,6 +503,77 @@ header[role=banner] nav #main_navigation .navbar-header {
       border-radius: 0 $border-radius-base $border-radius-base 0;
       display: inline-block;
    }
+}
+
+/*--------------------- */
+/* ---- SEARCH BAR ---- */
+/*--------------------- */
+#header_search {
+   display: flex;
+   align-items: center; 
+   flex: 1 0 auto;
+   margin-left: 2.25rem;
+   min-height: $main-menu-height;
+   height: $main-menu-height;
+   max-height: $main-menu-height;
+}
+
+form#search-form-header {
+   display: flex;
+   margin-top: 0;
+   width: 100%;
+}
+
+input#search-field-header {
+   @extend %local-button-padding;
+   border-radius: $border-radius-base 0 0 $border-radius-base;
+   border: solid 1px transparent;
+   color: #000;
+   display: block;
+   flex: 1 0 auto;
+   font-size: inherit;
+   background-color: #fff;
+   background-image: none;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+   font-family: inherit;
+   min-width: 0 !important; 
+   width: auto;
+   height: auto;
+}
+input#search-field-header:focus {
+   border-color: $uw-orange;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+}
+/* search bar placeholder - have to be separate so browsers get them */
+input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;
+}
+input#search-field-header::-moz-placeholder { /* Firefox 19+ */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;
+}
+input#search-field-header:-ms-input-placeholder { /* IE 10+ */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;
+}
+input#search-field-header:-moz-placeholder { /* Firefox 18- */
+   color: $uw-dark-grey !important;
+   font-style: italic;
+   opacity: 0.875;
+}
+
+button#search-submit-header {
+   flex: 0 0 auto;
+   border-radius: 0 $border-radius-base $border-radius-base 0;
 }
 
 /* --------------------- */
