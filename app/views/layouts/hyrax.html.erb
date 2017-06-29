@@ -8,12 +8,14 @@
   <body>
     <%= render '/local/banner/' %>
 
-    <%= content_for(:navbar) %>
     <%= content_for(:precontainer_content) %>
     
 
     <main role="main" id="content">
-       <div id="content-wrapper" class="container" role="main">
+      <% if controller_name == 'homepage' || controller_name == 'static' %>
+         <%= render '/local/image_masthead' %>
+      <% end %> 
+      <div id="content-wrapper" class="container" role="main">
          <a name="skip_to_content"></a>
           <div class="col-xs-12">
           <%= render '/flash_msg' %>

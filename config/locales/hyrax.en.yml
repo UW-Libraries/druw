@@ -55,6 +55,13 @@ en:
       copyright_html: "<strong>Copyright &copy; 2017 Project Hydra</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://projecthydra.org/" class="navbar-link" target="_blank">Project Hydra</a>.
 
+    nav_menu:
+      home: "Home"
+      browse: "Browse"
+      deposit: "Deposit"
+      help: "Help"
+         
+ 
     statics:
       about: "About"
       collection_policy: "Collection Policy"

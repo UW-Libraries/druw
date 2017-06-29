@@ -32,20 +32,45 @@
            <ul class="nav navbar-nav">
 
              <!-- HOME -->
-             <li <%= 'class=active' if current_page?(hyrax.root_path) %>>
-                <%= link_to t(:'hyrax.controls.home'), hyrax.root_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             <li>
+                <%= link_to t(:'hyrax.nav_menu.home'), 
+                    hyrax.root_path, 
+                    :'data-no-turbolink'=>"true", 
+                    :'class'=>"btn" %>
              </li>
 
+
+             <li>
+                <%= render partial: 'local/about_menu' %>
+             </li>
 
              <!-- BROWSE -->
              <li>
-                <%= link_to "Browse", main_app.search_catalog_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+                <%= link_to t(:'hyrax.nav_menu.browse'), 
+                            main_app.search_catalog_path, 
+                            :'data-no-turbolink'=>"true", 
+                            :'class'=>"btn" %>
              </li>
 
+
+             <!-- DEPOSIT -->
+             <li>
+                <%= render partial: 'local/deposit_button' %>
+             </li>
+
+             <!-- HELP -->
+             <li>
+                <%= link_to t(:'hyrax.statics.help'), main_app.help_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+             </li>
 
            </ul>
         </div>
      </div>
+
+     <div id="header_search">
+        <%= render partial: 'catalog/search_form' %>
+     </div>
+
    </nav>
 
 </header>
