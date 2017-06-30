@@ -1,4 +1,6 @@
 Hyrax.config do |config|
+  # Injected via `rails g hyrax:work GenericWork`
+  config.register_curation_concern :generic_work
   # Register roles that are expected by your implementation.
   # @see Hyrax::RoleRegistry for additional details.
   # @note there are magical roles as defined in Hyrax::RoleRegistry::MAGIC_ROLES
@@ -153,6 +155,7 @@ Hyrax.config do |config|
 
   # ActiveJob queue to handle ingest-like jobs
   # config.ingest_queue_name = :default
+  config.ingest_queue_name = :ingest
 
   ## Attributes for the lock manager which ensures a single process/thread is mutating a ore:Aggregation at once.
   # How many times to retry to acquire the lock before raising UnableToAcquireLockError

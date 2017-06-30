@@ -66,3 +66,8 @@ group :development, :test do
 end
 
 gem 'hydra-role-management'
+
+group :production do
+  gem 'pg'
+  gem 'sidekiq'
+end
