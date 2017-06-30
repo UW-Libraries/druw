@@ -589,7 +589,7 @@ footer#page-footer p {
    color: $uw-light-grey;
 }
 footer#page-footer a {
-   color: $uw-light-grey;
+   color: $uw-yellow;
    display: inline-block;
 }
 footer#page-footer a:hover,
@@ -607,9 +607,16 @@ footer#page-footer a:focus {
    outline: dotted 1px;
 }
 
-/* ------------------------- */
+/* -------------------------- */
 /* ---- Content Sections ---- */
-/* ------------------------- */
+/* -------------------------- */
+#content-wrapper {
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
+}
+#content-wrapper h1 {
+   margin-top: 0;
+}
 #content-wrapper h2,
 #content-wrapper h3 {
    color: $uw-metal-gold;
@@ -635,7 +642,7 @@ footer#page-footer a:focus {
 .image-masthead {
    border-bottom: none;
    margin-bottom: 0;
-   min-height: 85px;
+   min-height: 120px;
 }
 .image-masthead .background-container {
    -webkit-filter: none;
