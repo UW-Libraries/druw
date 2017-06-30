@@ -575,6 +575,20 @@ button#search-submit-header {
    flex: 0 0 auto;
    border-radius: 0 $border-radius-base $border-radius-base 0;
 }
+button#search-submit-header .fa {
+   font-size: 1.25em;
+}
+
+
+button#search-submit-header .buttonText {
+display: none;
+}
+@media(min-width:550px) {
+   button#search-submit-header .buttonText {
+       display: inline;
+   }
+}
+
 
 /* --------------------- */
 /* ---- Page Footer ---- */
@@ -582,9 +596,20 @@ button#search-submit-header {
 footer#page-footer {
    border: 0;
    background-color: $uw-dark-grey;
+   min-height: 0;
+   padding: 0.75em  $local-page-lr-padding;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
 }
-
+@media(min-width:500px) {
+   footer#page-footer {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+   }
+}
 footer#page-footer p {
+   flex: 0 0 auto;
    margin-bottom: 0;
    color: $uw-light-grey;
 }
@@ -709,4 +734,11 @@ div#site-title-buttons .btn {
       flex: 0 0 auto;
       margin: 0.375em 0;
    }
+}
+
+/* ----------------------------- */
+/* ---- Dashboard (General) ---- */
+/* ----------------------------- */
+body.dashboard {
+   padding-top: 0;
 }
