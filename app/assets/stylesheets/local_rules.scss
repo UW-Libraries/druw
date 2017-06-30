@@ -742,3 +742,23 @@ div#site-title-buttons .btn {
 body.dashboard {
    padding-top: 0;
 }
+body.dashboard div#content-wrapper {
+   padding-top: 0;
+   padding-bottom: 0;
+   display: flex;   
+}
+body.dashboard div#content-wrapper div.sidebar {
+   position: relative;
+   z-index: default;
+   flex: 0 0 auto;
+}
+body.dashboard div#content-wrapper div.main-content {
+   position: relative;
+   z-index: default;
+   flex: 1 1 auto;
+   padding-left: 0;
+}
+body.dashboard div#content-wrapper div.main-content.maximized {
+   padding-left: 0;
+}
+
