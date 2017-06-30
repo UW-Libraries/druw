@@ -751,6 +751,7 @@ body.dashboard div#content-wrapper div.sidebar {
    position: relative;
    z-index: default;
    flex: 0 0 auto;
+   background-color: $uw-dark-grey;
 }
 body.dashboard div#content-wrapper div.main-content {
    position: relative;
@@ -762,3 +763,15 @@ body.dashboard div#content-wrapper div.main-content.maximized {
    padding-left: 0;
 }
 
+body.dashboard button.sidebar-toggle {
+   vertical-align: middle;
+   border: none;
+   padding: 0;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   right: -15px;
+}
+body.dashboard button.sidebar-toggle span.fa{
+   font-size: 30px;
+}
