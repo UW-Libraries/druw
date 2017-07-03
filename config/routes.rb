@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     concern :searchable, Blacklight::Routes::Searchable.new
 
 
-  %w(about collection_policy help faq privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
+  %w(about collection_policy help faq formats privacy protected_info terms_of_deposit terms_of_use withdrawal).each do |action|
       get action, controller: 'hyrax/static', action: action, as: action
   end
 
