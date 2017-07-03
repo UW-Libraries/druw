@@ -1,0 +1,37 @@
+<div class="btn-group" id="about_menu">
+  <%= link_to t(:'hyrax.nav_menu.about'), 
+      main_app.about_path, 
+      :'class'=>"btn" 
+  %>
+  <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+    <span class="fa fa-chevron-down" ></span>
+    <span class="fa fa-chevron-up" ></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li role="menuitem">
+        <%= link_to t(:'hyrax.statics.about'), main_app.about_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+        <%= link_to t(:'hyrax.statics.faq'), main_app.faq_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+        <%= link_to t(:'hyrax.statics.collection_policy'), main_app.collection_policy_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+        <%= link_to t(:'hyrax.statics.terms_of_use'), main_app.terms_of_use_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+        <%= link_to t(:'hyrax.statics.terms_of_deposit'), main_app.terms_of_deposit_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+       <%= link_to t(:'hyrax.statics.withdrawal'), main_app.withdrawal_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+	<%= link_to t(:'hyrax.statics.protected_info'), main_app.protected_info_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+    <li role="menuitem">
+       <%= link_to t(:'hyrax.statics.privacy'), main_app.privacy_path, :'data-no-turbolink'=>"true", :'class'=>"dropdown-item" %>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,50 @@
+<div class="image-masthead">
+  <div class="background-container"></div>
+  <span class="background-container-gradient"></span>
+
+  <% if controller_name == 'homepage' %>
+    <div class="site-title" >
+       <div id="site-title-message">
+          <p>
+             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non pulvinar est.
+             Morbi dictum nisl ac ultrices sodales. Mauris posuere sodales augue, eget mattis lacus
+             commodo sed. Ut et arcu a risus mollis fringilla id ultrices arcu. Suspendisse potenti.
+             Nulla facilisi. In porta nibh sem, ac venenatis odio consequat nec. Nam ipsum elit,
+             rhoncus in velit sit amet, hendrerit vehicula quam. Mauris scelerisque suscipit ex.
+             Vestibulum vestibulum dui ac porttitor varius. Vestibulum in elit tellus. Vivamus
+             ultricies luctus magna eu feugiat.
+          </p>
+       </div>
+       <div id="site-title-buttons">
+
+         <% if @presenter.display_share_button? %>
+               <% if signed_in? %>
+                 <% if create_work_presenter.many? %>
+                   <%= link_to '#',
+                     class: 'btn btn-primary btn-lg',
+                     data: { behavior: 'select-work', target: '#worktypes-to-create', 'create-type' => 'single' } do %>
+                     <%= t('hyrax.share_button') %>
+                   <% end %>
+                 <% else # simple link to the first work type %>
+                   <%= link_to new_polymorphic_path([main_app, create_work_presenter.first_model]),
+                         class: 'btn btn-primary btn-lg' do %>
+                     <%= t('hyrax.share_button') %>
+                   <% end %>
+                 <% end %>
+               <% else %>
+                 <%= link_to hyrax.dashboard_path,
+                   class: 'btn btn-primary btn-lg' do %>
+                   <%= t('hyrax.share_button') %>
+                 <% end %>
+               <% end %>
+         <% end %>
+
+         <%= link_to main_app.search_catalog_path, :'class'=>"btn btn-primary btn-lg" do %>
+           Browse <%= t('hyrax.product_name') %>
+         <% end %>
+
+       </div>
+    </div>
+  <% end %>
+</div>
+

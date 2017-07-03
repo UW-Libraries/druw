@@ -1,0 +1,57 @@
+<div class="draft">
+    <p> Depositor grants nonexclusive perpetual license to UW to review, 
+        migrate, transfer, derive, copy, reproduce, distribute, display, 
+        preserve and/or other actions to deposited materials and associated
+        metadata.
+   </p>
+
+    <p> Depositor will assign a separate license to the materials, usually 
+        from the following categories:
+    </p>
+    <%= render partial: '/local/licenses_list' %>
+    <p> Please <%=contact_link('contact the repository librarian')%> if these 
+        options are insufficient.
+    </p>
+    
+    <p> By depositing materials in <%=t('hyrax.product_name')%>, the depositor 
+        understands and warrants that:
+    </p>
+    <ul>
+        <li>Depositor is a faculty, staff, student, or researcher at UW
+        </li>
+        <li>Deposited materials are original work and/or depositor has proper 
+            rights and permissions to deposit materials (see <a 
+            href="null">CoMotion</a> and the <a href="null">Copyright FAQ</a> 
+            for more information on intellectual property rights at UW)
+        </li>
+        <li>Deposited materials do not contain any restricted or 
+            <%=link_to main_app.protected_info_path do%>
+            <%=t('hyrax.product_name')%> Prohibited Information<%end%>
+        </li>
+        <li>Deposited materials do not infringe upon anyone’s publicity, 
+            privacy, or confidentiality
+        </li>
+        <li>Deposited materials do not violate copyright, patent, trademark, 
+            or other rights
+        </li>
+        <li>Depositor is in compliance with all applicable local, state, 
+            national, and international laws, regulations, and agreements
+        </li>
+        <li>Deposited materials, or the process of depositing, will not 
+            cause harm to UW and UW campus technology systems
+        </li>
+        <li>Depositor has read, understood, and agreed to the 
+            <%=t('hyrax.product_name')%> <a href="null">policies and terms</a>
+        </li>
+        <li>As <%= t('hyrax.product_name') %> is a resource of the University
+            of Washington, you agree to the
+            <a href="https://www.washington.edu/online/terms/">University of
+            Washington Website Terms and Conditions of Use</a>, including all
+            disclaimer of warranties, exclusions and limitations of liability.
+        </li>      
+    </ul>
+    
+    <p> UW reserves the right to <%=link_to main_app.withdrawal_path do%>
+        withdraw<%end%> files that have violated these Terms of Deposit.
+    </p>
+</div>

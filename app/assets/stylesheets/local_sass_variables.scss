@@ -1,0 +1,55 @@
+/*
+   Use this file to create any SASS variables to be used in our custom CSS.
+
+   Note that you can override the values of other SASS variables from
+   Bootstrap, Sufia, etc. by defining them here first. SASS uses the value
+   for a variable when it is first declared. Subsequent declarations do
+   not change the value.
+*/
+
+/* ---- UW BRANDING COLORS ---- */
+$uw-purple: #4B2E83;
+$uw-metal-gold: #85754D;
+$uw-gold: #B7A57A;
+$uw-web-gold: #E8E3D3;
+$uw-red: #C61029;
+$uw-yellow: #D7A900;
+$uw-blue: #001add;
+$uw-green: #4A7C01;
+$uw-orange: #C75B12;
+$uw-dark-grey: #282828;
+$uw-medium-grey: #a0a0a0;
+$uw-light-grey: #e8e8e8;
+
+/* ---- Override some Bootstrap defaults */
+$border-radius-base: 4px !default; /* declare so we can use it */
+
+$brand-primary: $uw-purple; /* also applies to default link color */
+$text-color: #000 !default;
+
+/* ---- Mainly Text Presentation ---- */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-size-base: 16px !default;
+$headings-font-weight: 600 !default;
+
+/* variable, mix-ins for commonly used code */
+
+$main-menu-height: 3.5em;
+
+$local-page-lr-padding: 12px;
+
+$button-tb-padding: 0.375em;
+$button-lr-padding: 0.75em;
+
+%local-button-padding {
+    padding: $button-tb-padding $button-lr-padding;
+}
+
+
+%local-button-hover-focus {
+    background-color: $uw-metal-gold;
+    border-color: $uw-metal-gold;
+    color: #fff;
+    outline: none;
+}
