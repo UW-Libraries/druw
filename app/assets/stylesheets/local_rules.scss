@@ -752,6 +752,7 @@ body.dashboard div#content-wrapper div.sidebar {
    z-index: default;
    flex: 0 0 auto;
    background-color: $uw-dark-grey;
+   z-index: 100;
 }
 body.dashboard div#content-wrapper div.main-content {
    position: relative;
@@ -771,7 +772,17 @@ body.dashboard button.sidebar-toggle {
    height: 30px;
    line-height: 30px;
    right: -15px;
+   z-index: 101;
 }
 body.dashboard button.sidebar-toggle span.fa{
    font-size: 30px;
+}
+
+
+/* removes the Home part from breadcrumbs on dashboard */
+body.dashboard main ul.breadcrumb li:first-child {
+   display:none;
+}
+body.dashboard main ul.breadcrumb li:first-child + li:before {
+   content: none;
 }
