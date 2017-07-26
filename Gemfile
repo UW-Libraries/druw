@@ -67,3 +67,7 @@ end
 
 gem 'hydra-role-management'
 gem 'omniauth-shibboleth', '~> 1.2', '>= 1.2.1'
+
+group :production do
+  gem 'pg'
+end
