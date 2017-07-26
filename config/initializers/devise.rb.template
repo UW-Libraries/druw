@@ -253,7 +253,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :shibboleth, {:uid_field => 'eppn',
                                 :info_fields => {
-                                     :email => 'email', :name => 'displayName'
+                                     :email => 'mail', :name => 'displayName'
                                 },
   }
 

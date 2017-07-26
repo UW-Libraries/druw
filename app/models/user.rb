@@ -32,9 +32,9 @@ class User < ApplicationRecord
   ## allow omniauth (including shibboleth) logins - this will create a local user based on an omniauth/shib login
   ## if they haven't logged in before
   def self.from_omniauth(auth)
-    where(email: auth.uid).first_or_create do |user|
+    where(email: auth.info.email).first_or_create do |user|
       #user.provider = auth.provider
-      user.email = auth.uid
+      user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
   end
