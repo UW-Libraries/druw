@@ -253,8 +253,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :shibboleth, {:uid_field => 'eppn',
                                 :info_fields => {
-                                    ## affiliation info from testshib.org IDP
-                                     :affiliation => lambda {|request_param| request_param.call('unscoped-affiliation').split(';')},
+                                     :email => 'email', :name => 'displayName'
                                 },
   }
 
