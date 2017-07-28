@@ -1,1 +1,6 @@
-REMOTE_USER: 'netid@uw.edu'
+EPPN: 'netid@washington.edu'
+MAIL: 'netid@uw.edu'
+UWNETID: 'netid'
+DISPLAYNAME: 'Display Name'
+GWS_GROUPS: 'group1;group2'
+AFFILIATION: 'affiliation'

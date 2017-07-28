@@ -466,6 +466,7 @@ GEM
       rails (> 3.2.0)
     orm_adapter (0.5.0)
     os (0.9.6)
+    pg (0.21.0)
     posix-spawn (0.3.13)
     power_converter (0.1.2)
     public_suffix (2.0.5)
@@ -713,6 +714,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   omniauth-shibboleth (~> 1.2, >= 1.2.1)
+  pg
   puma (~> 3.0)
   rails (~> 5.0.1)
   rsolr (>= 1.0)

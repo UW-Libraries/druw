@@ -4,13 +4,16 @@ class AddShibbolethHeaders
   end
 
   def call env
-    env["REMOTE_USER"] = ENV["REMOTE_USER"]
-    env["eppn"] = env["REMOTE_USER"] 
     env["Shib-Application-ID"] = "shib-app-id" 
     env["Shib-Sessions-ID"] = "shib-session-id" 
-    env["unscoped-affiliation"] = "foo;bar" 
-    
-    Rails.logger.info "REMOTE_USER set to: " + env["REMOTE_USER"]
+    env["affiliation"] = ENV["AFFILIATION"]
+    env["uwNetID"] = ENV["UWNETID"]
+    env["mail"] = ENV["MAIL"]
+    env["eppn"] = ENV["EPPN"] 
+    env["gws_groups"] = ENV["GWS_GROUPS"] 
+    env["displayName"] = ENV["DISPLAYNAME"] 
+
+    Rails.logger.info "USER set to: " + env["mail"]
     @status, @headers, @response = @app.call(env)
     [@status, @headers, @response]
   end
