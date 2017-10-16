@@ -181,6 +181,8 @@ Hyrax.config do |config|
   # Location where binaries are exported
   # config.binaries_directory = "tmp/binaries"
 
+  config.realtime_notifications = false
+
   # If browse-everything has been configured, load the configs.  Otherwise, set to nil.
   begin
     if defined? BrowseEverything

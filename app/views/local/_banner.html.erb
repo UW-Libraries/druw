@@ -10,7 +10,7 @@
 
      <div id="header_notifications_container">
         <% if user_signed_in? %>
-              <%= render partial: 'hyrax/users/notify_number' %>
+              <%= render_notifications(user: current_user) %>
         <% end %>
      </div>
 
