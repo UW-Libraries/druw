@@ -1,4 +1,4 @@
-# WCR Repository
+# WCR Repository™
 
 This bitbucket repository builds a research data repository based on the [Fedora](http://fedorarepository.org/)/[Samvera](http://samvera.org/)/[Hyrax](http://hyr.ax/) platform. 
 
