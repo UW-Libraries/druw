@@ -5,5 +5,5 @@
 
 <div class="col-xs-12 col-sm-6">
   <h2><%= t('hyrax.homepage.admin_sets.title') %></h2>
-  <%= render 'explore_collections' %>
+  <%= render 'explore_collections', collections: @presenter.collections %>
 </div>
