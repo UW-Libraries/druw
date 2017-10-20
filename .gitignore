@@ -22,15 +22,7 @@ db/development.sqlite3
 /tmp
 
 # Ignore locally-specific config files
-config/database.yml
-config/fedora.yml
-config/solr.yml
-config/redis.yml
-config/hydra-ldap.yml
-config/browse_everything_providers.yml
-config/analytics.yml
-config/secrets.yml
-config/blacklight.yml
+*.yml
 
 # Ignore this file for security reasons
 config/initializers/devise.rb
