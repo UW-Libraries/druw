@@ -1,115 +1,138 @@
 
-<section class="draft">    
+<section>    
     <h2>Getting Started</h2>
-    <p> The first time you deposit into <%=t('hyrax.product_name')%> , you will need to...</p> 
-    <p> If you need assistance, have questions or would like to schedule a 
-        consultation - contact us.
+	<ul>
+	<li>Log in
+		<ul>
+		<li>The first time you deposit into <%=t('hyrax.product_name')%>, you will need to create an account using the “Login” link at the top right of the application.
+		</li>
+		</ul>
+	</li>
+	<li>Select research data for deposit
+		<ul>
+		<li>Consider which components of your work are most suitable for archiving and sharing.</li>
+		<li>Think of it like publication - you want the data set to be as complete as possible.</li>
+		</ul>
+	</li>
+	<li>Understand the Terms of Use
+		<ul>
+		<li>By using <%=t('hyrax.product_name')%> you agree to certain conditions listed in the Terms of Use</li>
+		<li>Apart from Fair Use, you must also decide what restrictions need to be placed on re-use of your data. Refer to the “How will your material be licensed” section in the <%= link_to main_app.faq_path do%>FAQ<%end%>.</li>
+		<li>Determine how the data will be licensed. Refer to the “Licensing your materials” information in the <%= link_to main_app.terms_of_use_path do%>Terms of Use<%end%> for more information.</li>
+		</ul>
+	</li>
+	</ul>	
+</section> 
+<section>
+    <h2>Preparing your Data for Deposit</h2>
+	<ul>
+	<li>Decide how to organize your data for others to use.
+		<ul>
+		<li>Works &amp; Collections 
+			<ul>
+			<li>A “Work” is a single functional item―which can be made of one file or multiple files―that was required for the research work. 
+				<ul>
+				<li>Does it make more sense to have one “Work” or to have multiple “Works”?
+				</li>
+				<li>Should you have multiple files in each “Work” or a single file per “Work”?
+				</li>
+				</ul>
+			</li>
+			<li>A “Collection” is a group of works typically organized around a theme or category. Collections are not required.
+				<ul>
+				<li>Do you need to have your own “Collection”?
+				</li>
+				</ul>
+			</li>
+			</ul>
+		</li>
+		</ul>
+	</li>
+	<li>Decide what file formats and naming conventions you will use. A list of recommended file formats can be found in Recommended Formats [link to page on the Libraries website - preservation or link to data management libguide].
+	</li>
+	<li>Make sure you have the correct authorizations by reviewing the Protected Information Policy.
+	</li>
+	<li>Make sure the data set is as complete as possible
+	</li>
+	<li>Remove any personally identifiable information from the data. See the Protected Information Policy for more information.
+	</li>
+	</ul>
+</section> 
+<section>
+    <h2>Describing your Data</h2>
+    <p> Prepare a study description which includes a title and summary about the data collection along with some keywords to be used in search retrieval. For best practices in preparing your data for deposit refer to the ICPSR guide here <a href="https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html">https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html</a>.
     </p>
 </section> 
-<section class="draft">
-    <h2>Preparing your data for deposit</h2>
-    <p> Here’s a guide from <a class="external" href="https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html">ICPSR</a>.
-    </p> 
-    <p> Make sure you have the correct authorizations - see our Intellectual 
-        Property FAQ for more info.
+<section>
+    <h2>Depositing your data (How to Upload)</h2>
+    <p>Deposits are made using a secure online form to describe and upload your data.
     </p>
-    <p> Make sure that you don’t have any personally identifiable information - see 
-        our Protected Information Policy for more info.
-    </p>
-    <p> Think of it like publication - you want the data set to be as complete as possible
-    </p>
-    <p> Check out our recommended formats.
-    </p>
+	<p>Batch Upload: This will upload your data into separate sets.</p>
+	<p>Regular Upload: This will upload your data as a single set.</p>
+	<ul>
+	<li>STEP 1a: Describe your data - * Required Fields
+		<ul>
+		<li>Title: A name to identify the work.
+		</li>
+		<li>Creator: The person or group responsible for the data.
+		</li>	
+		<li>Keyword: (or phrase) to describe what the data is about. These will be used in search to find the data.
+		</li>
+		<li>Rights Statement: Indicate the copyright status of the work.
+		</li>
+		</ul>		
+	</li>
+	<li>Step 1b: Describe your data - Additional Fields
+		<ul>
+		<li>Contributor
+		</li>
+		<li>Abstract or Summary
+		</li>
+		<li>License
+		</li>
+		<li>Publisher
+		</li>
+		<li>Date Created
+		</li>
+		<li>Subject
+		</li>
+		<li>Language
+		</li>
+		<li>Identifier
+		</li>
+		<li>Location
+		</li>
+		<li>Related URL
+		</li>
+		<li>Resource Type
+		</li>
+		</ul>
+	</li>
+	<li>STEP 2: Add files
+		<ul>
+		<li>Select files individually using the “Add files” option to find files on your computer or a cloud service to upload.
+		</li>
+		<li>OR, select a folder of files from your computer or a cloud service to upload all the files contained in it by using the “Add folder” option.
+		</li>
+		</ul>
+	</li>
+	<li>STEP 3: Relationships: This optional step allows you to assign connections to other works or to a collection.
+	</li>
+	<li>STEP 4: Read the Deposit Agreement and check to agree
+	</li>
+	<li>STEP 5: After you have described your work, attached your files, and checked the deposit agreement, click the “Save” button in the right column to complete the deposit.
+	</li>
+	</ul>
 </section> 
-<section class="draft">
-    <h2>Describing your data</h2>
-    <p> The goal is for your data to not only be findable, but useable. In 
-        general, you will need to include some   descriptive metadata, including 
-        XYZ. You will also have the opportunity to include a number of other 
-        metadata fields. We also recommend that you include a readme file.  If 
-        you need assistance finding a metadata standard that’s appropriate, 
-        contact our Data Librarians. 
-    </p>
-</section> 
-<section class="draft">
-    <h2>Licensing your materials</h2>
-    <p> According to 
-        <a href="https://www.washington.edu/research/policies/gim-37-research-data/">UW Grants Information Memorandum 37</a> 
-        all Research Data is owned by the University, except as otherwise 
-        provided by an agreement with a third party, a law, or University 
-        policy, such as copyright policy. However, researchers are assigned 
-        stewardship responsibility of the data, and therefore may archive 
-        and share the data as they see fit. Ownership of software and other 
-        copyrightable materials is governed by 
-        <a href="http://www.washington.edu/admin/rules/policies/PO/EO36.html">Executive Order 36</a>,
-        which states that UW faculty, staff, and students retain all rights 
-        in copyrightable materials they create, subject to a limited number 
-        of exceptions.
-    </p>
-
-    <p> As owners and stewards of your materials it is important to give users
-        clear guidelines on how they may use your data and code. While you may
-        deposit materials with all rights reserved, UW encourages you to use 
-        one of the following licenses to communicate your wishes:
-    </p>
-
-    <p>For any material:</p>
-    <ul>
-       <li><a href="https://creativecommons.org/about/cc0/">CC0</a> - 
-          The rights holder waives all of their interests in the work; users
-          may use the material any way they wish.
-       </li>
-    </ul>
-
-    <p> For research data and data sets:
-    </p>
-    <ul>
-	<li>Open Data Commons - A set of licenses that are specifically 
-            designed to accommodate the differing ownership issues that can 
-            arise between a database and its contents. 
-        </li>
-    </ul>
- 
-    <p> For code:
-    </p>
-    <ul>
-       <li>MIT License - A simple and permissive license that allows a wide 
-           range of uses but requires inclusion of the original copyright 
-           and license notices.
-       </li>
-       <li>BSD Licenses - A set of simple and permissive licenses very 
-           similar to the MIT license, but with additional options to 
-           explicitly exclude patent rights or to control the copyright 
-           holder’s promotional association with derived products.
-       </li>
-    </ul>
-
-   <p>For other copyrightable materials:
-   </p>
-   <ul>
-      <li><a href="https://creativecommons.org/licenses/">Creative Commons</a>
-          - A set of licenses that outline users’ responsibilities regarding 
-          attribution, commercialization, derivative works, and licensing of 
-          derivative works.
-      </li>
-   </ul>
-
-
-</section> 
-<section class="draft">
-    <h2>Batch vs. Normal Upload</h2>
-    <p> Here are the differences
-    </p>
-</section> 
-<section class="draft">
-    <h2>Navigating your account</h2>
-    <p> Information about what it means to create your own collection, etc. 
-    </p>
-</section> 
-<section class="draft">
-    <h2>Further assistance</h2>
-    <p> Contact these folks, and these info sources 
-    </p>
-</section> 
+    <section>
+        <h2>Further Assistance</h2>
+        <p> <%=t('hyrax.product_name')%> is supported by the UW Libraries' Digital Strategies group. </p>
+        <ul>
+        <li>For general questions contact <a href="mailto:rworks@uw.edu">rworks@uw.edu</a></li>
+        <li>Repository Librarian: David Tolmie (<a href="mailto:dtolmie@uw.edu">dtolmie@uw.edu)</a></li>
+        <li>Data Management Librarian: Jenny Muilenburg (<a href="mailto:jmuil@uw.edu">jmuil@uw.edu)</a></li>
+        <li>Scholarly Publishing Outreach Librarian: Liz Bedford (<a href="mailto:ebedford@uw.edu">ebedford@uw.edu)</a></li>
+        </ul>
+    </section>
 
 

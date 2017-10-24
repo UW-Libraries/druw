@@ -1,48 +1,44 @@
-<div class="draft">
 
-    <p> Here is some text about DRUW.
-    </p>
+
+     <section>
+     <h2>What is DRUW?</h2>
+     <p>DRUW is the institutional data repository application for the University of Washington Research community. Hosted by the University of Washington Libraries, it provides a place to deposit research data developed in support of research activities at the UW.
+</p>
+     </section>
   
     <section>
         <h2>Policies</h2>
         <ul>
-	    <li><%= link_to t(:'hyrax.statics.collection_policy'), main_app.collection_policy_path %></li>
-            <li><%= link_to t(:'hyrax.statics.terms_of_use'), main_app.terms_of_use_path%></li>
-            <li><%= link_to t(:'hyrax.statics.terms_of_deposit'), main_app.terms_of_deposit_path %></li>
-            <li><%= link_to t(:'hyrax.statics.withdrawal'), main_app.withdrawal_path %></li>
-            <li><%= link_to t(:'hyrax.statics.protected_info'), main_app.protected_info_path %></li>
-            <li><%= link_to t(:'hyrax.statics.privacy'), main_app.privacy_path %></li>
+	    <li><%= link_to t(:'hyrax.statics.collection_policy'), main_app.collection_policy_path%>: Conditions for use of materials found in the repository</li>
+            <li><%= link_to t(:'hyrax.statics.terms_of_use'), main_app.terms_of_use_path%>: Conditions for uploading data to the repository</li>
+            <li><%= link_to t(:'hyrax.statics.terms_of_deposit'), main_app.terms_of_deposit_path%>: A general framework against which current and future collection decisions can be made</li>
+            <li><%= link_to t(:'hyrax.statics.withdrawal'), main_app.withdrawal_path%>: Conditions for withdrawing materials from the repository</li>
+            <li><%= link_to t(:'hyrax.statics.protected_info'), main_app.protected_info_path%>: Rules governing identifiable information</li>
+            <li><a href="https://www.washington.edu/online/privacy">University of Washington Privacy Policy</a></li>
         </ul>
     </section>
 
     <section>
         <h2>Frequently Asked Questions</h2>
-        <p> Here's a link to the  <%= link_to main_app.faq_path do%>FAQ<%end%>.
+        <p>A list of commonly asked questions and their answers can be found <%= link_to main_app.faq_path do%>HERE<%end%>.
         </p>
     </section>
 
     <section>
         <h2>Technical Infrastructure</h2>
-        <p> DRUW is built on Hydra Sufia (currently v<%= Hyrax::VERSION %>). 
-            Our data model is CPDM. We can take anything, but we have a 
-            <%= link_to 'list of preferred formats', main_app.formats_path %>.
+        <p>DRUW is built on <a href="http://hyr.ax">Samvera Hyrax</a>, an open source technology. Our data model is CPDM. DRUW will accept any file format. However, please refer to the <%= link_to 'what can be deposited', main_app.faq_path%> section of the FAQ for a list of suggested formats.
         </p>
     </section>
 
     <section>
-        <h2 id="about_contact">Contact Us</h2>
-        <p> <%=t('hyrax.product_name')%> is supported by the UW Libraries'
-            <a href="null">Digital Strategies</a> group. For general 
-            questions, contact:
-        </p>
+        <h2>Further Assistance</h2>
+        <p> <%=t('hyrax.product_name')%> is supported by the UW Libraries' Digital Strategies group. </p>
         <ul>
-           <li>Repository Librarian: David Tolmie 
-               <a href="mailto:dtolmie@edu">dtolmie.edu</a>
-           </li>
-           <li>Data Services Project Librarian: Liz Bedford
-               <a href="mailto:ebedford@uw.edu">ebedford@uw.edu</a>
-           </li>
+        <li>For general questions contact <a href="mailto:rworks@uw.edu">rworks@uw.edu</a></li>
+        <li>Repository Librarian: David Tolmie (<a href="mailto:dtolmie@uw.edu">dtolmie@uw.edu)</a></li>
+        <li>Data Management Librarian: Jenny Muilenburg (<a href="mailto:jmuil@uw.edu">jmuil@uw.edu)</a></li>
+        <li>Scholarly Publishing Outreach Librarian: Liz Bedford (<a href="mailto:ebedford@uw.edu">ebedford@uw.edu)</a></li>
         </ul>
     </section>
 
-</div>
+
