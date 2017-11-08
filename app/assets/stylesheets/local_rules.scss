@@ -166,27 +166,6 @@ button.dropdown-toggle[aria-expanded="false"] span.fa.fa-chevron-up {
    padding-bottom: calc(#{$button-tb-padding} - 2px);
 }
 
-/* ------------------------ */
-/* ---- Page Structure ---- */
-/* ------------------------ */
-
-/* make the footer sticky */
-html {
-   height: 100%;
-}
-body {
-   height: 100vh;
-   display: flex;
-   flex-direction: column;
-   margin-bottom: 0; /* unsets Sufia's attempt to make a sticky footer */
-}
-main#content {
-   flex: 1 0 auto;
-}
-footer#page-footer {
-   flex-shrink: 0;
-}
-
 
 /* -------------------- */
 /* ---- Skip Links ---- */
