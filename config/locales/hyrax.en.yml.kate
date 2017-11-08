@@ -1,0 +1,78 @@
+en:
+  blacklight:
+    search:
+      fields:
+        facet:
+          based_near_sim: Location
+          creator_sim: Creator
+          file_format_sim: Format
+          generic_type_sim: Type
+          keyword_sim: Keyword
+          language_sim: Language
+          publisher_sim: Publisher
+          subject_sim: Subject
+        index:
+          based_near_tesim: Location
+          contributor_tesim: Contributor
+          creator_tesim: Creator
+          date_created_tesim: Date Created
+          date_modified_dtsi: Date Modified
+          date_uploaded_dtsi: Date Uploaded
+          description_tesim: Description
+          file_format_tesim: File Format
+          identifier_tesim: Identifier
+          keyword_tesim: Keyword
+          language_tesim: Language
+          publisher_tesim: Publisher
+          rights_tesim: Rights
+          subject_tesim: Subject
+        show:
+          based_near_tesim: Location
+          contributor_tesim: Contributor
+          creator_tesim: Creator
+          date_created_tesim: Date Created
+          date_modified_dtsi: Date Modified
+          date_uploaded_dtsi: Date Uploaded
+          description_tesim: Description
+          file_format_tesim: File Format
+          identifier_tesim: Identifier
+          keyword_tesim: Keyword
+          language_tesim: Language
+          publisher_tesim: Publisher
+          rights_tesim: Rights
+          subject_tesim: Subject
+          title_tesim: Title
+  hyrax:
+    product_name:           "DRUW"
+    product_long_name:      "Data Repository at the University of Washington"
+    product_twitter_handle: "@HydraSphere"
+    institution_name:       "Institution"
+    institution_name_full:  "The Institution Name"
+    account_name:           "My Institution Account Id"
+    directory:
+      suffix:               "@example.org"
+    footer:
+
+
+    search:
+      button:
+        text: "Search"
+
+
+    nav_menu:
+      home: "Home"
+      browse: "Browse"
+      deposit: "Deposit"
+      help: "Help"
+         
+ 
+    statics:
+      about: "About"
+      collection_policy: "Collection Policy"
+      faq: "Frequently Asked Questions"
+      formats: "Recommended File Formats"
+      help: "Help"
+      protected_info: "Protected Information Policy"
+      terms_of_deposit: "Terms of Deposit"
+      terms_of_use: "Terms of Use"
+      withdrawal: "Withdrawal Policy"
