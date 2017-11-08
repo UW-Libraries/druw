@@ -71,8 +71,8 @@ gem 'omniauth-shibboleth', '~> 1.2', '>= 1.2.1'
 
 group :production do
   gem 'pg'
-
+end
+`
 group :development do
   gem 'xray-rails'
-end
 end
