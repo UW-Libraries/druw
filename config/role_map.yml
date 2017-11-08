@@ -21,10 +21,3 @@ test:
 
 production:
   # Add roles for users here.
-# BEGIN ANSIBLE MANAGED BLOCK
-  admin_policy_object_editor:
-    - archivist1@example.com
-  researcher:
-    - archivist1@example.com
-    - researcher1@example.com
-# END ANSIBLE MANAGED BLOCK
