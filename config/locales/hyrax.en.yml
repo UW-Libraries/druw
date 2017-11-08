@@ -46,26 +46,30 @@ en:
     product_name:           "DRUW"
     product_long_name:      "Data Repository at the University of Washington"
     product_twitter_handle: "@HydraSphere"
-    institution_name:       "Institution"
-    institution_name_full:  "The Institution Name"
-    account_name:           "My Institution Account Id"
+    institution_name:       "University of Washington"
+    institution_name_full:  "University of Washington Libraries"
+    #account_name:           "My Institution Account Id"
+    dashboard:
+      breadcrumbs:
+        admin:              "My Dashboard"
+      #my:
+      #  works:              "My Works"
     directory:
       suffix:               "@example.org"
     footer:
-
-
-    search:
-      button:
-        text: "Search"
-
 
     nav_menu:
       home: "Home"
       browse: "Browse"
       deposit: "Deposit"
       help: "Help"
-         
  
+    search:
+      button:
+        text: "Search"
+
+    share_button:            "Deposit Your Work"
+
     statics:
       about: "About"
       collection_policy: "Collection Policy"
