@@ -46,6 +46,7 @@ en:
           title_tesim: Title
   hyrax:
     product_name:           "DRUW"
+    product_long_name:      "Digital Repository @ University of Washington"
     product_twitter_handle: "@UWLibraries"
     institution_name:       "UW"
     institution_name_full:  "University of Washington Libraries"
