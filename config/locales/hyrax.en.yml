@@ -62,3 +62,53 @@ en:
       service_html: A service of <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
     share_button:           "Deposit Your Work"
 
+    search:
+      button:
+        text: "Search"
+
+
+    nav_menu:
+      home: "Home"
+      browse: "Browse"
+      deposit: "Deposit"
+      help: "Help"
+         
+ 
+    statics:
+      about: "About"
+      collection_policy: "Collection Policy"
+      faq: "Frequently Asked Questions"
+      faq_short_name: "FAQs"
+      formats: "Recommended File Formats"
+      help: "Help"
+      protected_info: "Protected Information Policy"
+      terms_of_deposit: "Terms of Deposit"
+      terms_of_use: "Terms of Use"
+      withdrawal: "Withdrawal Policy"
+
+    visibility:
+      authenticated:
+        note_html: "Restrict access to users logged in with %{institution} NetIDs."
+        text: "%{institution}"
+      embargo:
+        note_html: "Set date for future release."
+        text: "Embargo"
+      lease:
+        note_html: "Set date for future reduced access."
+        text: "Lease"
+      open:
+        note_html: "Make available to all."
+        text: Public
+        warning_html: "<p>
+                        <strong>Please note</strong>, making something visible to the world (i.e.
+                        marking this as %{label}) may be
+                        viewed as publishing which could impact your ability to:
+                      </p>
+                      <ul>
+                        <li>Patent your work</li>
+                        <li>Publish your work in a journal</li>
+                      </ul>
+                      <p>
+                        Check out <a href=\"http://www.sherpa.ac.uk/romeo/\">SHERPA/RoMEO</a> for more
+                        information about publisher copyright policies.
+                      </p>"

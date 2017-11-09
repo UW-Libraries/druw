@@ -45,5 +45,5 @@ public/assets
 # Ignore bash history
 .bash_history
 
- # Ignore vi swap files
+# Ignore vi swap files
 *.swp

@@ -39,10 +39,13 @@
                     :'class'=>"btn" %>
              </li>
 
+	     <li>
+	        <%= link_to t(:'hyrax.statics.about'), main_app.about_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+	     </li>
 
-             <li>
-                <%= render partial: 'local/about_menu' %>
-             </li>
+	     <li>
+	        <%= link_to t(:'hyrax.statics.faq_short_name'), main_app.faq_path, :'data-no-turbolink'=>"true", :'class'=>"btn" %>
+	     </li>
 
              <!-- BROWSE -->
              <li>
