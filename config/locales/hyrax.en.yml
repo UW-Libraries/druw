@@ -62,3 +62,26 @@ en:
       service_html: A service of <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
     share_button:           "Deposit Your Work"
 
+    search:
+      button:
+        text: "Search"
+
+
+    nav_menu:
+      home: "Home"
+      browse: "Browse"
+      deposit: "Deposit"
+      help: "Help"
+         
+ 
+    statics:
+      about: "About"
+      collection_policy: "Collection Policy"
+      faq: "Frequently Asked Questions"
+      faq_short_name: "FAQs"
+      formats: "Recommended File Formats"
+      help: "Help"
+      protected_info: "Protected Information Policy"
+      terms_of_deposit: "Terms of Deposit"
+      terms_of_use: "Terms of Use"
+      withdrawal: "Withdrawal Policy"
