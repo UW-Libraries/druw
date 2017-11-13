@@ -53,7 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gem 'hyrax', github: 'projecthydra-labs/hyrax', branch: 'master'
-gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.0.0.rc1'
+gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.0.0.rc2'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
@@ -71,4 +71,8 @@ gem 'omniauth-shibboleth', '~> 1.2', '>= 1.2.1'
 
 group :production do
   gem 'pg'
+end
+
+group :development do
+  gem 'xray-rails'
 end
