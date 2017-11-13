@@ -73,8 +73,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active-fedora (11.5.0)
-      active-triples (~> 0.11.0)
+    active-fedora (11.5.2)
+      active-triples (>= 0.11.0, < 2.0.0)
       activemodel (>= 4.2, < 6)
       activesupport (>= 4.2.4, < 6)
       deprecation
@@ -84,11 +84,11 @@ GEM
       rsolr (>= 1.1.2, < 3)
       ruby-progressbar (~> 1.0)
       solrizer (>= 3.4, < 5)
-    active-triples (0.11.0)
+    active-triples (1.0.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       rdf (~> 2.0, >= 2.0.2)
-      rdf-vocab
+      rdf-vocab (~> 2.0)
     active_encode (0.1.1)
       activesupport
     active_fedora-noid (2.2.0)
@@ -120,7 +120,7 @@ GEM
       execjs
     awesome_nested_set (3.1.3)
       activerecord (>= 4.0.0, < 5.2)
-    aws-partitions (1.32.0)
+    aws-partitions (1.34.0)
     aws-sdk-core (3.7.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
@@ -179,16 +179,16 @@ GEM
       sass-rails
       signet
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     cancancan (1.17.0)
     carrierwave (1.2.1)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
     clipboard-rails (1.7.1)
-    coffee-rails (4.2.1)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -254,7 +254,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-encoding (0.0.4)
       faraday
-    fcrepo_wrapper (0.8.0)
+    fcrepo_wrapper (0.9.0)
       ruby-progressbar
     ffi (1.9.18)
     flipflop (2.3.1)
@@ -330,7 +330,7 @@ GEM
     hydra-pcdm (0.10.0)
       active-fedora (>= 10, < 12)
       mime-types (>= 1)
-    hydra-role-management (0.2.2)
+    hydra-role-management (1.0.0)
       blacklight
       bootstrap_form
       cancancan
@@ -472,10 +472,10 @@ GEM
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
-    omniauth (1.6.1)
+    omniauth (1.7.1)
       hashie (>= 3.4.6, < 3.6.0)
       rack (>= 1.6.2, < 3)
-    omniauth-shibboleth (1.2.1)
+    omniauth-shibboleth (1.3.0)
       omniauth (>= 1.0.0)
     openseadragon (0.4.0)
       rails (> 3.2.0)
@@ -485,7 +485,7 @@ GEM
     posix-spawn (0.3.13)
     power_converter (0.1.2)
     public_suffix (3.0.1)
-    puma (3.8.2)
+    puma (3.10.0)
     qa (2.0.0)
       activerecord-import
       deprecation
@@ -596,23 +596,23 @@ GEM
     rsolr (2.0.2)
       builder (>= 2.1.2)
       faraday
-    rspec-core (3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-expectations (3.6.0)
+    rspec-core (3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-mocks (3.6.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-rails (3.6.0)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-support (3.6.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.0)
     ruby-box (1.15.0)
       addressable
       json
@@ -650,8 +650,9 @@ GEM
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
     slop (4.6.0)
-    solr_wrapper (1.0.0)
+    solr_wrapper (1.1.0)
       faraday
+      retriable
       ruby-progressbar
       rubyzip
     solrizer (3.4.1)
@@ -671,7 +672,7 @@ GEM
     sparql-client (2.1.0)
       net-http-persistent (~> 2.9)
       rdf (~> 2.0)
-    spring (2.0.1)
+    spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
