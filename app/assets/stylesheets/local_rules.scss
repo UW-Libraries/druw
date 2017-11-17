@@ -109,10 +109,10 @@ p, ol, ul
 .btn {
    @extend %local-button-padding;
 }
-.btn-primary:hover, 
-.btn-primary:focus, 
-.btn-primary:active, 
-.btn-primary.active, 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
 .btn-primary:active:focus {
     @extend %local-button-hover-focus;
 }
@@ -158,7 +158,7 @@ button.dropdown-toggle[aria-expanded="false"] span.fa.fa-chevron-up {
 }
 /* when the dropdown is open, the button looks inset */
 #user_menu.open > button.dropdown-toggle,
-#main_navigation button.navbar-toggle[aria-expanded=true], 
+#main_navigation button.navbar-toggle[aria-expanded=true],
 #about_menu.open > button.dropdown-toggle,
 #deposit_menu.open > button.dropdown-toggle {
    box-shadow: inset 2px 3px 5px #000, inset 0px 1px 1px #000;
@@ -234,7 +234,7 @@ header[role=banner] div.flex_row {
 .uw_logo {
    background-color: $uw-purple;
    background-image: image-url("uw_patch.png");
-   background-repeat: no-repeat; 
+   background-repeat: no-repeat;
    background-position: 0 0;
    background-size: 100% 100%;
    display: block;
@@ -278,7 +278,7 @@ header[role=banner] div.flex_row {
 }
 .uw_logo:focus,
 .uwlib_logo:focus {
-   outline: 1px dotted $uw-yellow;  
+   outline: 1px dotted $uw-yellow;
    outline-offset: -1px;
 }
 
@@ -320,7 +320,7 @@ header[role=banner] div.flex_row {
    font-weight: normal;
 }
 #user_login_link:hover,
-#user_login_link:focus, 
+#user_login_link:focus,
 #user_menu_button:hover,
 #user_menu_button:focus {
     @extend %local-button-hover-focus;
@@ -352,15 +352,16 @@ header[role=banner] nav {
 header[role=banner] nav #main_navigation {
    flex: 0 0 auto;
    margin-bottom: 0;
-   padding: 0;
+//   padding: 0;
+   padding: 0 1em 0 0;
    border-radius: 0;
    border: 0;
-   position: static; 
+   position: static;
    min-height: $main-menu-height;
    height: $main-menu-height;
    max-height: $main-menu-height;
 }
-@media(min-width:768px) { 
+@media(min-width:768px) {
    header[role=banner] nav #main_navigation {
       display: flex;
       align-items: center;
@@ -381,8 +382,8 @@ header[role=banner] nav #main_navigation .navbar-header {
    float: none;
    margin-right: 0;
    @extend %local-button-padding;
-   min-height: 2.25em;  
-   background-color: $uw-purple; 
+   min-height: 2.25em;
+   background-color: $uw-purple;
 }
 #main_navigation button.navbar-toggle span.icon-bar {
    border-color: #fff;
@@ -420,7 +421,7 @@ header[role=banner] nav #main_navigation .navbar-header {
    display: block;
    vertical-align: middle;
    border-radius: 0;
-   border-color: #333 transparent transparent;   
+   border-color: #333 transparent transparent;
    line-height: 1.42857;
 }
 /* ---- Split Button in Main Menu ---- */
@@ -433,7 +434,7 @@ header[role=banner] nav #main_navigation .navbar-header {
 #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
    display: none;
    padding-left: 0.375em;
-   padding-right: 0.375em;   
+   padding-right: 0.375em;
    margin-left: 1px;
 }
 #main_navigation div.navbar-collapse > ul > li > a,
@@ -487,86 +488,86 @@ header[role=banner] nav #main_navigation .navbar-header {
 /*--------------------- */
 /* ---- SEARCH BAR ---- */
 /*--------------------- */
-#header_search {
-   display: flex;
-   align-items: center; 
-   flex: 1 0 auto;
-   margin-left: 2.25rem;
-   min-height: $main-menu-height;
-   height: $main-menu-height;
-   max-height: $main-menu-height;
-}
-
-form#search-form-header {
-   display: flex;
-   margin-top: 0;
-   width: 100%;
-}
-
-input#search-field-header {
-   @extend %local-button-padding;
-   border-radius: $border-radius-base 0 0 $border-radius-base;
-   border: solid 1px transparent;
-   color: #000;
-   display: block;
-   flex: 1 0 auto;
-   font-size: inherit;
-   background-color: #fff;
-   background-image: none;
-   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-   font-family: inherit;
-   min-width: 0 !important; 
-   width: auto;
-   height: auto;
-}
-input#search-field-header:focus {
-   border-color: $uw-orange;
-   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
-           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
-}
-/* search bar placeholder - have to be separate so browsers get them */
-input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-   color: $uw-dark-grey !important;
-   font-style: italic;
-   opacity: 0.875;
-}
-input#search-field-header::-moz-placeholder { /* Firefox 19+ */
-   color: $uw-dark-grey !important;
-   font-style: italic;
-   opacity: 0.875;
-}
-input#search-field-header:-ms-input-placeholder { /* IE 10+ */
-   color: $uw-dark-grey !important;
-   font-style: italic;
-   opacity: 0.875;
-}
-input#search-field-header:-moz-placeholder { /* Firefox 18- */
-   color: $uw-dark-grey !important;
-   font-style: italic;
-   opacity: 0.875;
-}
-
-button#search-submit-header {
-   flex: 0 0 auto;
-   border-radius: 0 $border-radius-base $border-radius-base 0;
-}
-button#search-submit-header .fa {
-   font-size: 1.25em;
-}
-
-
-button#search-submit-header .buttonText {
-display: none;
-}
-@media(min-width:550px) {
-   button#search-submit-header .buttonText {
-       display: inline;
-   }
-}
+// #header_search {
+//    display: flex;
+//    align-items: center;
+//    flex: 1 0 auto;
+//    margin-left: 2.25rem;
+//    min-height: $main-menu-height;
+//    height: $main-menu-height;
+//    max-height: $main-menu-height;
+// }
+//
+// form#search-form-header {
+//    display: flex;
+//    margin-top: 0;
+//    width: 100%;
+// }
+//
+// input#search-field-header {
+//    @extend %local-button-padding;
+//    border-radius: $border-radius-base 0 0 $border-radius-base;
+//    border: solid 1px transparent;
+//    color: #000;
+//    display: block;
+//    flex: 1 0 auto;
+//    font-size: inherit;
+//    background-color: #fff;
+//    background-image: none;
+//    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+//            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+//    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+//         -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+//            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+//    font-family: inherit;
+//    min-width: 0 !important;
+//    width: auto;
+//    height: auto;
+// }
+// input#search-field-header:focus {
+//    border-color: $uw-orange;
+//    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+//            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($uw-orange, 0.6);
+// }
+// /* search bar placeholder - have to be separate so browsers get them */
+// input#search-field-header::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//    color: $uw-dark-grey !important;
+//    font-style: italic;
+//    opacity: 0.875;
+// }
+// input#search-field-header::-moz-placeholder { /* Firefox 19+ */
+//    color: $uw-dark-grey !important;
+//    font-style: italic;
+//    opacity: 0.875;
+// }
+// input#search-field-header:-ms-input-placeholder { /* IE 10+ */
+//    color: $uw-dark-grey !important;
+//    font-style: italic;
+//    opacity: 0.875;
+// }
+// input#search-field-header:-moz-placeholder { /* Firefox 18- */
+//    color: $uw-dark-grey !important;
+//    font-style: italic;
+//    opacity: 0.875;
+// }
+//
+// button#search-submit-header {
+//    flex: 0 0 auto;
+//    border-radius: 0 $border-radius-base $border-radius-base 0;
+// }
+// button#search-submit-header .fa {
+//    font-size: 1.25em;
+// }
+//
+//
+// button#search-submit-header .buttonText {
+// display: none;
+// }
+// @media(min-width:550px) {
+//    button#search-submit-header .buttonText {
+//        display: inline;
+//    }
+// }
 
 
 /* --------------------- */
@@ -686,7 +687,7 @@ div#site-title-buttons {
    flex-wrap: wrap;
    justify-content: center;
    margin-bottom: 0.5em;
-} 
+}
 
 div#site-title-buttons .btn {
    min-width: 10em;
@@ -694,7 +695,7 @@ div#site-title-buttons .btn {
 }
 
 @media (min-width: 768px) {
-   .image-masthead .site-title { 
+   .image-masthead .site-title {
       flex-direction: row;
    }
    div#site-title-message {
@@ -724,7 +725,7 @@ body.dashboard {
 body.dashboard div#content-wrapper {
    padding-top: 0;
    padding-bottom: 0;
-   display: flex;   
+   display: flex;
 }
 body.dashboard div#content-wrapper div.sidebar {
    position: relative;
