@@ -21,7 +21,7 @@
              <% end %>
            <% else # simple link to the first work type %>
              <%= link_to new_polymorphic_path([main_app, create_work_presenter.first_model]),
-                   class: 'btn btn-primary' do %>
+                   class: 'btn btn-primary btn-lg' do %>
 <%#              <i class="glyphicon glyphicon-upload"></i> <%= t('hyrax.share_button') %>
                <%= t('hyrax.share_button') %>
              <% end %>
