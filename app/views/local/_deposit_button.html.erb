@@ -1,3 +1,4 @@
+<%= render '/shared/select_work_type_modal' if create_work_presenter.many? %>
 <% if signed_in? %>
    <% if create_work_presenter.many? %>
       <button type="button" class="btn modal-btn" data-behavior="select-work"
@@ -16,4 +17,3 @@
        class: "btn"
    %>
 <% end %>
-
