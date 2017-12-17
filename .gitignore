@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignoring hyrax.rb for now to avoid adding works back into it
+config/initializers/hyrax.rb
+
 # Ignore bundler config.
 /.bundle
 
