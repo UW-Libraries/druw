@@ -6,9 +6,11 @@
 
 @import 'local_sass_variables';
 
+/*
 a[href="#"] {
    color: $uw-orange !important;
 }
+*/
 
 #content-wrapper .draft {
    position: relative;
@@ -423,6 +425,7 @@ header[role=banner] nav #main_navigation .navbar-header {
    border-radius: 0;
    border-color: #333 transparent transparent;
    line-height: 1.42857;
+   color: #fff;
 }
 /* ---- Split Button in Main Menu ---- */
 #main_navigation div.navbar-collapse > ul > li > div.btn-group {
@@ -476,8 +479,9 @@ header[role=banner] nav #main_navigation .navbar-header {
       float: left;
    }
    #main_navigation div.navbar-collapse > ul > li > div.btn-group > a.btn,
-   #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.modal-btn {
+   #main_navigation div.navbar-collapse > ul > li > div.btn-group > .modal-btn {
       border-radius: $border-radius-base 0 0 $border-radius-base;
+      color: #fff;
    }
    #main_navigation div.navbar-collapse > ul > li > div.btn-group > button.dropdown-toggle {
       border-radius: 0 $border-radius-base $border-radius-base 0;

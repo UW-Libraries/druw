@@ -67,14 +67,12 @@ en:
       button:
         text: "Search"
 
-
     nav_menu:
       home: "Home"
       browse: "Browse"
       deposit: "Deposit"
       help: "Help"
-         
- 
+
     statics:
       about: "About"
       collection_policy: "Collection Policy"
