@@ -4,7 +4,6 @@
 
 require 'nokogiri'
 require 'zip'
-require 'date'
 require 'bagit'
 require 'json'
 
@@ -13,6 +12,10 @@ ATTRIBUTES = {
   'dc.creator' => 'creator',
   'dc.contributor.author' => 'creator'
 }.freeze
+
+SINGULARS = {
+  'dc.date.accessioned' => 'date_uploaded'
+}
 
 # ---- File staging and cleanup ----
 
@@ -66,6 +69,7 @@ def get_params(field_elems)
   field_elems.each do |element|
     field = construct_attribute_name(element)
     params[ATTRIBUTES[field]] << element.inner_html if ATTRIBUTES.key? field
+    params[SINGULARS[field]] = element.inner_html if SINGULARS.key? field
   end
   params.update(default_params)
   params
@@ -85,7 +89,6 @@ def default_params
     'rights_statement' => ['No Known Copyright'],
     'visibility' => 'open',
     'keyword' => %w[foo bar],
-    'date_uploaded' => Date.today
   }
 end
 

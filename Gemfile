@@ -76,3 +76,5 @@ end
 group :development do
   gem 'xray-rails'
 end
+
+gem 'bagit'

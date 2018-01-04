@@ -22,6 +22,10 @@ def extract_item_creation_data(bagit_dir)
     else
       file = File.read(f)
       druw_params = JSON.parse(file)
+      if druw_params['date_uploaded']
+        date_str = druw_params['date_uploaded']
+        druw_params['date_uploaded'] = DateTime.parse(date_str)
+      end
     end
   end
   [druw_params, attachables]
