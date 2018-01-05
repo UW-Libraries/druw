@@ -1,6 +1,7 @@
 # Import data from a Bagit folder
 #
 # Run: `bundle exec rake 'import:bagit[BAGIT_DIR, EXISTING_DRUW_USER_ID]`
+#  e.g. bundle exec rake 'import:bagit[/tmp/weatherstation/, netid@uw.edu]'
 
 namespace :import do
   task :bagit, %i[bagit_dir user_id] => [:environment] do |_, args|
@@ -22,6 +23,10 @@ def extract_item_creation_data(bagit_dir)
     else
       file = File.read(f)
       druw_params = JSON.parse(file)
+      if druw_params['date_uploaded']
+        date_str = druw_params['date_uploaded']
+        druw_params['date_uploaded'] = DateTime.parse(date_str)
+      end
     end
   end
   [druw_params, attachables]
