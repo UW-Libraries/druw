@@ -1,6 +1,7 @@
 # Import data from a Bagit folder
 #
 # Run: `bundle exec rake 'import:bagit[BAGIT_DIR, EXISTING_DRUW_USER_ID]`
+#  e.g. bundle exec rake 'import:bagit[/tmp/weatherstation/, netid@uw.edu]'
 
 namespace :import do
   task :bagit, %i[bagit_dir user_id] => [:environment] do |_, args|

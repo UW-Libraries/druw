@@ -1,6 +1,7 @@
 # Create a BagIt directory from a DSpace export zip
 #
 # Run: `ds2bi.rb DSPACE_ZIPFILE [OUTPUT_DIR]`
+#  e.g. ds2bi.rb weatherstation.zip /tmp
 
 require 'nokogiri'
 require 'zip'
