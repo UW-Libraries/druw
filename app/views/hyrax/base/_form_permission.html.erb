@@ -17,12 +17,6 @@
         <br>
         <%= t('hyrax.visibility.open.note_html', type: f.object.human_readable_type) %>
       </label>
-      <label class="radio">
-        <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED %>
-        <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED) %>
-        <br>
-        <%= t('hyrax.visibility.authenticated.note_html', institution: institution_name) %>
-      </label>
 <!--
   Other visibility options removed
 -->
