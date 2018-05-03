@@ -65,29 +65,28 @@ def delete_unused_files(stage_dir, known_files):
 
 def parse_mets(mets_xml_str):
     '''Retrieve data from mets file for creating DRUW item'''
-    dom = etree.fromstring(mets_xml_str)
-    field_elems = get_field_elems(dom)
+    root = etree.fromstring(mets_xml_str)
+    field_elems = get_field_elems(root)
     params = get_params(field_elems)
-    file_mappings = get_file_mappings(dom)
+    file_mappings = get_file_mappings(root)
     return {
         'params': params,
         'files': file_mappings,
     }
 
-def get_field_elems(dom):
-    '''Get all fields elements in a DOM'''
-    current_type = dom.get('TYPE')[7:]
+def get_field_elems(root):
+    '''Get all fields elements in a XML'''
+    current_type = root.get('TYPE')[7:]
     if current_type != 'ITEM':
         raise RuntimeError('Cannot handle collections yet')
     xpath = "//dim:dim[@dspaceType='{}']/dim:field".format(current_type)
     namespaces = {'dim': 'http://www.dspace.org/xmlns/dspace/dim'}
-    return dom.xpath(xpath, namespaces=namespaces)
+    return root.xpath(xpath, namespaces=namespaces)
 
 def get_params(field_elems):
-    '''Get select DRUW item parameters from DOM elements'''
+    '''Get select DRUW item parameters from XML elements'''
     attributes = {
         'dc.title': 'title',
-        'dc.creator': 'creator',
         'dc.contributor.author': 'creator',
     }
 
@@ -112,39 +111,39 @@ def construct_attribute_name(element):
         field = field + '.' + element.get('qualifier')
     return field
 
-def get_file_mappings(dom):
+def get_file_mappings(root):
     '''Get DSpace bitstream->filename hash'''
     namespaces = {'premis': 'http://www.loc.gov/standards/premis'}
     file_mappings = []
-    file_md5_list = dom.xpath('//premis:object', namespaces=namespaces)
-    for fptr in file_md5_list:
-        ttype, bitstream, original_filename = get_filename_mapping(fptr, dom)
+    file_md5_list = root.xpath('//premis:object', namespaces=namespaces)
+    for file_elem in file_md5_list:
+        ttype, bitstream, original_filename = get_filename_mapping(file_elem, root)
         if ttype in ['ORIGINAL', 'TEXT']:
             file_mappings.append([bitstream, original_filename])
     return dict(file_mappings)
 
-def get_filename_mapping(fptr, dom):
+def get_filename_mapping(file_elem, root):
     '''Get single bitstream->orig_filename mapping'''
-    checksum = get_checksum(fptr)
-    orig_filename = get_orig_filename(fptr)
-    ttype, bitstream_filename = get_bitstream_filename(checksum, dom)
+    checksum = get_checksum(file_elem)
+    orig_filename = get_orig_filename(file_elem)
+    ttype, bitstream_filename = get_bitstream_filename(checksum, root)
     return [ttype, bitstream_filename, orig_filename]
 
-def get_checksum(fptr):
+def get_checksum(file_elem):
     '''Get the checksum of a file'''
     namespaces = {'premis': 'http://www.loc.gov/standards/premis'}
     xpath = 'premis:objectCharacteristics/premis:fixity/premis:messageDigest'
-    return fptr.find(xpath, namespaces=namespaces).text
+    return file_elem.find(xpath, namespaces=namespaces).text
 
-def get_orig_filename(fptr):
+def get_orig_filename(file_elem):
     '''Get the of a bitstream artifact'''
     namespaces = {'premis': 'http://www.loc.gov/standards/premis'}
-    return fptr.find('premis:originalName', namespaces=namespaces).text
+    return file_elem.find('premis:originalName', namespaces=namespaces).text
 
-def get_bitstream_filename(checksum, dom):
+def get_bitstream_filename(checksum, root):
     '''Get the type of original file and its bitstream name'''
     xpath = "//mets:file[@CHECKSUM='{}']/mets:FLocat".format(checksum)
-    new_file = dom.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})
+    new_file = root.xpath(xpath, namespaces={'mets': 'http://www.loc.gov/METS/'})
     ttype = new_file[0].getparent().getparent().get('USE')
     filename = new_file[0].get('{http://www.w3.org/1999/xlink}href')
     return [ttype, filename]
