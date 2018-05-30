@@ -52,7 +52,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.1.0.rc2'
+gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.1.0.rc3'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
@@ -60,6 +60,9 @@ end
 gem 'rsolr', '>= 1.0'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+
+gem 'riiif', '~> 1.1'
+
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
