@@ -52,8 +52,8 @@ en:
     footer:
       copyright_html: "<strong>Copyright &copy; 2018 University of Washington Libraries</strong>"
       service_html: <a href="http://localhost:4001/contact" class="navbar-link" target="_blank">Contact</a>
-      contact_info_html: "Put whatever you want in this area."
+      contact_info_html: "<ul><li>For general questions contact rworks@uw.edu</li><li>Data Management Librarian: Jenny Muilenburg (jmuil@uw.edu)</li><li>Scholarly Publishing Outreach Librarian: Liz Bedford (ebedford@uw.edu)</li></ul>"
     institution_name: University of Washington
     institution_name_full: University of Washington Libraries
-    product_name: DRUW at UW
+    product_name: Data Repository at UW
     #product_twitter_handle: "@uwlibraries"
