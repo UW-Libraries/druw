@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      technical_report:     'fa fa-file-text-o'
+    select_type:
+      technical_report:
+        description:        "A document that describes the process, progress, or results of research, or the current state of research, on a topic."
+        name:               "Technical Report"

@@ -27,6 +27,7 @@ fits.log
 
 # Ignore locally-specific config files
 *.yml
+!config/locales
 
 # Ignore this file for security reasons
 config/initializers/devise.rb
