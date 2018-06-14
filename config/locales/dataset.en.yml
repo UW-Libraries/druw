@@ -1,0 +1,8 @@
+en:
+  hyrax:
+    icons:
+      dataset:     'fa fa-file-text-o'
+    select_type:
+      dataset:
+        description:        "A body of data collected or compiled as an output of research or scholarly activity. This may include text, images, numerical data, audio, video, etc..."
+        name:               "Dataset"

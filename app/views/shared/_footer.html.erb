@@ -1,9 +1,16 @@
-<footer id="page-footer" role="contentinfo">
-  <p> <%= link_to t(:'hydra.statics.terms_of_use'), main_app.terms_of_use_path %>
-      <span class="separator"></span>
-      <%=contact_link('Contact')%>
-  </p>
-  <p> &copy;<%= Time.current.year %> 
-      <a href="https://lib.washington.edu/">University of Washington Libraries</a>
-  </p>
+<footer class="navbar navbar-inverse site-footer">
+  <div class="container-fluid">
+    <div class="navbar-text text-left">
+        <p><%= t('hyrax.footer.service_html') %></p>
+        <p><%= t('hyrax.footer.contact_info_html') %></p>
+        <!--<p><%= t('hyrax.product_name') %> v<%= Hyrax::VERSION %></p>-->
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-text text-right">
+        <p>Powered by Hyrax <%= Hyrax::VERSION %></p>
+        <p><%= t('hyrax.footer.copyright_html') %></p>
+        <p><%= t('hyrax.background_attribution_html') %></p>
+      </div>
+    </div>
+  </div>
 </footer>

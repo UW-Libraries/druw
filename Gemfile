@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.0.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -52,29 +52,31 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#gem 'hyrax', github: 'projecthydra-labs/hyrax', branch: 'master'
-gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.0.1'
+gem 'hyrax', github: 'samvera/hyrax', tag: 'v2.1.0'
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
 end
 
 gem 'rsolr', '>= 1.0'
 gem 'devise'
-gem 'devise-guests', '~> 0.5'
+gem 'devise-guests', '~> 0.6'
+
+gem 'riiif', '~> 1.1'
+
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
 end
 
-gem 'hydra-role-management'
-gem 'omniauth-shibboleth', '~> 1.2', '>= 1.2.1'
-
 group :production do
-  gem 'pg'
+  gem 'pg', '~>0.21'
+  gem 'clamav'
 end
 
 group :development do
   gem 'xray-rails'
 end
 
+gem 'hydra-role-management'
+gem 'omniauth-shibboleth', '~> 1.2', '>= 1.2.1'
 gem 'bagit'
