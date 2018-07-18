@@ -70,6 +70,8 @@ end
 
 group :production do
   gem 'pg', '~>0.21'
+# Adding sidekiq gem so we can simplify the ansible druw role
+  gem 'sidekiq'
   gem 'clamav'
 end
 
