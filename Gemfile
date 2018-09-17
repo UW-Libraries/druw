@@ -62,6 +62,7 @@ gem 'devise'
 gem 'devise-guests', '~> 0.6'
 
 gem 'riiif', '~> 1.1'
+gem 'rubyzip', '~> 1.2.2'
 
 group :development, :test do
   gem 'fcrepo_wrapper'
